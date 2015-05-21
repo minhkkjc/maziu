@@ -1,0 +1,56 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+ScaleSlider	C:\xampp\htdocs\evona\wp-content\themes\evona\functions.php	262;"	kind:function	line:262	language:PHP
+__construct	C:\xampp\htdocs\evona\wp-content\themes\evona\functions.php	290;"	kind:function	line:290	language:PHP
+a	C:\xampp\htdocs\evona\wp-content\themes\evona\functions.php	155;"	kind:variable	line:155	language:PHP
+add_page	C:\xampp\htdocs\evona\wp-content\themes\evona\functions.php	296;"	kind:function	line:296	language:PHP
+args	C:\xampp\htdocs\evona\wp-content\themes\evona\functions.php	162;"	kind:variable	line:162	language:PHP
+evonaSettings	C:\xampp\htdocs\evona\wp-content\themes\evona\functions.php	285;"	kind:class	line:285	language:PHP
+evona_admin_scripts	C:\xampp\htdocs\evona\wp-content\themes\evona\functions.php	143;"	kind:function	line:143	language:PHP
+evona_feature_page	C:\xampp\htdocs\evona\wp-content\themes\evona\functions.php	400;"	kind:function	line:400	language:PHP
+evona_font_title_url	C:\xampp\htdocs\evona\wp-content\themes\evona\functions.php	71;"	kind:function	line:71	language:PHP
+evona_font_url	C:\xampp\htdocs\evona\wp-content\themes\evona\functions.php	47;"	kind:function	line:47	language:PHP
+evona_fonts_page	C:\xampp\htdocs\evona\wp-content\themes\evona\functions.php	343;"	kind:function	line:343	language:PHP
+evona_scripts_styles	C:\xampp\htdocs\evona\wp-content\themes\evona\functions.php	85;"	kind:function	line:85	language:PHP
+evona_settings_page	C:\xampp\htdocs\evona\wp-content\themes\evona\functions.php	335;"	kind:function	line:335	language:PHP
+evona_setup	C:\xampp\htdocs\evona\wp-content\themes\evona\functions.php	9;"	kind:function	line:9	language:PHP
+evona_widgets_init	C:\xampp\htdocs\evona\wp-content\themes\evona\functions.php	127;"	kind:function	line:127	language:PHP
+evona_wp_title	C:\xampp\htdocs\evona\wp-content\themes\evona\functions.php	112;"	kind:function	line:112	language:PHP
+feature_slug_callback	C:\xampp\htdocs\evona\wp-content\themes\evona\functions.php	549;"	kind:function	line:549	language:PHP
+font	C:\xampp\htdocs\evona\wp-content\themes\evona\functions.php	52;"	kind:variable	line:52	language:PHP
+font	C:\xampp\htdocs\evona\wp-content\themes\evona\functions.php	54;"	kind:variable	line:54	language:PHP
+font_style	C:\xampp\htdocs\evona\wp-content\themes\evona\functions.php	97;"	kind:variable	line:97	language:PHP
+font_text_family_callback	C:\xampp\htdocs\evona\wp-content\themes\evona\functions.php	521;"	kind:function	line:521	language:PHP
+font_text_subset_callback	C:\xampp\htdocs\evona\wp-content\themes\evona\functions.php	528;"	kind:function	line:528	language:PHP
+font_title_family_callback	C:\xampp\htdocs\evona\wp-content\themes\evona\functions.php	535;"	kind:function	line:535	language:PHP
+font_title_subset_callback	C:\xampp\htdocs\evona\wp-content\themes\evona\functions.php	542;"	kind:function	line:542	language:PHP
+font_url	C:\xampp\htdocs\evona\wp-content\themes\evona\functions.php	64;"	kind:variable	line:64	language:PHP
+font_url	C:\xampp\htdocs\evona\wp-content\themes\evona\functions.php	78;"	kind:variable	line:78	language:PHP
+fonts	C:\xampp\htdocs\evona\wp-content\themes\evona\functions.php	288;"	kind:variable	line:288	language:PHP
+fonts_arr	C:\xampp\htdocs\evona\wp-content\themes\evona\functions.php	347;"	kind:variable	line:347	language:PHP
+fonts_arr	C:\xampp\htdocs\evona\wp-content\themes\evona\functions.php	57;"	kind:variable	line:57	language:PHP
+k	C:\xampp\htdocs\evona\wp-content\themes\evona\functions.php	361;"	kind:variable	line:361	language:PHP
+k	C:\xampp\htdocs\evona\wp-content\themes\evona\functions.php	370;"	kind:variable	line:370	language:PHP
+k	C:\xampp\htdocs\evona\wp-content\themes\evona\functions.php	376;"	kind:variable	line:376	language:PHP
+my_settings_page	C:\xampp\htdocs\evona\wp-content\themes\evona\functions.php	559;"	kind:variable	line:559	language:PHP
+new_input	C:\xampp\htdocs\evona\wp-content\themes\evona\functions.php	495;"	kind:variable	line:495	language:PHP
+options	C:\xampp\htdocs\evona\wp-content\themes\evona\functions.php	287;"	kind:variable	line:287	language:PHP
+options	C:\xampp\htdocs\evona\wp-content\themes\evona\functions.php	345;"	kind:variable	line:345	language:PHP
+options	C:\xampp\htdocs\evona\wp-content\themes\evona\functions.php	402;"	kind:variable	line:402	language:PHP
+options	C:\xampp\htdocs\evona\wp-content\themes\evona\functions.php	48;"	kind:variable	line:48	language:PHP
+page_init	C:\xampp\htdocs\evona\wp-content\themes\evona\functions.php	417;"	kind:function	line:417	language:PHP
+posts	C:\xampp\htdocs\evona\wp-content\themes\evona\functions.php	172;"	kind:variable	line:172	language:PHP
+query_args	C:\xampp\htdocs\evona\wp-content\themes\evona\functions.php	59;"	kind:variable	line:59	language:PHP
+query_args	C:\xampp\htdocs\evona\wp-content\themes\evona\functions.php	73;"	kind:variable	line:73	language:PHP
+sanitize	C:\xampp\htdocs\evona\wp-content\themes\evona\functions.php	493;"	kind:function	line:493	language:PHP
+selected	C:\xampp\htdocs\evona\wp-content\themes\evona\functions.php	372;"	kind:variable	line:372	language:PHP
+selected	C:\xampp\htdocs\evona\wp-content\themes\evona\functions.php	378;"	kind:variable	line:378	language:PHP
+selected_text	C:\xampp\htdocs\evona\wp-content\themes\evona\functions.php	366;"	kind:variable	line:366	language:PHP
+selected_title	C:\xampp\htdocs\evona\wp-content\themes\evona\functions.php	363;"	kind:variable	line:363	language:PHP
+site_description	C:\xampp\htdocs\evona\wp-content\themes\evona\functions.php	116;"	kind:variable	line:116	language:PHP
+slider_shortcode	C:\xampp\htdocs\evona\wp-content\themes\evona\functions.php	151;"	kind:function	line:151	language:PHP
+title	C:\xampp\htdocs\evona\wp-content\themes\evona\functions.php	118;"	kind:variable	line:118	language:PHP

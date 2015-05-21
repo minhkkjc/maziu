@@ -1,0 +1,35 @@
+msgid "Main Menu"
+msgstr ""
+
+msgid "Main Widget Area"
+msgstr ""
+
+msgid "Read more"
+msgstr ""
+
+msgid "Continue reading"
+msgstr ""
+
+msgid "Language"
+msgstr
+
+msgid "Currency"
+msgstr
+
+msgid "Maziu About Me Widget"
+msgstr
+
+msgid "A About Me Widget"
+msgstr
+
+msgid "Enter title"
+msgstr
+
+msgid "Title:"
+msgstr
+
+msgid "Enter post slug"
+msgstr
+
+msgid "Post slug"
+msgstr

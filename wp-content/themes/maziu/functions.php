@@ -782,11 +782,11 @@ class Popular_Posts_Widget extends WP_Widget {
             echo $args['before_title'] . apply_filters('widget_title', $instance['title']) . $args['after_title'];
         }
 
-        if (!empty($instance['post_count'])) {
-            $count = $instance['post_count'];
-        } else {
-            $count = 5;
+        if (!empty($instance['count'])) {
+            $count = (int)$instance['count'];
         }
+
+        if (empty($count)) $count = 5;
 
         $array = array(
             'numberposts' => $count,
@@ -833,11 +833,17 @@ class Popular_Posts_Widget extends WP_Widget {
 
     public function form($instance) {
         $title = !empty($instance['title']) ? $instance['title'] : __('Enter title', 'maziu');
+        $count = !empty($instance['count']) ? $instance['count'] : 5;
         ?>
         <p>
             <label for="<?php echo $this->get_field_id('title'); ?>"><?php echo _e('Title:', 'maziu'); ?></label>
             <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>"
                    name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>" />
+        </p>
+        <p>
+            <label for="<?php echo $this->get_field_id('count'); ?>"><?php echo _e('Count:', 'maziu'); ?></label>
+            <input id="<?php echo $this->get_field_id('count'); ?>"
+                   name="<?php echo $this->get_field_name('count'); ?>" type="text" value="<?php echo esc_attr($count); ?>" />
         </p>
     <?php
     }
@@ -845,6 +851,244 @@ class Popular_Posts_Widget extends WP_Widget {
     public function update($new_instance, $old_instance) {
         $instance = array();
         $instance['title'] = !empty($new_instance['title']) ? strip_tags($new_instance['title']) : '';
+        $instance['count'] = !empty($new_instance['count']) ? (int)strip_tags($new_instance['count']) : 5;
+
+        return $instance;
+    }
+
+}
+
+/*
+ * Add news letter widget
+ */
+
+class News_Letter_Widget extends WP_Widget {
+
+    function __construct() {
+        parent::__construct(
+            'news_letter_widget',
+            __('Maziu News Letter Widget', 'maziu'),
+            array('description' => __('A News Letter Widget', 'maziu'))
+        );
+    }
+
+    public function widget($args, $instance) {
+        global $post;
+
+        echo $args['before_widget'];
+        if (!empty($instance['title'])) {
+            echo $args['before_title'] . apply_filters('widget_title', $instance['title']) . $args['after_title'];
+        }
+
+        if (!empty($instance['description'])) {
+            echo '<p class="news-letter-desc">' . strip_tags($instance['description']) . '</p>';
+        }
+        ?>
+        <div class="news-letter-input">
+            <input type="text" name="email" placeholder="<?php echo __('Your email address..'); ?>" class="main-border-focus" />
+            <i class="fa fa-envelope-o main-color"></i>
+        </div>
+        <?php
+        echo $args['after_widget'];
+    }
+
+    public function form($instance) {
+        $title = !empty($instance['title']) ? $instance['title'] : __('Enter title', 'maziu');
+        $description = !empty($instance['description']) ? $instance['description'] : '';
+        ?>
+        <p>
+            <label for="<?php echo $this->get_field_id('title'); ?>"><?php echo _e('Title:', 'maziu'); ?></label>
+            <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>"
+                   name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>" />
+        </p>
+        <p>
+            <label for="<?php echo $this->get_field_id('description'); ?>"><?php echo _e('Description:', 'maziu'); ?></label>
+            <textarea class="widefat" id="<?php echo $this->get_field_id('description'); ?>"
+                   name="<?php echo $this->get_field_name('description'); ?>"><?php echo $description; ?></textarea>
+        </p>
+    <?php
+    }
+
+    public function update($new_instance, $old_instance) {
+        $instance = array();
+        $instance['title'] = !empty($new_instance['title']) ? strip_tags($new_instance['title']) : '';
+        $instance['description'] = !empty($new_instance['description']) ? strip_tags($new_instance['description']) : '';
+
+        return $instance;
+    }
+
+}
+
+/*
+ * Add news letter widget
+ */
+
+class Popular_Tags_Widget extends WP_Widget {
+
+    function __construct() {
+        parent::__construct(
+            'popular_tags_widget',
+            __('Maziu Popular Tags Widget', 'maziu'),
+            array('description' => __('A Popular Tags Widget', 'maziu'))
+        );
+    }
+
+    public function widget($args, $instance) {
+        global $post;
+
+        echo $args['before_widget'];
+        if (!empty($instance['title'])) {
+            echo $args['before_title'] . apply_filters('widget_title', $instance['title']) . $args['after_title'];
+        }
+
+        if (!empty($instance['count'])) {
+            $count = (int)$instance['count'];
+        }
+
+        if (empty($count)) $count = 10;
+
+        $array = array(
+            'orderby' => 'count',
+            'order' => 'DESC',
+            'number' => $count
+        );
+
+        $tags = get_tags($array);
+        ?>
+        <ul class="popular-tags-list clearfix">
+        <?php
+        foreach ($tags as $tag) :
+        ?>
+            <li class="popular-tag <?php echo $tag->slug; ?>">
+                <a href="<?php echo get_tag_link($tag->term_id); ?>" title="<?php echo $tag->name; ?>" class="main-color-hover main-border-hover"><?php echo $tag->name; ?></a>
+            </li>
+        <?php
+        endforeach;
+        ?>
+        </ul>
+        <?php
+        echo $args['after_widget'];
+    }
+
+    public function form($instance) {
+        $title = !empty($instance['title']) ? $instance['title'] : __('Enter title', 'maziu');
+        $count = !empty($instance['count']) ? $instance['count'] : 10;
+        ?>
+        <p>
+            <label for="<?php echo $this->get_field_id('title'); ?>"><?php echo _e('Title:', 'maziu'); ?></label>
+            <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>"
+                   name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>" />
+        </p>
+        <p>
+            <label for="<?php echo $this->get_field_id('count'); ?>"><?php echo _e('Count:', 'maziu'); ?></label>
+            <input id="<?php echo $this->get_field_id('count'); ?>"
+                   name="<?php echo $this->get_field_name('count'); ?>" type="text" value="<?php echo esc_attr($count); ?>" />
+        </p>
+    <?php
+    }
+
+    public function update($new_instance, $old_instance) {
+        $instance = array();
+        $instance['title'] = !empty($new_instance['title']) ? strip_tags($new_instance['title']) : '';
+        $instance['count'] = !empty($new_instance['count']) ? (int)strip_tags($new_instance['count']) : 10;
+
+        return $instance;
+    }
+
+}
+
+/*
+ * Add popular posts widget
+ */
+
+class Liked_Posts_Widget extends WP_Widget {
+
+    function __construct() {
+        parent::__construct(
+            'liked_posts_widget',
+            __('Maziu Liked Posts Widget', 'maziu'),
+            array('description' => __('A Liked Posts Widget', 'maziu'))
+        );
+    }
+
+    public function widget($args, $instance) {
+        global $post;
+
+        echo $args['before_widget'];
+        if (!empty($instance['title'])) {
+            echo $args['before_title'] . apply_filters('widget_title', $instance['title']) . $args['after_title'];
+        }
+
+        if (!empty($instance['count'])) {
+            $count = (int)$instance['count'];
+        }
+
+        if (empty($count)) $count = 5;
+
+        $array = array(
+            'numberposts' => $count,
+            'post_type' => 'post',
+            'post_status' => 'publish',
+            'meta_key' => '_hit-counter',
+            'orderby' => 'meta_value_num',
+            'order' => 'DESC'
+        );
+
+        $posts = get_posts($array);
+        ?>
+        <ul class="popular-post-list">
+            <?php
+            foreach ($posts as $post) :
+                setup_postdata($post);
+                ?>
+                <li class="popular-post clearfix">
+                    <div class="popular-post-thumbnail">
+                        <?php the_post_thumbnail('thumbnail'); ?>
+                    </div>
+                    <div class="popular-post-info">
+                        <h3><?php the_title(); ?></h3>
+                        <div class="popular-post-meta clearfix">
+                            <div class="post-likes">
+                                <i class="fa fa-heart-o main-color"></i>
+                                4
+                            </div>
+                            <div class="post-hits">
+                                <i class="fa fa-comments-o main-color"></i>
+                                <?php echo get_hits(); ?>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            <?php
+            endforeach;
+            wp_reset_postdata();
+            ?>
+        </ul>
+        <?php
+        echo $args['after_widget'];
+    }
+
+    public function form($instance) {
+        $title = !empty($instance['title']) ? $instance['title'] : __('Enter title', 'maziu');
+        $count = !empty($instance['count']) ? $instance['count'] : 5;
+        ?>
+        <p>
+            <label for="<?php echo $this->get_field_id('title'); ?>"><?php echo _e('Title:', 'maziu'); ?></label>
+            <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>"
+                   name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>" />
+        </p>
+        <p>
+            <label for="<?php echo $this->get_field_id('count'); ?>"><?php echo _e('Count:', 'maziu'); ?></label>
+            <input id="<?php echo $this->get_field_id('count'); ?>"
+                   name="<?php echo $this->get_field_name('count'); ?>" type="text" value="<?php echo esc_attr($count); ?>" />
+        </p>
+    <?php
+    }
+
+    public function update($new_instance, $old_instance) {
+        $instance = array();
+        $instance['title'] = !empty($new_instance['title']) ? strip_tags($new_instance['title']) : '';
+        $instance['count'] = !empty($new_instance['count']) ? (int)strip_tags($new_instance['count']) : 5;
 
         return $instance;
     }
@@ -856,6 +1100,8 @@ function maziu_register_widgets() {
     register_widget('Follow_Widget');
     register_widget('Categories_Widget');
     register_widget('Popular_Posts_Widget');
+    register_widget('News_Letter_Widget');
+    register_widget('Popular_Tags_Widget');
 }
 add_action('widgets_init', 'maziu_register_widgets');
 

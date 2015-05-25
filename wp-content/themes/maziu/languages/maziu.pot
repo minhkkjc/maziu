@@ -51,3 +51,18 @@ msgstr
 
 msgid "A Popular Posts Widget"
 msgstr
+
+msgid "Maziu News Letter Widget"
+msgstr
+
+msgid "A News Letter Widget"
+msgstr
+
+msgid "Description"
+msgstr
+
+msgid "Count"
+msgstr
+
+msgid "Your email address.."
+msgstr

@@ -33,3 +33,21 @@ msgstr
 
 msgid "Post slug"
 msgstr
+
+msgid "Maziu Follow Widget"
+msgstr
+
+msgid "A Follow Widget"
+msgstr
+
+msgid "Maziu Categories Widget"
+msgstr
+
+msgid "A Categories Widget"
+msgstr
+
+msgid "Maziu Popular Posts Widget"
+msgstr
+
+msgid "A Popular Posts Widget"
+msgstr

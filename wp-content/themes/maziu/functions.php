@@ -152,12 +152,12 @@ add_action('admin_enqueue_scripts', 'maziu_admin_scripts');
 function maziu_slideshow()
 {
 	global $post;
-	
+
 	$options = get_option('maziu_option');
 	if (!empty($options['category_name'])) :
 		if (!isset($options['slide_count']))
 			$options['slide_count'] = 4;
-		
+
 		if (!empty($options['slide_count'])) :
 			$args = array(
 				'posts_per_page' => $options['slide_count'],
@@ -168,11 +168,11 @@ function maziu_slideshow()
 				'post_type' => 'post',
 				'post_status' => 'publish'
 			);
-			
+
 			$posts = get_posts($args);
 	?>
-    <div id="slideshow" style="position: relative; top: 0px; left: 0px; width: 1110px; height: 435px; overflow: hidden;">
-        <div u="slides" style="position: absolute; left: 0px; top: 0px; width: 1110px; height: 435px; overflow: hidden;">
+    <div id="slideshow" style="position: relative; top: 0px; left: 0px; width: 900px; height: 435px; overflow: hidden;">
+        <div u="slides" style="position: absolute; left: 0px; top: 0px; width: 900px; height: 435px; overflow: hidden;">
             <?php
             foreach ($posts as $post) :
                 setup_postdata($post);
@@ -205,7 +205,7 @@ function maziu_slideshow()
     <script>
         jQuery(document).ready(function ($) {
             var options = {
-                $AutoPlay: true,                                    //[Optional] Whether to auto play, to enable slideshow, this option must be set to true, default value is false
+                $AutoPlay: false,                                    //[Optional] Whether to auto play, to enable slideshow, this option must be set to true, default value is false
                 $AutoPlaySteps: 1,                                  //[Optional] Steps to go for each navigation request (this options applys only when slideshow disabled), the default value is 1
                 $AutoPlayInterval: 4000,                            //[Optional] Interval (in milliseconds) to go for next slide since the previous stopped if the slider is auto playing, default value is 3000
                 $PauseOnHover: 1,                               //[Optional] Whether to pause when mouse over if a slider is auto playing, 0 no pause, 1 pause for desktop, 2 pause for touch device, 3 pause for desktop and touch device, 4 freeze for desktop, 8 freeze for touch device, 12 freeze for desktop and touch device, default value is 1
@@ -213,7 +213,7 @@ function maziu_slideshow()
                 $ArrowKeyNavigation: true,   			            //[Optional] Allows keyboard (arrow key) navigation or not, default value is false
                 $SlideDuration: 160,                                //[Optional] Specifies default duration (swipe) for slide in milliseconds, default value is 500
                 $MinDragOffsetToSlide: 20,                          //[Optional] Minimum drag offset to trigger slide , default value is 20
-                $SlideWidth: 370,                                   //[Optional] Width of every slide in pixels, default value is width of 'slides' container
+                $SlideWidth: 300,                                   //[Optional] Width of every slide in pixels, default value is width of 'slides' container
                 //$SlideHeight: 150,                                //[Optional] Height of every slide in pixels, default value is height of 'slides' container
                 $SlideSpacing: 0, 					                //[Optional] Space between each slide in pixels, default value is 0
                 $DisplayPieces: 3,                                  //[Optional] Number of pieces to display (the slideshow would be disabled if the value is set to greater than 1), the default value is 1
@@ -414,37 +414,17 @@ class maziuSettings
 
         $fonts_arr = json_decode(file_get_contents('https://www.googleapis.com/webfonts/v1/webfonts?key=AIzaSyBgzCr9pt5xS09me72S91tTaCmLtAzWkOE'));
 
-        if (!isset($this->options['font_title_family']))
-        {
-            $this->options['font_title_family'] = 188; // Font Droid Serif
-        }
-
         if (!isset($this->options['font_text_family']))
         {
-            $this->options['font_text_family'] = 349; // Font Lato
+            $this->options['font_text_family'] = 352; // Font Lato
         }
 
         if (!empty($fonts_arr->items))
         {
             foreach ($fonts_arr->items as $k => $font)
             {
-                $selected_title = (isset($this->options['font_title_family']) && $this->options['font_title_family'] == $k) ? ' selected' : '';
-                $this->fonts['font_title']['family'] .= '<option value="' . $k . '"' . $selected_title . '>' . $font->family . '</option>';
-
                 $selected_text = (isset($this->options['font_text_family']) && $this->options['font_text_family'] == $k) ? ' selected' : '';
                 $this->fonts['font_text']['family'] .= '<option value="' . $k . '"' . $selected_text . '>' . $font->family . '</option>';
-            }
-
-            foreach ($fonts_arr->items[$this->options['font_title_family']]->subsets as $k => $subset)
-            {
-                $selected = (isset($this->options['font_title_subset']) && $this->options['font_title_subset'] == $k) ? ' selected' : '';
-                $this->fonts['font_title']['subset'] .= '<option value="' . $k .'"' . $selected . '>' . $subset . '</option>';
-            }
-
-            foreach ($fonts_arr->items[$this->options['font_text_family']]->subsets as $k => $subset)
-            {
-                $selected = (isset($this->options['font_text_subset']) && $this->options['font_text_subset'] == $k) ? ' selected' : '';
-                $this->fonts['font_text']['subset'] .= '<option value="' . $k .'"' . $selected . '>' . $subset . '</option>';
             }
         }
 
@@ -494,47 +474,16 @@ class maziuSettings
          * Fonts page
          */
         add_settings_section(
-            'font_title_section',
-            'Font title',
-            '',
-            'maziu-fonts-page'
-        );
-
-        add_settings_section(
             'font_text_section',
-            'Font text',
+            '',
             '',
             'maziu-fonts-page'
-        );
-
-        add_settings_field(
-            'font_title_family',
-            'Font family',
-            array($this, 'font_title_family_callback'),
-            'maziu-fonts-page',
-            'font_title_section'
-        );
-
-        add_settings_field(
-            'font_title_subset',
-            'Subset',
-            array($this, 'font_title_subset_callback'),
-            'maziu-fonts-page',
-            'font_title_section'
         );
 
         add_settings_field(
             'font_text_family',
             'Font family',
             array($this, 'font_text_family_callback'),
-            'maziu-fonts-page',
-            'font_text_section'
-        );
-
-        add_settings_field(
-            'font_text_subset',
-            'Subset',
-            array($this, 'font_text_subset_callback'),
             'maziu-fonts-page',
             'font_text_section'
         );
@@ -568,22 +517,13 @@ class maziuSettings
 
     public function sanitize($input)
     {
-        $new_input = array();
+        $new_input = get_option('maziu_option');
 
         /*
          * Fonts page
          */
         if (isset($input['font_text_family']))
             $new_input['font_text_family'] = absint($input['font_text_family']);
-
-        if (isset($input['font_text_subset']))
-            $new_input['font_text_subset'] = absint($input['font_text_subset']);
-
-        if (isset($input['font_title_family']))
-            $new_input['font_title_family'] = absint($input['font_title_family']);
-
-        if (isset($input['font_title_subset']))
-            $new_input['font_title_subset'] = absint($input['font_title_subset']);
 
         /*
          * Slideshow page
@@ -601,27 +541,6 @@ class maziuSettings
     {
         printf(
             '<select id="font-text-family" name="maziu_option[font_text_family]" class="google-font-family">' . $this->fonts['font_text']['family'] . '</select>'
-        );
-    }
-
-    public function font_text_subset_callback()
-    {
-        printf(
-            '<select id="font-text-subset" name="maziu_option[font_text_subset]" class="google-font-subset">' . $this->fonts['font_text']['subset'] . '</select>'
-        );
-    }
-
-    public function font_title_family_callback()
-    {
-        printf(
-            '<select id="font-title-family" name="maziu_option[font_title_family]" class="google-font-family">' . $this->fonts['font_title']['family'] . '</select>'
-        );
-    }
-
-    public function font_title_subset_callback()
-    {
-        printf(
-            '<select id="font-title-subset" name="maziu_option[font_title_subset]" class="google-font-subset">' . $this->fonts['font_title']['subset'] . '</select>'
         );
     }
 

@@ -666,6 +666,10 @@ ins {
 
 /* Main content */
 
+#slideshow-wrap .content {
+    width: 100%!important;
+}
+
 #main-content {
 	margin-top: 100px;
 }

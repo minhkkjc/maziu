@@ -1030,3 +1030,29 @@ ul.socials li:hover a {
     border: 1px solid #efefef;
     outline: 0;
 }
+
+.instagram-pictures-list {
+	margin: 0;
+	padding: 0;
+}
+
+.instagram-pictures-list li {
+	list-style-type: none;
+}
+
+.instagram-pictures-list li a {
+	display: block;
+}
+
+.instagram-pictures-list li img {
+	width: 100%;
+	height: auto;
+}
+
+#sidebar .instagram-pictures-list li {
+	width: 47.0852%!important;
+}
+
+#sidebar .instagram-pictures-list li:nth-child(n) {
+	margin-right: 
+}

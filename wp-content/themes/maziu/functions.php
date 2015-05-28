@@ -920,7 +920,7 @@ class News_Letter_Widget extends WP_Widget {
 }
 
 /*
- * Add news letter widget
+ * Add Popular Tags widget
  */
 
 class Popular_Tags_Widget extends WP_Widget {
@@ -998,7 +998,7 @@ class Popular_Tags_Widget extends WP_Widget {
 }
 
 /*
- * Add popular posts widget
+ * Add liked posts widget
  */
 
 class Liked_Posts_Widget extends WP_Widget {
@@ -1095,6 +1095,112 @@ class Liked_Posts_Widget extends WP_Widget {
 
 }
 
+/*
+ * Add instagram widget
+ */
+
+class Instagram_Widget extends WP_Widget {
+
+    function __construct() {
+        parent::__construct(
+            'instagram_widget',
+            __('Maziu Instagram Widget', 'maziu'),
+            array('description' => __('A Instagram Widget', 'maziu'))
+        );
+    }
+
+    public function widget($args, $instance) {
+        global $post;
+
+        echo $args['before_widget'];
+        if (!empty($instance['title'])) {
+            echo $args['before_title'] . apply_filters('widget_title', $instance['title']) . $args['after_title'];
+        }
+		
+		if (!empty($instance['instagram_username'])) {
+			$username = $instance['instagram_username'];
+		}
+
+        if (!empty($instance['count'])) {
+            $count = (int)$instance['count'];
+        }
+
+        if (empty($count)) $count = 4;
+		
+		if (!empty($instance['column'])) {
+			$column = (int)$instance['column'];
+		}
+		
+		if (empty($column)) $column = 2;
+		
+		if (!empty($username)) :
+			$user = json_decode(file_get_contents('https://api.instagram.com/v1/users/search?q=' . $username . '&access_token=2137252455.d7646b8.a916a8a8e024489ba99ae5c9eaee50ae'));
+			$id = $user->data[0]->id;
+			if (!empty($id)) :
+				$medias = json_decode(file_get_contents('https://api.instagram.com/v1/users/' . $id . '/media/recent/?count=' . $count . '&access_token=2137252455.d7646b8.a916a8a8e024489ba99ae5c9eaee50ae'));
+				if (count($medias->data) > 0) :
+					$width = 94 / $column;
+					$margin_right = 6 / ($column - 1);
+					$total = count($medias->data);
+		?>
+        <ul class="instagram-pictures-list clearfix">
+        <?php foreach ($medias->data as $k => $media) : ?>
+			<li class="instagram-picture" 
+			style="float: left; width: <?php echo $width; ?>%;<?php if (($k % $column) != ($column - 1)) echo ' margin-right:' . $margin_right . '%;'; ?><?php if ($k < ($total - $column)) echo ' margin-bottom: 10px;'; ?>">
+				<a href="<?php echo $media->link; ?>">
+					<img src="<?php echo $media->images->low_resolution->url ?>" />
+				</a>
+			</li>
+		<?php endforeach; ?>
+        </ul>
+        <?php
+				endif;
+			endif;
+		endif;
+        echo $args['after_widget'];
+    }
+
+    public function form($instance) {
+        $title = !empty($instance['title']) ? $instance['title'] : __('Enter title', 'maziu');
+		$username = !empty($instance['instagram_username']) ? $instance['instagram_username'] : '';
+        $count = !empty($instance['count']) ? $instance['count'] : 4;
+		$column = !empty($instance['column']) ? $instance['column'] : 2;
+        ?>
+        <p>
+            <label for="<?php echo $this->get_field_id('title'); ?>"><?php echo _e('Title:', 'maziu'); ?></label>
+            <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>"
+                   name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>" />
+        </p>
+		<p>
+            <label for="<?php echo $this->get_field_id('instagram_username'); ?>"><?php echo _e('Instagram username:', 'maziu'); ?></label>
+            <input class="widefat" id="<?php echo $this->get_field_id('instagram_username'); ?>"
+                   name="<?php echo $this->get_field_name('instagram_username'); ?>" type="text" value="<?php echo esc_attr($username); ?>" />
+        </p>
+        <p>
+            <label for="<?php echo $this->get_field_id('count'); ?>"><?php echo _e('Count:', 'maziu'); ?></label>
+            <input id="<?php echo $this->get_field_id('count'); ?>"
+                   name="<?php echo $this->get_field_name('count'); ?>" type="text" value="<?php echo esc_attr($count); ?>" />
+        </p>
+		<p>
+            <label for="<?php echo $this->get_field_id('column'); ?>"><?php echo _e('Column:', 'maziu'); ?></label>
+            <input id="<?php echo $this->get_field_id('column'); ?>"
+                   name="<?php echo $this->get_field_name('column'); ?>" type="text" value="<?php echo esc_attr($column); ?>" />
+        </p>
+    <?php
+    }
+
+    public function update($new_instance, $old_instance) {
+        $instance = array();
+        $instance['title'] = !empty($new_instance['title']) ? strip_tags($new_instance['title']) : '';
+		$instance['instagram_username'] = !empty($new_instance['instagram_username']) ? strip_tags($new_instance['instagram_username']) : '';
+        $instance['count'] = !empty($new_instance['count']) ? (int)strip_tags($new_instance['count']) : 4;
+		$instance['column'] = !empty($new_instance['column']) ? (int)strip_tags($new_instance['column']) : 2;
+
+        return $instance;
+    }
+
+}
+
 function maziu_register_widgets() {
 	register_widget('About_Me_Widget');
     register_widget('Follow_Widget');
@@ -1102,6 +1208,7 @@ function maziu_register_widgets() {
     register_widget('Popular_Posts_Widget');
     register_widget('News_Letter_Widget');
     register_widget('Popular_Tags_Widget');
+	register_widget('Instagram_Widget');
 }
 add_action('widgets_init', 'maziu_register_widgets');
 

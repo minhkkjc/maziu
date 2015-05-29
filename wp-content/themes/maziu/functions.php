@@ -1143,9 +1143,9 @@ class Instagram_Widget extends WP_Widget {
 					$margin_right = 6 / ($column - 1);
 					$total = count($medias->data);
 		?>
-        <ul class="instagram-pictures-list clearfix">
+        <ul class="instagram-pictures-list clearfix instagram-columns-<?php echo $column; ?>">
         <?php foreach ($medias->data as $k => $media) : ?>
-			<li class="instagram-picture" 
+			<li class="instagram-picture<?php if ($k >= ($total - $column)) echo ' no-margin-bottom'; ?>" 
 			style="float: left; width: <?php echo $width; ?>%;<?php if (($k % $column) != ($column - 1)) echo ' margin-right:' . $margin_right . '%;'; ?><?php if ($k < ($total - $column)) echo ' margin-bottom: 10px;'; ?>">
 				<a href="<?php echo $media->link; ?>">
 					<img src="<?php echo $media->images->low_resolution->url ?>" />

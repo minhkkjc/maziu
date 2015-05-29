@@ -676,6 +676,7 @@ ins {
 
 #main-content {
 	margin-top: 100px;
+	padding-bottom: 100px;
 }
 
 #primary {
@@ -800,6 +801,11 @@ ins {
 	text-transform: uppercase;
 	color: #fff;
 	text-decoration: none!important;
+	border: 1px solid;
+}
+
+.post-read-more a:hover {
+	color: #fff!important;
 }
 
 .post-socials {
@@ -1049,10 +1055,35 @@ ul.socials li:hover a {
 	height: auto;
 }
 
-#sidebar .instagram-pictures-list li {
+#sidebar .instagram-columns-2 li {
 	width: 47.0852%!important;
 }
 
-#sidebar .instagram-pictures-list li:nth-child(n) {
-	margin-right: 
+#sidebar .instagram-columns-2 li:nth-child(2n - 1) {
+	margin-right: 5.8296%!important;
+}
+
+#sidebar .instagram-columns-2 li:not(.no-margin-bottom) {
+	margin-bottom: 15px;
+}
+
+#main-socials-wrap {
+	background: #f6f6f6;
+}
+
+#main-socials-wrap .socials-wrap ul {
+	margin: 50px 0;
+}
+
+#main-socials-wrap .socials-wrap ul a {
+	display: block;
+	width: 40px;
+	height: 40px;
+	border-radius: 40px;
+	background: #fff;
+	line-height: 40px;
+}
+
+#main-socials-wrap .socials-wrap ul a:hover {
+	color: #fff!important;
 }

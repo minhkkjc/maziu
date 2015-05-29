@@ -30,7 +30,7 @@
 		<h3><?php the_title(); ?></h3>
 		<div class="post-excerpt"><?php the_excerpt(); ?></div>
 		<div class="post-read-more">
-			<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="main-bg ease-transition"><?php echo __('Continue reading'); ?></a>
+			<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="main-bg-hover main-border main-color ease-transition"><?php echo __('Continue reading'); ?></a>
 		</div>
 		<div class="post-socials"><?php echo do_shortcode('[post_socials]'); ?></div>
 	</div><!-- .post-content -->

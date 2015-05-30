@@ -4,6 +4,9 @@ msgstr ""
 msgid "Main Widget Area"
 msgstr ""
 
+msgid "Footer Widget Area"
+msgstr ""
+
 msgid "Read more"
 msgstr ""
 
@@ -71,5 +74,19 @@ msgid "Column"
 msgstr
 
 msgid "Instagram username"
-
 msgstr
+
+msgid "Maziu Twitter Timeline Widget"
+msgstr
+
+msgid "A Twitter Timeline Widget"
+msgstr
+
+msgid "Twitter username"
+msgid
+
+msgid "Enter Type & Hit Enter.."
+msgid
+
+msgid "Search"
+msgid

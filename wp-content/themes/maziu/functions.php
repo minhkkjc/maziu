@@ -126,7 +126,7 @@ add_filter( 'wp_title', 'maziu_wp_title', 10, 2 );
  * Register widget areas
  */
 function maziu_widgets_init() {
-    register_sidebar( array(
+    register_sidebar(array(
         'name'          => __( 'Main Widget Area', 'maziu' ),
         'id'            => 'sidebar-1',
         'description'   => __( 'Main Widget Area', 'maziu' ),
@@ -134,7 +134,17 @@ function maziu_widgets_init() {
         'after_widget'  => '</aside>',
         'before_title'  => '<h2 class="widget-title">',
         'after_title'   => '</h2>',
-    ) );
+    ));
+	
+	register_sidebar(array(
+		'name'          => __( 'Footer Widget Area', 'maziu' ),
+        'id'            => 'sidebar-2',
+        'description'   => __( 'Footer Widget Area', 'maziu' ),
+        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</aside>',
+        'before_title'  => '<h2 class="widget-title">',
+        'after_title'   => '</h2>',
+	));
 }
 add_action('widgets_init', 'maziu_widgets_init');
 
@@ -1201,6 +1211,82 @@ class Instagram_Widget extends WP_Widget {
 
 }
 
+class Twitter_Timeline_Widget extends WP_Widget {
+
+    function __construct() {
+        parent::__construct(
+            'twitter_timeline_widget',
+            __('Maziu Twitter Timeline Widget', 'maziu'),
+            array('description' => __('A Twitter Timeline Widget', 'maziu'))
+        );
+    }
+
+    public function widget($args, $instance) {
+        global $post;
+
+        echo $args['before_widget'];
+        if (!empty($instance['title'])) {
+            echo $args['before_title'] . apply_filters('widget_title', $instance['title']) . $args['after_title'];
+        }
+		
+		require_once('inc/twitter_api/TwitterAPIExchange.php');
+		
+		$settings = array(
+			'oauth_access_token' => "3140033382-c6FjBsmgLmKfL59Khv2TKY2Q5kmrZMRWOQCw1b4",
+			'oauth_access_token_secret' => "kKVM3qUI1fGAikORmXB3RJQJcKnjOqs3LOF3nD7uhZoNI",
+			'consumer_key' => "bpwii15Ik843H97DAmAueTp1q",
+			'consumer_secret' => "af5BmvqxriRzYQJEUBh20QCkseYAAKugHqcCyJgBOh9a91LLXX"
+		);
+		
+		$url = 'https://api.twitter.com/1.1/statuses/user_timeline.json';
+		$requestMethod = 'POST';
+		
+		$postfields = array(
+			'user_id' => '3140033382'
+		);
+		
+		$twitter = new TwitterAPIExchange($settings);
+		echo $twitter->buildOauth($url, $requestMethod)
+					 ->setPostfields($postfields)
+					 ->performRequest();
+		
+        echo $args['after_widget'];
+    }
+
+    public function form($instance) {
+        $title = !empty($instance['title']) ? $instance['title'] : __('Enter title', 'maziu');
+		$username = !empty($instance['twitter_username']) ? $instance['twitter_username'] : '';
+        $count = !empty($instance['count']) ? $instance['count'] : 3;
+        ?>
+        <p>
+            <label for="<?php echo $this->get_field_id('title'); ?>"><?php echo _e('Title:', 'maziu'); ?></label>
+            <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>"
+                   name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>" />
+        </p>
+		<p>
+            <label for="<?php echo $this->get_field_id('twitter_username'); ?>"><?php echo _e('Twitter username:', 'maziu'); ?></label>
+            <input class="widefat" id="<?php echo $this->get_field_id('twitter_username'); ?>"
+                   name="<?php echo $this->get_field_name('twitter_username'); ?>" type="text" value="<?php echo esc_attr($username); ?>" />
+        </p>
+        <p>
+            <label for="<?php echo $this->get_field_id('count'); ?>"><?php echo _e('Count:', 'maziu'); ?></label>
+            <input id="<?php echo $this->get_field_id('count'); ?>"
+                   name="<?php echo $this->get_field_name('count'); ?>" type="text" value="<?php echo esc_attr($count); ?>" />
+        </p>
+    <?php
+    }
+
+    public function update($new_instance, $old_instance) {
+        $instance = array();
+        $instance['title'] = !empty($new_instance['title']) ? strip_tags($new_instance['title']) : '';
+		$instance['twitter_username'] = !empty($new_instance['twitter_username']) ? strip_tags($new_instance['twitter_username']) : '';
+        $instance['count'] = !empty($new_instance['count']) ? (int)strip_tags($new_instance['count']) : 3;
+
+        return $instance;
+    }
+
+}
+
 function maziu_register_widgets() {
 	register_widget('About_Me_Widget');
     register_widget('Follow_Widget');
@@ -1209,6 +1295,7 @@ function maziu_register_widgets() {
     register_widget('News_Letter_Widget');
     register_widget('Popular_Tags_Widget');
 	register_widget('Instagram_Widget');
+	register_widget('Twitter_Timeline_Widget');
 }
 add_action('widgets_init', 'maziu_register_widgets');
 

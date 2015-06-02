@@ -92,8 +92,7 @@ function maziu_scripts_styles() {
         wp_enqueue_script( 'comment-reply' );
 
     wp_enqueue_script('maziu-script', get_template_directory_uri() . '/js/script.js', array('jquery'), null, true);
-    wp_enqueue_script('jssor', get_template_directory_uri() . '/js/jssor/jssor.js', array('jquery'), null);
-    wp_enqueue_script('jssor-slider', get_template_directory_uri() . '/js/jssor/jssor.slider.js', array('jquery'), null);
+    wp_enqueue_script('bx-slider-script', get_template_directory_uri() . '/js/bxslider/jquery.bxslider.min.js', array('jquery'), null);
     wp_enqueue_script('bootstrap', get_template_directory_uri() . '/bootstrap/js/bootstrap.min.js', array('jquery'));
 
 	wp_enqueue_style('font-awesome', get_template_directory_uri() . '/fonts/fontawesome/css/font-awesome.min.css', array(), null);
@@ -181,21 +180,41 @@ function maziu_slideshow()
 
 			$posts = get_posts($args);
 	?>
-    <div id="slideshow" style="position: relative; top: 0px; left: 0px; width: 900px; height: 435px; overflow: hidden;">
-        <div u="slides" style="position: absolute; left: 0px; top: 0px; width: 900px; height: 435px; overflow: hidden;">
+    <div id="main-slideshow">
+        <div class="slideshow">
             <?php
             foreach ($posts as $post) :
                 setup_postdata($post);
                 ?>
                 <div class="slider-box">
-                    <div class="sb-inner">
+                    <div class="sb-main">
                         <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="slider-image">
                             <?php if (has_post_thumbnail()) the_post_thumbnail('module-size'); ?>
                         </a>
-                        <p class="sb-categories"><?php the_category(' - '); ?></p>
-                        <h3>
-                            <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
-                        </h3>
+                        <div class="sb-main-info">
+                            <?php
+                                $categories = get_the_category($post->ID);
+                                if (!empty($categories)) :
+                            ?>
+                            <ul class="categories-list main-bg clearfix">
+                            <?php foreach ($categories as $category) : ?>
+                                <li>
+                                    <a href="<?php echo get_category_link($category->term_id); ?>" title="<?php echo esc_attr($category->name) ?>"><?php echo $category->name; ?></a>
+                                </li>
+                            <?php endforeach; ?>
+                            </ul>
+                            <?php endif; ?>
+                            <h3 class="ease-transition">
+                                <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="main-color-hover"><?php echo wp_trim_words(get_the_title(), 7, '...'); ?></a>
+                            </h3>
+                        </div>
+                    </div>
+                    <div class="sb-meta">
+                        <ul class="clearfix">
+                            <li><i class="fa fa-heart-o main-color"></i>4</li>
+                            <li><a href="<?php the_permalink(); ?>" title="<?php the_title() ?>" class="read-more main-color"><?php echo __('Continue reading'); ?></a></li>
+                            <li><i class="fa fa-comments-o main-color"></i><?php comments_number('0', '1', '%') ?></li>
+                        </ul>
                     </div>
                 </div>
             <?php
@@ -203,81 +222,22 @@ function maziu_slideshow()
             wp_reset_postdata();
             ?>
         </div>
-
-        <span u="arrowleft" class="slide-button prev-button">
-            <i class="fa fa-arrow-circle-o-left"></i>
-        </span>
-        <span u="arrowright" class="slide-button next-button">
-            <i class="fa fa-arrow-circle-o-right"></i>
-        </span>
     </div>
 
-    <script>
-        jQuery(document).ready(function ($) {
-            var options = {
-                $AutoPlay: false,                                    //[Optional] Whether to auto play, to enable slideshow, this option must be set to true, default value is false
-                $AutoPlaySteps: 1,                                  //[Optional] Steps to go for each navigation request (this options applys only when slideshow disabled), the default value is 1
-                $AutoPlayInterval: 4000,                            //[Optional] Interval (in milliseconds) to go for next slide since the previous stopped if the slider is auto playing, default value is 3000
-                $PauseOnHover: 1,                               //[Optional] Whether to pause when mouse over if a slider is auto playing, 0 no pause, 1 pause for desktop, 2 pause for touch device, 3 pause for desktop and touch device, 4 freeze for desktop, 8 freeze for touch device, 12 freeze for desktop and touch device, default value is 1
-
-                $ArrowKeyNavigation: true,   			            //[Optional] Allows keyboard (arrow key) navigation or not, default value is false
-                $SlideDuration: 160,                                //[Optional] Specifies default duration (swipe) for slide in milliseconds, default value is 500
-                $MinDragOffsetToSlide: 20,                          //[Optional] Minimum drag offset to trigger slide , default value is 20
-                $SlideWidth: 300,                                   //[Optional] Width of every slide in pixels, default value is width of 'slides' container
-                //$SlideHeight: 150,                                //[Optional] Height of every slide in pixels, default value is height of 'slides' container
-                $SlideSpacing: 0, 					                //[Optional] Space between each slide in pixels, default value is 0
-                $DisplayPieces: 3,                                  //[Optional] Number of pieces to display (the slideshow would be disabled if the value is set to greater than 1), the default value is 1
-                $ParkingPosition: 0,                              //[Optional] The offset position to park slide (this options applys only when slideshow disabled), default value is 0.
-                $UISearchMode: 1,                                   //[Optional] The way (0 parellel, 1 recursive, default value is 1) to search UI components (slides container, loading screen, navigator container, arrow navigator container, thumbnail navigator container etc).
-                $PlayOrientation: 1,                                //[Optional] Orientation to play slide (for auto play, navigation), 1 horizental, 2 vertical, 5 horizental reverse, 6 vertical reverse, default value is 1
-                $DragOrientation: 1,                                //[Optional] Orientation to drag slide, 0 no drag, 1 horizental, 2 vertical, 3 either, default value is 1 (Note that the $DragOrientation should be the same as $PlayOrientation when $DisplayPieces is greater than 1, or parking position is not 0)
-
-
-
-                $ArrowNavigatorOptions: {
-                    $Class: $JssorArrowNavigator$,              //[Requried] Class to create arrow navigator instance
-                    $ChanceToShow: 1,                               //[Required] 0 Never, 1 Mouse Over, 2 Always
-                    $AutoCenter: 2,                                 //[Optional] Auto center navigator in parent container, 0 None, 1 Horizontal, 2 Vertical, 3 Both, default value is 0
-                    $Steps: 1                                       //[Optional] Steps to go for each navigation request, default value is 1
-                }
-            };
-
-            var slideshow = new $JssorSlider$("slideshow", options);
-
-            //responsive code begin
-            //you can remove responsive code if you don't want the slider scales while window resizes
-            function ScaleSlider() {
-                var bodyWidth = document.body.clientWidth;
-                if (bodyWidth)
-                    slideshow.$ScaleWidth(Math.min(bodyWidth, 809));
-                else
-                    window.setTimeout(ScaleSlider, 30);
-            }
-            ScaleSlider();
-
-            $(window).bind("load", ScaleSlider);
-            $(window).bind("resize", ScaleSlider);
-            $(window).bind("orientationchange", ScaleSlider);
-            //responsive code end
+    <script type="text/javascript">
+        jQuery(function($) {
+            $('.slideshow').bxSlider({
+                slideWidth: $('body').width() / 3,
+                minSlides: 2,
+                maxSlides: 3,
+                slideMargin: 0,
+                moveSlides: 1,
+                pager: false,
+                nextText: '<i class="fa fa-angle-right main-color-hover main-border-hover ease-transition"></i>',
+                prevText: '<i class="fa fa-angle-left main-color-hover main-border-hover ease-transition"></i>'
+            });
         });
     </script>
-    <style>
-        .slide-button {
-            display: block;
-            position: absolute;
-            /* size of arrow element */
-            width: 55px;
-            height: 55px;
-            cursor: pointer;
-            overflow: hidden;
-        }
-        .jssora03l { background-position: -3px -33px; }
-        .jssora03r { background-position: -63px -33px; }
-        .jssora03l:hover { background-position: -123px -33px; }
-        .jssora03r:hover { background-position: -183px -33px; }
-        .jssora03l.jssora03ldn { background-position: -243px -33px; }
-        .jssora03r.jssora03rdn { background-position: -303px -33px; }
-    </style>
 	<?php
 		endif;
 	endif;

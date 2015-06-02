@@ -6,7 +6,7 @@ get_header(); ?>
 		<div id="slideshow-wrap">
 			<div class="content">
 				<div class="content-inner">
-					<?php //maziu_slideshow(); ?>
+					<?php maziu_slideshow(); ?>
 				</div>
 			</div>
 		</div><!-- #slideshow -->

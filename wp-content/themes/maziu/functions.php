@@ -163,22 +163,21 @@ function maziu_slideshow()
 	global $post;
 
 	$options = get_option('maziu_option');
-	if (!empty($options['category_name'])) :
-		if (!isset($options['slide_count']))
-			$options['slide_count'] = 4;
+	if (!isset($options['slide_count']))
+		$options['slide_count'] = 4;
 
-		if (!empty($options['slide_count'])) :
-			$args = array(
-				'posts_per_page' => $options['slide_count'],
-				'category_name' => $options['category_name'],
-				'offset' => 0,
-				'orderby' => 'post_date',
-				'order' => 'DESC',
-				'post_type' => 'post',
-				'post_status' => 'publish'
-			);
+	if (!empty($options['slide_count'])) :
+		$args = array(
+			'meta_key' => '_slideshow',
+			'meta_value' => 1,
+			'posts_per_page' => $options['slide_count'],
+			'offset' => 0,
+			'orderby' => 'post_date',
+			'order' => 'DESC',
+			'post_status' => 'publish'
+		);
 
-			$posts = get_posts($args);
+		$posts = get_posts($args);
 	?>
     <div id="main-slideshow">
         <div class="slideshow">
@@ -239,7 +238,6 @@ function maziu_slideshow()
         });
     </script>
 	<?php
-		endif;
 	endif;
 }
 
@@ -776,10 +774,14 @@ class Popular_Posts_Widget extends WP_Widget {
         ?>
             <li class="popular-post clearfix">
                 <div class="popular-post-thumbnail">
-                    <?php the_post_thumbnail('thumbnail'); ?>
+					<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+						<?php the_post_thumbnail('thumbnail'); ?>
+					</a>
                 </div>
                 <div class="popular-post-info">
-                    <h3><?php the_title(); ?></h3>
+                    <h3>
+						<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
+					</h3>
                     <div class="popular-post-meta clearfix">
                         <div class="post-likes">
                             <i class="fa fa-heart-o main-color"></i>
@@ -1258,6 +1260,69 @@ function maziu_register_widgets() {
 	register_widget('Twitter_Timeline_Widget');
 }
 add_action('widgets_init', 'maziu_register_widgets');
+
+/* Add meta box */
+function maziu_add_meta_box() {
+	$screens = array('post', 'page');
+	
+	foreach ($screens as $screen) {
+		add_meta_box(
+			'maziu_meta_box_section',
+			__('Maziu Options'),
+			'maziu_meta_box_callback',
+			$screen
+		);
+	}
+}
+add_action('add_meta_boxes', 'maziu_add_meta_box');
+
+function maziu_meta_box_callback($post) {
+	wp_nonce_field('maziu_meta_box', 'maziu_meta_box_nonce');
+	
+	$slideshow = get_post_meta($post->ID, '_slideshow', true);
+	if (!empty($slideshow))
+		$checked = ' checked';
+	else
+		$checked = '';
+	
+	echo '<label>';
+	echo '<input type="checkbox" id="maziu_post_slideshow" name="maziu_post_slideshow" value="1"' . $checked . ' />';
+	_e('Slideshow');
+	echo '</label>';
+}
+
+function maziu_save_meta_box_data($post_id) {
+	if (!isset($_POST['maziu_meta_box_nonce'])) {
+		return;
+	}
+	
+	if (!wp_verify_nonce($_POST['maziu_meta_box_nonce'], 'maziu_meta_box')) {
+		return;
+	}
+	
+	if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
+		return;
+	}
+	
+	if (isset($_POST['post_type']) && $_POST['post_type'] == 'page') {
+		if (!current_user_can('edit_page', $post_id)) {
+			return;
+		}
+	} else {
+		if (!current_user_can('edit_post', $post_id)) {
+			return;
+		}
+	}
+	
+	if (!isset($_POST['maziu_post_slideshow'])) {
+		$slideshow_data = 0;
+	} else {
+		$slideshow_data = absint($_POST['maziu_post_slideshow']);
+	}
+	
+	update_post_meta($post_id, '_slideshow', $slideshow_data);
+}
+add_action('save_post', 'maziu_save_meta_box_data');
 
 /* Functions */
 

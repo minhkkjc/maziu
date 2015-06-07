@@ -83,10 +83,16 @@ msgid "A Twitter Timeline Widget"
 msgstr
 
 msgid "Twitter username"
-msgid
+msgstr
 
 msgid "Enter Type & Hit Enter.."
-msgid
+msgstr
 
 msgid "Search"
-msgid
+msgstr
+
+msgid "Maziu Options"
+msgstr
+
+msgid "Slideshow"
+msgstr

@@ -15,6 +15,13 @@ get_header(); ?>
 			<div id="main-content-inner" class="clearfix">
 				<div id="primary" class="content-area">
 					<div id="content" class="site-content">
+                    <?php
+                        $paged = (get_query_var('paged')) ? absint(get_query_var('paged')) : 1;
+                        $wp_query = new WP_Query(array(
+                            'posts_per_page' => 2,
+                            'paged' => $paged,
+                        ));
+                    ?>
 					<?php if (have_posts()) : ?>
 
 						<?php while (have_posts()) : the_post(); ?>
@@ -26,6 +33,19 @@ get_header(); ?>
 					<?php endif; ?>
 
 					</div><!-- #content -->
+
+                    <?php
+                        /*
+                         * Pagination
+                         */
+                        $args = array(
+                            'total' => $wp_query->max_num_pages,
+                            'show_all' => true,
+                        );
+
+                        echo paginate_links($args);
+                    ?>
+
 				</div><!-- #primary -->
 				
 				<?php get_sidebar(); ?>

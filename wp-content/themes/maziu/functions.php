@@ -47,7 +47,7 @@ function maziu_font_url() {
 
     if (empty($options['font_text_family']))
     {
-        $font = 350; // Lato font
+        $font = 'Lato'; // Lato font
     } else {
         $font = $options['font_text_family'];
     }
@@ -55,13 +55,12 @@ function maziu_font_url() {
     $fonts_arr = json_decode(file_get_contents('https://www.googleapis.com/webfonts/v1/webfonts?key=AIzaSyBgzCr9pt5xS09me72S91tTaCmLtAzWkOE'));
 	
     $query_args = array(
-        'family' => urlencode($fonts_arr->items[$font]->family),
-        'subset' => urlencode(implode(',', $fonts_arr->items[$font]->subsets))
+        'family' => $font
     );
 	
     $font_style = "
         body {
-            font-family: '" . $fonts_arr->items[$font]->family . "', Arial, sans-serif;
+            font-family: '" . $font . "', Arial, sans-serif;
         }
     ";
     wp_add_inline_style('maziu-style', $font_style);
@@ -384,15 +383,15 @@ class maziuSettings
 
         if (!isset($this->options['font_text_family']))
         {
-            $this->options['font_text_family'] = 352; // Font Lato
+            $this->options['font_text_family'] = 'Lato'; // Font Lato
         }
 
         if (!empty($fonts_arr->items))
         {
             foreach ($fonts_arr->items as $k => $font)
             {
-                $selected_text = (isset($this->options['font_text_family']) && $this->options['font_text_family'] == $k) ? ' selected' : '';
-                $this->fonts['font_text']['family'] .= '<option value="' . $k . '"' . $selected_text . '>' . $font->family . '</option>';
+                $selected_text = (isset($this->options['font_text_family']) && $this->options['font_text_family'] == $font->family) ? ' selected' : '';
+                $this->fonts['font_text']['family'] .= '<option value="' . $font->family . '"' . $selected_text . '>' . $font->family . '</option>';
             }
         }
 
@@ -491,7 +490,7 @@ class maziuSettings
          * Fonts page
          */
         if (isset($input['font_text_family']))
-            $new_input['font_text_family'] = absint($input['font_text_family']);
+            $new_input['font_text_family'] = sanitize_text_field($input['font_text_family']);
 
         /*
          * Slideshow page

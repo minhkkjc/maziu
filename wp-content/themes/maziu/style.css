@@ -894,6 +894,10 @@ ins {
     opacity: 0;
 }
 
+#main-slideshow:hover .bx-controls-direction a {
+    opacity: 1;
+}
+
 .bx-controls-direction a i {
     display: block;
     width: 40px;
@@ -907,21 +911,11 @@ ins {
 }
 
 .bx-prev {
-    left: -55px;
+    left: 15px;
 }
 
 .bx-next {
-    right: -55px;
-}
-
-#main-slideshow:hover .bx-prev {
-    left: 15px;
-    opacity: 1;
-}
-
-#main-slideshow:hover .bx-next {
     right: 15px;
-    opacity: 1;
 }
 
 #main-content {

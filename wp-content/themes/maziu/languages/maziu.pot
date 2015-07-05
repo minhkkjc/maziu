@@ -82,7 +82,7 @@ msgstr
 msgid "A Twitter Timeline Widget"
 msgstr
 
-msgid "Twitter username"
+msgid "Widget ID"
 msgstr
 
 msgid "Enter Type & Hit Enter.."

@@ -1189,34 +1189,44 @@ class Twitter_Timeline_Widget extends WP_Widget {
         if (!empty($instance['title'])) {
             echo $args['before_title'] . apply_filters('widget_title', $instance['title']) . $args['after_title'];
         }
+		?>
 		
-		require_once('inc/twitter_api/TwitterAPIExchange.php');
+		<ul class="twitter-widget-list" id="content_<?php echo $args['widget_id']; ?>"></ul>
+		<script type="text/javascript" src="<?php echo get_template_directory_uri() . '/js/twitterFetcher_min.js' ?>"></script>
+		<script type="text/javascript">
+			var config1 = {
+			  "id": '<?php echo $instance['wid']; ?>',
+			  "domId": '',
+			  "maxTweets": <?php echo $instance['count']; ?>,
+			  "enableLinks": true,
+			  "showUser": false,
+			  "showRetweet": false,
+			  "showInteraction": false,
+			  "customCallback": handleTweets,
+			};
+			
+			function handleTweets(tweets){
+				var x = tweets.length;
+				var n = 0;
+				var element = document.getElementById('content_<?php echo $args['widget_id']; ?>');
+				var html = '';
+				while(n < x) {
+				  html += '<li><span class="tweet-icon"><i class="fa fa-twitter main-color"></i></span>' + tweets[n] + '</li>';
+				  n++;
+				}
+				element.innerHTML = html;
+			}
+			
+			twitterFetcher.fetch(config1);
+		</script>
 		
-		$settings = array(
-			'oauth_access_token' => "3140033382-c6FjBsmgLmKfL59Khv2TKY2Q5kmrZMRWOQCw1b4",
-			'oauth_access_token_secret' => "kKVM3qUI1fGAikORmXB3RJQJcKnjOqs3LOF3nD7uhZoNI",
-			'consumer_key' => "bpwii15Ik843H97DAmAueTp1q",
-			'consumer_secret' => "af5BmvqxriRzYQJEUBh20QCkseYAAKugHqcCyJgBOh9a91LLXX"
-		);
-		
-		$url = 'https://api.twitter.com/1.1/statuses/user_timeline.json';
-		$requestMethod = 'POST';
-		
-		$postfields = array(
-			'user_id' => '3140033382'
-		);
-		
-		$twitter = new TwitterAPIExchange($settings);
-		echo $twitter->buildOauth($url, $requestMethod)
-					 ->setPostfields($postfields)
-					 ->performRequest();
-		
+		<?php
         echo $args['after_widget'];
     }
 
     public function form($instance) {
         $title = !empty($instance['title']) ? $instance['title'] : __('Enter title', 'maziu');
-		$username = !empty($instance['twitter_username']) ? $instance['twitter_username'] : '';
+		$wid = !empty($instance['wid']) ? $instance['wid'] : '';
         $count = !empty($instance['count']) ? $instance['count'] : 3;
         ?>
         <p>
@@ -1225,9 +1235,9 @@ class Twitter_Timeline_Widget extends WP_Widget {
                    name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>" />
         </p>
 		<p>
-            <label for="<?php echo $this->get_field_id('twitter_username'); ?>"><?php echo _e('Twitter username:', 'maziu'); ?></label>
-            <input class="widefat" id="<?php echo $this->get_field_id('twitter_username'); ?>"
-                   name="<?php echo $this->get_field_name('twitter_username'); ?>" type="text" value="<?php echo esc_attr($username); ?>" />
+            <label for="<?php echo $this->get_field_id('wid'); ?>"><?php echo _e('Widget ID:', 'maziu'); ?></label>
+            <input class="widefat" id="<?php echo $this->get_field_id('wid'); ?>"
+                   name="<?php echo $this->get_field_name('wid'); ?>" type="text" value="<?php echo esc_attr($wid); ?>" />
         </p>
         <p>
             <label for="<?php echo $this->get_field_id('count'); ?>"><?php echo _e('Count:', 'maziu'); ?></label>
@@ -1240,7 +1250,7 @@ class Twitter_Timeline_Widget extends WP_Widget {
     public function update($new_instance, $old_instance) {
         $instance = array();
         $instance['title'] = !empty($new_instance['title']) ? strip_tags($new_instance['title']) : '';
-		$instance['twitter_username'] = !empty($new_instance['twitter_username']) ? strip_tags($new_instance['twitter_username']) : '';
+		$instance['wid'] = !empty($new_instance['wid']) ? strip_tags($new_instance['wid']) : '';
         $instance['count'] = !empty($new_instance['count']) ? (int)strip_tags($new_instance['count']) : 3;
 
         return $instance;

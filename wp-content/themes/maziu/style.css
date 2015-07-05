@@ -1390,6 +1390,50 @@ ul.socials li:hover a {
 	margin-right: 0!important;
 }
 
+#footer-sidebar .widget_twitter_timeline_widget {
+	width: 34.2343%;
+	padding-left: 30px;
+}
+
+#footer-sidebar .widget_twitter_timeline_widget .twitter-widget-list {
+	margin: 0;
+	padding: 0;
+}
+
+#footer-sidebar .widget_twitter_timeline_widget .twitter-widget-list li {
+	list-style-type: none;
+	color: #8f8f8f;
+	font-size: 13px;
+	position: relative;
+	margin-bottom: 20px;
+	padding-left: 28px;
+}
+
+#footer-sidebar .widget_twitter_timeline_widget .twitter-widget-list li .tweet-icon {
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	border-radius: 20px;
+	background: #f6f6f6;
+	line-height: 20px;
+	left: 0;
+	top: 3px;
+	text-align: center;
+}
+
+#footer-sidebar .widget_twitter_timeline_widget .twitter-widget-list li a {
+	color: #8f8f8f;
+	font-size: 13px;
+}
+
+#footer-sidebar .widget_twitter_timeline_widget .twitter-widget-list li > p {
+	margin: 0;
+}
+
+#footer-sidebar .widget_twitter_timeline_widget .twitter-widget-list li .tweet {
+	margin-bottom: 10px;
+}
+
 /* Footer bottom */
 #footer-bottom {
 	padding: 40px 0;

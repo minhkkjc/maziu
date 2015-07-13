@@ -18,7 +18,7 @@ get_header(); ?>
                     <?php
                         $paged = (get_query_var('paged')) ? absint(get_query_var('paged')) : 1;
                         $wp_query = new WP_Query(array(
-                            'posts_per_page' => 2,
+                            'posts_per_page' => get_option('posts_per_page'),
                             'paged' => $paged,
                         ));
                     ?>
@@ -34,17 +34,23 @@ get_header(); ?>
 
 					</div><!-- #content -->
 
-                    <?php
-                        /*
-                         * Pagination
-                         */
-                        $args = array(
-                            'total' => $wp_query->max_num_pages,
-                            'show_all' => true,
-                        );
+                    <div id="content-pagination">
+                        <div id="content-pagination-in" class="clearfix">
+                        <?php
+                            /*
+                             * Pagination
+                             */
+                            $args = array(
+                                'total' => $wp_query->max_num_pages,
+                                'show_all' => true,
+                                'prev_text' => '<i class="fa fa-angle-left"></i>',
+                                'next_text' => '<i class="fa fa-angle-right"></i>'
+                            );
 
-                        echo paginate_links($args);
-                    ?>
+                            echo paginate_links($args);
+                        ?>
+                        </div><!-- #content-pagination-in -->
+                    </div><!-- #content-pagination -->
 
 				</div><!-- #primary -->
 				

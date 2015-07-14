@@ -449,7 +449,7 @@ ins {
 	font-style: normal;
 }
 
-.main-bg, .main-bg-hover:hover {
+.main-bg, .main-bg-hover:hover, .main-bg-hover-child:hover > * {
 	background: #d4a38d!important;
 }
 
@@ -837,7 +837,7 @@ ins {
 .sb-main-info .categories-list li a {
     color: #fff;
     text-decoration: none!important;
-    line-height: 1;
+    line-height: 0.7;
     font-size: 12px;
     text-transform: uppercase;
     display: block;
@@ -898,7 +898,7 @@ ins {
     opacity: 1;
 }
 
-.bx-controls-direction a i {
+.bx-controls-direction a span {
     display: block;
     width: 40px;
     height: 40px;
@@ -908,6 +908,11 @@ ins {
     text-align: center;
     font-size: 27px;
     color: #fff;
+}
+
+.bx-controls-direction a span i {
+    position: relative;
+    top: -2px;
 }
 
 .bx-prev {
@@ -1077,6 +1082,21 @@ ins {
 
 .post_socials li:hover a {
 	color: #5f5f5f!important;
+}
+
+article .gallery-item a {
+    display: block;
+    text-decoration: none!important;
+}
+
+article .gallery-item img {
+    display: block;
+    width: 100%!important;
+    height: auto!important;
+}
+
+article.format-gallery:hover .bx-controls-direction a {
+    opacity: 1;
 }
 
 /* Pagination */
@@ -1487,7 +1507,7 @@ ul.socials li:hover a {
 
 #bottom-menu li {
 	float: left;
-	line-height: 1;
+	line-height: 0.7;
 	padding: 0 15px;
 	border-right: 1px solid #fff;
 }
@@ -1500,7 +1520,6 @@ ul.socials li:hover a {
 	text-decoration: none!important;
 	color: #fff;
 	font-size: 12px;
-	line-height: 1;
 	text-transform: uppercase;
 }
 

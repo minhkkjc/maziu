@@ -9,7 +9,7 @@
 		</div><!-- .search-modal-inner -->
 	</div><!-- .search-modal -->
 	
-	<div class="search-button">
-		<input type="button" class="search-submit" value="<?php echo esc_attr_x( 'Search', 'submit button' ) ?>" />
+	<div class="search-button main-bg-hover-child">
+		<input type="button" class="search-submit easeout-transition" value="<?php echo esc_attr_x( 'Search', 'submit button' ) ?>" />
 	</div><!-- .search-button -->
 </form><!-- .search-form -->

@@ -203,7 +203,7 @@ function maziu_slideshow()
                             </ul>
                             <?php endif; ?>
                             <h3 class="ease-transition">
-                                <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="main-color-hover"><?php echo wp_trim_words(get_the_title(), 7, '...'); ?></a>
+                                <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php echo wp_trim_words(get_the_title(), 7, '...'); ?></a>
                             </h3>
                         </div>
                     </div>
@@ -231,8 +231,8 @@ function maziu_slideshow()
                 slideMargin: 0,
                 moveSlides: 1,
                 pager: false,
-                nextText: '<i class="fa fa-angle-right main-color-hover main-border-hover ease-transition"></i>',
-                prevText: '<i class="fa fa-angle-left main-color-hover main-border-hover ease-transition"></i>'
+                nextText: '<span class="main-border-hover main-color-hover ease-transition"><i class="fa fa-angle-right"></i></span>',
+                prevText: '<span class="main-border-hover main-color-hover ease-transition"><i class="fa fa-angle-left"></i></span>'
             });
         });
     </script>

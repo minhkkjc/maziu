@@ -96,3 +96,12 @@ msgstr
 
 msgid "Slideshow"
 msgstr
+
+msgid "Video"
+msgstr
+
+msgid "URL"
+msgstr
+
+msgid "Audio"
+msgstr

@@ -1333,6 +1333,158 @@ function maziu_save_meta_box_data($post_id) {
 }
 add_action('save_post', 'maziu_save_meta_box_data');
 
+/* --------------------- */
+$metaboxes = array(
+    'link_video' => array(
+        'title' => __('Video', 'maziu'),
+        'applicableto' => array('post', 'page'),
+        'location' => 'normal',
+        'display_condition' => 'post-format-video',
+        'priority' => 'low',
+        'fields' => array(
+            'v_url' => array(
+                'title' => __('URL', 'maziu'),
+                'type' => 'text',
+                'description' => ''
+            ),
+        ),
+    ),
+    'link_audio' => array(
+        'title' => __('Audio', 'maziu'),
+        'applicableto' => array('post', 'page'),
+        'location' => 'normal',
+        'display_condition' => 'post-format-audio',
+        'priority' => 'low',
+        'fields' => array(
+            'a_url' => array(
+                'title' => __('URL', 'maziu'),
+                'type' => 'text',
+                'description' => ''
+            )
+        )
+    )
+);
+
+add_action('admin_init', 'add_post_format_metabox');
+function add_post_format_metabox() {
+    global $metaboxes;
+
+    if (!empty($metaboxes)) {
+        foreach ($metaboxes as $id => $metabox) {
+            foreach ($metabox['applicableto'] as $applicableto) {
+                add_meta_box($id, $metabox['title'], 'show_metaboxes', $applicableto, $metabox['location'], $metabox['priority'], $id);
+            }
+        }
+    }
+}
+
+function show_metaboxes($post, $args) {
+    global $metaboxes;
+
+    $custom = get_post_custom($post->ID);
+    $fields = $metaboxes[$args['id']]['fields'];
+
+    $output = '<input type="hidden" name="post_format_meta_box_nonce" value="' . wp_create_nonce(basename(__FILE__)) . '" />';
+
+    if (sizeof($fields)) {
+        foreach ($fields as $id => $field) {
+            switch ($field['type']) {
+                default:
+                case "text":
+                    $output .= '<label for="' . $id . '">' . $field['title'] . '</label><input type="text" id="' . $id . '" name="' . $id . '" value="' . $custom[$id][0] . '" />';
+                    break;
+            }
+        }
+    }
+
+    echo $output;
+}
+
+add_action('save_post', 'save_metaboxes');
+function save_metaboxes($post_id) {
+    global $metaboxes;
+
+    // verify nonce
+    if ( ! wp_verify_nonce( $_POST['post_format_meta_box_nonce'], basename( __FILE__ ) ) )
+        return $post_id;
+
+    // check autosave
+    if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE )
+        return $post_id;
+
+    // check permissions
+    if ( 'page' == $_POST['post_type'] ) {
+        if ( ! current_user_can( 'edit_page', $post_id ) )
+            return $post_id;
+    } elseif ( ! current_user_can( 'edit_post', $post_id ) ) {
+        return $post_id;
+    }
+
+    $post_type = get_post_type();
+
+    foreach ($metaboxes as $id => $metabox) {
+        if ($metabox['applicableto'] == $post_type) {
+            $fields = $metabox['fields'];
+
+            foreach ($fields as $id => $field) {
+                $old = get_post_meta($post_id, $id, true);
+                if (isset($_POST[$id])) {
+                    $new = $_POST[$id];
+                } else {
+                    $new = '';
+                }
+
+                if ($new && $new != $old) {
+                    update_post_meta($post_id, $id, $new);
+                } elseif ($new == '' && $old) {
+                    delete_post_meta($post_id, $id, $old);
+                }
+            }
+        }
+    }
+}
+
+add_action('admin_print_scripts', 'display_metaboxes', 1000);
+function display_metaboxes() {
+    global $metaboxes;
+    ?>
+
+    <script type="text/javascript">
+        $ = jQuery;
+
+        <?php
+            $formats = $ids = array();
+            foreach ( $metaboxes as $id => $metabox ) {
+                array_push( $formats, "'" . $metabox['display_condition'] . "': '" . $id . "'" );
+                array_push( $ids, "#" . $id );
+            }
+        ?>
+
+        var formats = {<?php echo implode(',', $formats); ?>};
+        var ids = "<?php echo implode(',', $ids); ?>";
+
+        function displayMetaboxes() {
+            $(ids).hide();
+
+            var selectedElt = $("input[name='post_format']:checked").attr('id');
+
+            if (formats[selectedElt]) {
+                $("#" + formats[selectedElt]).fadeIn();
+            }
+        }
+
+        $(function() {
+            displayMetaboxes();
+
+            $("input[name='post_format']").change(function() {
+                displayMetaboxes();
+            });
+        })
+    </script>
+
+    <?php
+}
+
 /* Functions */
 
 /*

@@ -30,8 +30,8 @@ jQuery(function($) {
     // Gallery post slide
     $('article > .gallery').bxSlider({
         pager: false,
-        nextText: '<span class="main-border-hover main-color-hover ease-transition"><i class="fa fa-angle-right main-color-hover main-border-hover ease-transition"></i></span>',
-        prevText: '<span class="main-border-hover main-color-hover ease-transition"><i class="fa fa-angle-left main-color-hover main-border-hover ease-transition"></i></span>'
+        nextText: '<span class="main-border-hover main-color-hover ease-transition"><i class="fa fa-angle-right"></i></span>',
+        prevText: '<span class="main-border-hover main-color-hover ease-transition"><i class="fa fa-angle-left"></i></span>'
     });
 	
 });

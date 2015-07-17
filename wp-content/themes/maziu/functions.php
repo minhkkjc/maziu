@@ -1423,7 +1423,7 @@ function save_metaboxes($post_id) {
     $post_type = get_post_type();
 
     foreach ($metaboxes as $id => $metabox) {
-        if ($metabox['applicableto'] == $post_type) {
+        if (in_array($post_type, $metabox['applicableto'])) {
             $fields = $metabox['fields'];
 
             foreach ($fields as $id => $field) {
@@ -1454,9 +1454,9 @@ function display_metaboxes() {
 
         <?php
             $formats = $ids = array();
-            foreach ( $metaboxes as $id => $metabox ) {
-                array_push( $formats, "'" . $metabox['display_condition'] . "': '" . $id . "'" );
-                array_push( $ids, "#" . $id );
+            foreach ($metaboxes as $id => $metabox) {
+                array_push($formats, "'" . $metabox['display_condition'] . "': '" . $id . "'");
+                array_push($ids, "#" . $id);
             }
         ?>
 

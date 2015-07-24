@@ -1,0 +1,105 @@
+<wpml-config>
+	<custom-fields>
+		<custom-field action="translate">layout-options</custom-field>
+		<custom-field action="translate">post-options</custom-field>
+	</custom-fields> 
+	<admin-texts>
+		<key name="ferado_options">
+			<key name="title_tagline">
+				<key name="wr_logo_type" />
+				<key name="wr_logo_image" />
+				<key name="blogname_font_family" />
+				<key name="blogname_font_size" />
+				<key name="blogname_font_weight" />
+				<key name="wr_logo_mgl" />
+				<key name="wr_logo_mgt" />
+			</key>
+			<key name="color_schemes">
+				<key name="wr_color_schemes" />
+				<key name="wr_body_color_subtitle" />
+				<key name="wr_body_color" />
+				<key name="wr_body_bg_color" />
+				<key name="wr_page_title_color_subtitle" />
+				<key name="wr_page_title_color" />
+				<key name="wr_page_title_bg_color" />
+				<key name="wr_header_color_subtitle" />
+				<key name="wr_main_menu_color" />
+				<key name="wr_other_color_subtitle" />
+				<key name="wr_heading_color" />
+				<key name="wr_footer_bg_color" />
+			</key>
+			<key name="typography">
+				<key name="wr_body_font_subtitle" />
+				<key name="wr_body_font" />
+				<key name="wr_body_font_google_family" />
+				<key name="wr_body_font_standard_family" />
+				<key name="wr_body_font_size" />
+				<key name="wr_body_font_google_weight" />
+				<key name="wr_body_font_standard_weight" />
+				<key name="wr_page_title_subtitle" />
+				<key name="wr_page_title_font" />
+				<key name="wr_page_title_font_google_family" />
+				<key name="wr_page_title_font_standard_family" />
+				<key name="wr_page_title_font_size" />
+				<key name="wr_page_title_font_google_weight" />
+				<key name="wr_page_title_font_standard_weight" />
+				<key name="wr_heading_font_subtitle" />
+				<key name="wr_heading_font" />
+				<key name="wr_heading_font_google_family" />
+				<key name="wr_heading_font_standard_family" />
+				<key name="wr_heading_font_google_weight" />
+				<key name="wr_heading_font_standard_weight" />
+				<key name="wr_heading_h1_font_size" />
+				<key name="wr_heading_h2_font_size" />
+				<key name="wr_heading_h3_font_size" />
+				<key name="wr_heading_h4_font_size" />
+				<key name="wr_heading_h5_font_size" />
+				<key name="wr_heading_h6_font_size" />
+			</key>
+			<key name="header">
+				<key name="wr_header_layout" />
+				<key name="wr_sticky_menu" />
+				<key name="wr_search_box" />
+				<key name="wr_search_box_text" />
+				<key name="wr_header_info" />
+				<key name="header_image_sub_title" />
+			</key>
+			<key name="page_layout">
+				<key name="wr_page_layout" />
+				<key name="wr_layout_boxed" />
+				<key name="wr_page_bg_repeat" />
+				<key name="wr_page_bg_position" />
+				<key name="wr_page_bg_attachment" />
+				<key name="wr_page_comments" />
+				<key name="wr_blog_layout" />
+				<key name="wr_page_title_setting" />
+				<key name="wr_page_title_image" />
+				<key name="wr_page_title_bg_repeat" />
+				<key name="wr_page_title_bg_position" />
+				<key name="wr_page_title_bg_attachment" />
+				<key name="wr_page_title_alignment" />
+			</key>
+			<key name="wcm_layout">
+				<key name="wr_wcm_layout" />
+				<key name="wr_wcm_list_product_layout" />
+				<key name="wr_wcm_shop_cart" />
+			</key>
+			<key name="footer">
+				<key name="wr_copyright_text" />
+				<key name="wr_footer_right_text" />
+			</key>
+			<key name="extras">
+				<key name="wr_loading" />
+				<key name="favicon" />
+				<key name="wr_google_analytics_code" />
+				<key name="wr_maintenance_mode" />
+				<key name="wr_maintenance_mode_message" />
+				<key name="wr_maintenance_mode_timer" />
+				<key name="wr_code_at_end_of_head" />
+				<key name="wr_code_at_end_of_body" />
+			</key>
+		</key>
+	</admin-texts>
+</wpml-config>
+
+

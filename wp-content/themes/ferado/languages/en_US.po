@@ -1,0 +1,2211 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Ferado v1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2015-02-04 04:20:59+0000\n"
+"Last-Translator: admin <ferado@woorockets.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: CSL v1.x\n"
+"X-Poedit-Language: English\n"
+"X-Poedit-Country: UNITED STATES\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n"
+"X-Poedit-Basepath: ../\n"
+"X-Poedit-Bookmarks: \n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Textdomain-Support: yes"
+
+#: 404.php:19
+#@ ferado
+msgid "Uh oh! Looks like something broke."
+msgstr ""
+
+#: 404.php:22
+#@ ferado
+msgid "4<span></span>4"
+msgstr ""
+
+#: 404.php:23
+#@ ferado
+msgid "The page cannot be found"
+msgstr ""
+
+#: 404.php:24
+#@ ferado
+msgid "The page you are looking for might have been removed, had its name changed or is temporarily unavailable<br />Can't find what you need? Take a moment and do a search below!"
+msgstr ""
+
+#: archive.php:25
+#, php-format
+#@ ferado
+msgid "Author: %s"
+msgstr ""
+
+#: archive.php:28
+#, php-format
+#@ ferado
+msgid "Day: %s"
+msgstr ""
+
+#: archive.php:31
+#, php-format
+#@ ferado
+msgid "Month: %s"
+msgstr ""
+
+#: archive.php:31
+#@ ferado
+msgctxt "monthly archives date format"
+msgid "F Y"
+msgstr ""
+
+#: archive.php:34
+#, php-format
+#@ ferado
+msgid "Year: %s"
+msgstr ""
+
+#: archive.php:34
+#@ ferado
+msgctxt "yearly archives date format"
+msgid "Y"
+msgstr ""
+
+#: archive.php:37
+#@ ferado
+msgid "Galleries"
+msgstr ""
+
+#: archive.php:40
+#@ ferado
+msgid "Images"
+msgstr ""
+
+#: archive.php:43
+#@ ferado
+msgid "Videos"
+msgstr ""
+
+#: archive.php:46
+#@ ferado
+msgid "Quotes"
+msgstr ""
+
+#: archive.php:49
+#@ ferado
+msgid "Audios"
+msgstr ""
+
+#: archive.php:52
+#@ ferado
+msgid "Archives"
+msgstr ""
+
+#: comments.php:26
+#, php-format
+#@ ferado
+msgctxt "comments title"
+msgid "One comment on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s comments on &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:33
+#: comments.php:50
+#@ ferado
+msgid "Comment navigation"
+msgstr ""
+
+#: comments.php:34
+#: comments.php:51
+#@ ferado
+msgid "&larr; Older Comments"
+msgstr ""
+
+#: comments.php:35
+#: comments.php:52
+#@ ferado
+msgid "Newer Comments &rarr;"
+msgstr ""
+
+#: comments.php:61
+#@ ferado
+msgid "Comments are closed."
+msgstr ""
+
+#: content-none.php:15
+#@ ferado
+msgid "Nothing Found"
+msgstr ""
+
+#: content-none.php:21
+#, php-format
+#@ ferado
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: content-none.php:25
+#@ ferado
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr ""
+
+#: content-none.php:30
+#@ ferado
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr ""
+
+#: content-page.php:18
+#: content-single.php:30
+#: content.php:73
+#: content.php:107
+#@ ferado
+msgid "Pages:"
+msgstr ""
+
+#: content-single.php:45
+#, php-format
+#@ ferado
+msgid "<i class=\"wr-icon-tags\"></i>%1$s"
+msgstr ""
+
+#. translators: %s: Name of current post
+#: content.php:66
+#: content.php:100
+#, php-format
+#@ ferado
+msgid "Read More %s <span class=\"meta-nav\">&raquo;</span>"
+msgstr ""
+
+#: footer.php:29
+#: footer.php:31
+#: inc/structure/header-v2.php:60
+#, php-format
+#@ ferado
+msgid "%s"
+msgstr ""
+
+#: inc/admin/acf.php:16
+#@ ferado
+msgid "Layout Options"
+msgstr ""
+
+#: inc/admin/acf.php:20
+#@ ferado
+msgid "Select a specific layout for this page"
+msgstr ""
+
+#: inc/admin/acf.php:23
+#@ ferado
+msgid "Default layout: <strong>Global Layout On Customizer</strong>"
+msgstr ""
+
+#: inc/admin/acf.php:25
+#@ ferado
+msgid "Default"
+msgstr ""
+
+#: inc/admin/acf.php:26
+#@ ferado
+msgid "Full Width"
+msgstr ""
+
+#: inc/admin/acf.php:27
+#: inc/init.php:141
+#@ ferado
+msgid "Left Sidebar"
+msgstr ""
+
+#: inc/admin/acf.php:28
+#: inc/init.php:132
+#@ ferado
+msgid "Right Sidebar"
+msgstr ""
+
+#: inc/admin/acf.php:29
+#@ ferado
+msgid "Left - Main Content - Right"
+msgstr ""
+
+#: inc/admin/acf.php:30
+#@ ferado
+msgid "Left - Right - Main Content"
+msgstr ""
+
+#: inc/admin/acf.php:31
+#@ ferado
+msgid "Main Content - Left - Right"
+msgstr ""
+
+#: inc/admin/acf.php:60
+#@ ferado
+msgid "Post Options"
+msgstr ""
+
+#: inc/admin/acf.php:64
+#@ ferado
+msgid "Post Layout"
+msgstr ""
+
+#: inc/admin/acf.php:74
+#@ ferado
+msgid "Post layout"
+msgstr ""
+
+#: inc/admin/acf.php:77
+#@ ferado
+msgid "Enable large post type for <b>masonry layout only</b>"
+msgstr ""
+
+#: inc/admin/acf.php:92
+#@ ferado
+msgid "Choose video source"
+msgstr ""
+
+#: inc/admin/acf.php:96
+#@ ferado
+msgid "Video Link"
+msgstr ""
+
+#: inc/admin/acf.php:97
+#@ ferado
+msgid "Video Embed code"
+msgstr ""
+
+#: inc/admin/acf.php:98
+#: inc/admin/acf.php:179
+#@ ferado
+msgid "Upload local file"
+msgstr ""
+
+#: inc/admin/acf.php:106
+#@ ferado
+msgid "Video URL"
+msgstr ""
+
+#: inc/admin/acf.php:108
+#@ ferado
+msgid "You can choose Youtube or Vimeo link (eg: https://www.youtube.com/watch?v=uxHXATYpt2w)"
+msgstr ""
+
+#: inc/admin/acf.php:130
+#@ ferado
+msgid "Video embed code"
+msgstr ""
+
+#: inc/admin/acf.php:132
+#@ ferado
+msgid "Paste video embed code"
+msgstr ""
+
+#: inc/admin/acf.php:154
+#@ ferado
+msgid "Upload video"
+msgstr ""
+
+#: inc/admin/acf.php:156
+#@ ferado
+msgid "Support .mp4 file format only"
+msgstr ""
+
+#: inc/admin/acf.php:174
+#@ ferado
+msgid "Choose audio source"
+msgstr ""
+
+#: inc/admin/acf.php:178
+#@ ferado
+msgid "Soundcloud link"
+msgstr ""
+
+#: inc/admin/acf.php:187
+#@ ferado
+msgid "Soundcloud URL"
+msgstr ""
+
+#: inc/admin/acf.php:210
+#@ ferado
+msgid "Upload audio"
+msgstr ""
+
+#: inc/admin/acf.php:212
+#@ ferado
+msgid "Support .mp3 file format only"
+msgstr ""
+
+#: inc/admin/acf.php:230
+#@ ferado
+msgid "Gallery"
+msgstr ""
+
+#: inc/admin/acf.php:232
+#@ ferado
+msgid "Insert gallery shortcode"
+msgstr ""
+
+#: inc/admin/acf.php:243
+#@ ferado
+msgid "Quote author"
+msgstr ""
+
+#: inc/admin/acf.php:245
+#: inc/admin/acf.php:257
+#: inc/admin/acf.php:270
+#@ ferado
+msgid "Option for format \"quote\" only"
+msgstr ""
+
+#: inc/admin/acf.php:255
+#@ ferado
+msgid "Author quote url"
+msgstr ""
+
+#: inc/admin/acf.php:268
+#@ ferado
+msgid "Quote Content"
+msgstr ""
+
+#: inc/admin/customizer.php:181
+#@ ferado
+msgid "Getting Started"
+msgstr ""
+
+#: inc/admin/customizer.php:182
+#@ ferado
+msgid "The best way to understand the template is to setup sample data on your website to make it look the same as template demo website. And when the sample data installed, it's about time to take a look at template documentation and start exploration."
+msgstr ""
+
+#: inc/admin/customizer.php:196
+#: inc/admin/sample-data-installer.php:128
+#: inc/admin/sample-data-installer.php:135
+#@ ferado
+msgid "Restore Original Data"
+msgstr ""
+
+#: inc/admin/customizer.php:196
+#: inc/admin/sample-data-installer.php:127
+#: inc/admin/sample-data-installer.php:134
+#@ ferado
+msgid "Install Sample Data"
+msgstr ""
+
+#: inc/admin/customizer.php:205
+#@ ferado
+msgid "Read Documentation"
+msgstr ""
+
+#: inc/admin/customizer.php:227
+#@ ferado
+msgid "Site Title & Logo & Tagline"
+msgstr ""
+
+#: inc/admin/customizer.php:228
+#@ ferado
+msgid "Enter your website title or insert logo image. And type a short description for your website"
+msgstr ""
+
+#: inc/admin/customizer.php:255
+#@ ferado
+msgid "Logo Type"
+msgstr ""
+
+#: inc/admin/customizer.php:260
+#@ ferado
+msgid "Logo Text"
+msgstr ""
+
+#: inc/admin/customizer.php:261
+#@ ferado
+msgid "Logo Image"
+msgstr ""
+
+#: inc/admin/customizer.php:267
+#@ ferado
+msgid "Upload Logo"
+msgstr ""
+
+#: inc/admin/customizer.php:273
+#@ ferado
+msgid "Logo Font Family"
+msgstr ""
+
+#: inc/admin/customizer.php:280
+#@ ferado
+msgid "Logo Font Size (px)"
+msgstr ""
+
+#: inc/admin/customizer.php:286
+#@ ferado
+msgid "Logo Font Weight"
+msgstr ""
+
+#: inc/admin/customizer.php:291
+#: inc/admin/customizer.php:640
+#: inc/admin/customizer.php:712
+#: inc/admin/customizer.php:778
+#@ ferado
+msgid "Thin 100"
+msgstr ""
+
+#: inc/admin/customizer.php:292
+#: inc/admin/customizer.php:641
+#: inc/admin/customizer.php:713
+#: inc/admin/customizer.php:779
+#@ ferado
+msgid "Thin 100 Italic"
+msgstr ""
+
+#: inc/admin/customizer.php:293
+#: inc/admin/customizer.php:642
+#: inc/admin/customizer.php:714
+#: inc/admin/customizer.php:780
+#@ ferado
+msgid "Light 300"
+msgstr ""
+
+#: inc/admin/customizer.php:294
+#: inc/admin/customizer.php:643
+#: inc/admin/customizer.php:715
+#: inc/admin/customizer.php:781
+#@ ferado
+msgid "Light 300 Italic"
+msgstr ""
+
+#: inc/admin/customizer.php:295
+#: inc/admin/customizer.php:644
+#: inc/admin/customizer.php:716
+#: inc/admin/customizer.php:782
+#@ ferado
+msgid "Normal 400"
+msgstr ""
+
+#: inc/admin/customizer.php:296
+#: inc/admin/customizer.php:645
+#: inc/admin/customizer.php:717
+#: inc/admin/customizer.php:783
+#@ ferado
+msgid "Normal 400 Italic"
+msgstr ""
+
+#: inc/admin/customizer.php:297
+#: inc/admin/customizer.php:646
+#: inc/admin/customizer.php:718
+#: inc/admin/customizer.php:784
+#@ ferado
+msgid "Semi Bold 600"
+msgstr ""
+
+#: inc/admin/customizer.php:298
+#: inc/admin/customizer.php:647
+#: inc/admin/customizer.php:719
+#: inc/admin/customizer.php:785
+#@ ferado
+msgid "Semi Bold 600 Italic"
+msgstr ""
+
+#: inc/admin/customizer.php:299
+#: inc/admin/customizer.php:648
+#: inc/admin/customizer.php:720
+#: inc/admin/customizer.php:786
+#@ ferado
+msgid "Bold 700"
+msgstr ""
+
+#: inc/admin/customizer.php:300
+#: inc/admin/customizer.php:649
+#: inc/admin/customizer.php:721
+#: inc/admin/customizer.php:787
+#@ ferado
+msgid "Bold 700 Italic"
+msgstr ""
+
+#: inc/admin/customizer.php:301
+#: inc/admin/customizer.php:650
+#: inc/admin/customizer.php:722
+#: inc/admin/customizer.php:788
+#@ ferado
+msgid "Extra Bold 800"
+msgstr ""
+
+#: inc/admin/customizer.php:302
+#: inc/admin/customizer.php:651
+#: inc/admin/customizer.php:723
+#: inc/admin/customizer.php:789
+#@ ferado
+msgid "Extra Bold 800 Italic"
+msgstr ""
+
+#: inc/admin/customizer.php:303
+#: inc/admin/customizer.php:652
+#: inc/admin/customizer.php:724
+#: inc/admin/customizer.php:790
+#@ ferado
+msgid "Ultra Bold 900"
+msgstr ""
+
+#: inc/admin/customizer.php:304
+#: inc/admin/customizer.php:653
+#: inc/admin/customizer.php:725
+#: inc/admin/customizer.php:791
+#@ ferado
+msgid "Ultra Bold 900 Italic"
+msgstr ""
+
+#: inc/admin/customizer.php:308
+#@ ferado
+msgid "Logo Margin Left (px)"
+msgstr ""
+
+#: inc/admin/customizer.php:314
+#@ ferado
+msgid "Logo Margin Top (px)"
+msgstr ""
+
+#: inc/admin/customizer.php:332
+#@ ferado
+msgid "Color Schemes"
+msgstr ""
+
+#: inc/admin/customizer.php:333
+#@ ferado
+msgid "Ferado provides 6 major color variations for your taste. Each color variation covers not only the main background, but also color of drop-down menu, links, table's header and others"
+msgstr ""
+
+#: inc/admin/customizer.php:385
+#@ ferado
+msgid "Main color schemes"
+msgstr ""
+
+#: inc/admin/customizer.php:388
+#: inc/admin/customizer.php:1544
+#@ ferado
+msgid "Red"
+msgstr ""
+
+#: inc/admin/customizer.php:389
+#: inc/admin/customizer.php:1545
+#@ ferado
+msgid "Brown"
+msgstr ""
+
+#: inc/admin/customizer.php:390
+#: inc/admin/customizer.php:1546
+#@ ferado
+msgid "Yellow"
+msgstr ""
+
+#: inc/admin/customizer.php:391
+#: inc/admin/customizer.php:1547
+#@ ferado
+msgid "Blue"
+msgstr ""
+
+#: inc/admin/customizer.php:392
+#: inc/admin/customizer.php:1548
+#@ ferado
+msgid "Green"
+msgstr ""
+
+#: inc/admin/customizer.php:393
+#: inc/admin/customizer.php:1549
+#@ ferado
+msgid "Purple"
+msgstr ""
+
+#: inc/admin/customizer.php:400
+#@ ferado
+msgid "Body color schemes"
+msgstr ""
+
+#: inc/admin/customizer.php:407
+#@ ferado
+msgid "Body font color"
+msgstr ""
+
+#: inc/admin/customizer.php:414
+#@ ferado
+msgid "Body background color"
+msgstr ""
+
+#: inc/admin/customizer.php:421
+#@ ferado
+msgid "Page title color schemes"
+msgstr ""
+
+#: inc/admin/customizer.php:428
+#@ ferado
+msgid "Page title color"
+msgstr ""
+
+#: inc/admin/customizer.php:435
+#@ ferado
+msgid "Page title background color"
+msgstr ""
+
+#: inc/admin/customizer.php:442
+#@ ferado
+msgid "Header color schemes"
+msgstr ""
+
+#: inc/admin/customizer.php:449
+#@ ferado
+msgid "Main menu color"
+msgstr ""
+
+#: inc/admin/customizer.php:456
+#@ ferado
+msgid "Other color schemes"
+msgstr ""
+
+#: inc/admin/customizer.php:463
+#@ ferado
+msgid "Heading font color"
+msgstr ""
+
+#: inc/admin/customizer.php:470
+#@ ferado
+msgid "Footer background color"
+msgstr ""
+
+#: inc/admin/customizer.php:486
+#@ ferado
+msgid "Typography"
+msgstr ""
+
+#: inc/admin/customizer.php:487
+#@ ferado
+msgid "Setting typography for your website"
+msgstr ""
+
+#: inc/admin/customizer.php:599
+#@ ferado
+msgid "Body Font Settings"
+msgstr ""
+
+#: inc/admin/customizer.php:605
+#@ ferado
+msgid "Body Font Type"
+msgstr ""
+
+#: inc/admin/customizer.php:610
+#: inc/admin/customizer.php:682
+#: inc/admin/customizer.php:754
+#@ ferado
+msgid "Standard Font"
+msgstr ""
+
+#: inc/admin/customizer.php:611
+#: inc/admin/customizer.php:683
+#: inc/admin/customizer.php:755
+#@ ferado
+msgid "Google Font"
+msgstr ""
+
+#: inc/admin/customizer.php:615
+#: inc/admin/customizer.php:622
+#@ ferado
+msgid "Body Font Family"
+msgstr ""
+
+#: inc/admin/customizer.php:629
+#@ ferado
+msgid "Body Font Size (px)"
+msgstr ""
+
+#: inc/admin/customizer.php:635
+#@ ferado
+msgid "Body Font Weight"
+msgstr ""
+
+#: inc/admin/customizer.php:657
+#: inc/admin/customizer.php:729
+#: inc/admin/customizer.php:773
+#: inc/admin/customizer.php:795
+#@ ferado
+msgid "Heading Font Weight"
+msgstr ""
+
+#: inc/admin/customizer.php:662
+#: inc/admin/customizer.php:734
+#: inc/admin/customizer.php:800
+#@ ferado
+msgid "Normal"
+msgstr ""
+
+#: inc/admin/customizer.php:663
+#: inc/admin/customizer.php:735
+#: inc/admin/customizer.php:801
+#@ ferado
+msgid "Normal Italic"
+msgstr ""
+
+#: inc/admin/customizer.php:664
+#: inc/admin/customizer.php:736
+#: inc/admin/customizer.php:802
+#@ ferado
+msgid "Bold"
+msgstr ""
+
+#: inc/admin/customizer.php:665
+#: inc/admin/customizer.php:737
+#: inc/admin/customizer.php:803
+#@ ferado
+msgid "Bold Italic"
+msgstr ""
+
+#: inc/admin/customizer.php:671
+#@ ferado
+msgid "Page Title Font Settings"
+msgstr ""
+
+#: inc/admin/customizer.php:677
+#@ ferado
+msgid "Page Title Font Type"
+msgstr ""
+
+#: inc/admin/customizer.php:687
+#: inc/admin/customizer.php:694
+#@ ferado
+msgid "Page Title Font Family"
+msgstr ""
+
+#: inc/admin/customizer.php:701
+#@ ferado
+msgid "Page Title Font Size (px)"
+msgstr ""
+
+#: inc/admin/customizer.php:707
+#@ ferado
+msgid "Page Title Font Weight"
+msgstr ""
+
+#: inc/admin/customizer.php:743
+#@ ferado
+msgid "Heading Font Settings"
+msgstr ""
+
+#: inc/admin/customizer.php:749
+#@ ferado
+msgid "Heading Font Type"
+msgstr ""
+
+#: inc/admin/customizer.php:759
+#: inc/admin/customizer.php:766
+#@ ferado
+msgid "Heading Font Family"
+msgstr ""
+
+#: inc/admin/customizer.php:807
+#@ ferado
+msgid "H1 Font Size (px)"
+msgstr ""
+
+#: inc/admin/customizer.php:813
+#@ ferado
+msgid "H2 Font Size (px)"
+msgstr ""
+
+#: inc/admin/customizer.php:819
+#@ ferado
+msgid "H3 Font Size (px)"
+msgstr ""
+
+#: inc/admin/customizer.php:825
+#@ ferado
+msgid "H4 Font Size (px)"
+msgstr ""
+
+#: inc/admin/customizer.php:831
+#@ ferado
+msgid "H5 Font Size (px)"
+msgstr ""
+
+#: inc/admin/customizer.php:837
+#@ ferado
+msgid "H6 Font Size (px)"
+msgstr ""
+
+#: inc/admin/customizer.php:850
+#@ ferado
+msgid "Header"
+msgstr ""
+
+#: inc/admin/customizer.php:867
+#@ ferado
+msgid "Enter your keywords"
+msgstr ""
+
+#: inc/admin/customizer.php:880
+#: inc/admin/customizer.php:1059
+#@ ferado
+msgid "Blog List Layout"
+msgstr ""
+
+#: inc/admin/customizer.php:885
+#@ ferado
+msgid "Header version 1"
+msgstr ""
+
+#: inc/admin/customizer.php:886
+#@ ferado
+msgid "Header version 2"
+msgstr ""
+
+#: inc/admin/customizer.php:890
+#@ ferado
+msgid "Enable sticky menu"
+msgstr ""
+
+#: inc/admin/customizer.php:896
+#@ ferado
+msgid "Show search box"
+msgstr ""
+
+#: inc/admin/customizer.php:902
+#@ ferado
+msgid "Search text"
+msgstr ""
+
+#: inc/admin/customizer.php:908
+#@ ferado
+msgid "Right header info (HTML allowed)"
+msgstr ""
+
+#: inc/admin/customizer.php:916
+#@ ferado
+msgid "Background image"
+msgstr ""
+
+#: inc/admin/customizer.php:933
+#@ ferado
+msgid "Page Layout"
+msgstr ""
+
+#: inc/admin/customizer.php:934
+#@ ferado
+msgid "Select page layout with sidebar display."
+msgstr ""
+
+#: inc/admin/customizer.php:996
+#@ ferado
+msgid "Select Page Layout"
+msgstr ""
+
+#: inc/admin/customizer.php:1000
+#: inc/admin/customizer.php:1161
+#: inc/admin/customizer.php:1567
+#@ ferado
+msgid "Main"
+msgstr ""
+
+#: inc/admin/customizer.php:1001
+#: inc/admin/customizer.php:1162
+#: inc/admin/customizer.php:1568
+#@ ferado
+msgid "Left - Main"
+msgstr ""
+
+#: inc/admin/customizer.php:1002
+#: inc/admin/customizer.php:1163
+#: inc/admin/customizer.php:1569
+#@ ferado
+msgid "Main - Right"
+msgstr ""
+
+#: inc/admin/customizer.php:1003
+#: inc/admin/customizer.php:1570
+#@ ferado
+msgid "Left - Main - Right"
+msgstr ""
+
+#: inc/admin/customizer.php:1004
+#: inc/admin/customizer.php:1571
+#@ ferado
+msgid "Left - Right - Main"
+msgstr ""
+
+#: inc/admin/customizer.php:1005
+#: inc/admin/customizer.php:1572
+#@ ferado
+msgid "Main - Left - Right"
+msgstr ""
+
+#: inc/admin/customizer.php:1010
+#@ ferado
+msgid "Enable Boxed Layout"
+msgstr ""
+
+#: inc/admin/customizer.php:1016
+#: inc/admin/customizer.php:1086
+#@ ferado
+msgid "Background Repeat"
+msgstr ""
+
+#: inc/admin/customizer.php:1021
+#: inc/admin/customizer.php:1091
+#@ ferado
+msgid "No Repeat"
+msgstr ""
+
+#: inc/admin/customizer.php:1022
+#: inc/admin/customizer.php:1092
+#@ ferado
+msgid "Repeat"
+msgstr ""
+
+#: inc/admin/customizer.php:1023
+#: inc/admin/customizer.php:1093
+#@ ferado
+msgid "Repeat X"
+msgstr ""
+
+#: inc/admin/customizer.php:1024
+#: inc/admin/customizer.php:1094
+#@ ferado
+msgid "Repeat Y"
+msgstr ""
+
+#: inc/admin/customizer.php:1028
+#: inc/admin/customizer.php:1098
+#@ ferado
+msgid "Background Position"
+msgstr ""
+
+#: inc/admin/customizer.php:1033
+#: inc/admin/customizer.php:1103
+#: inc/admin/customizer.php:1124
+#@ ferado
+msgid "Left"
+msgstr ""
+
+#: inc/admin/customizer.php:1034
+#: inc/admin/customizer.php:1104
+#: inc/admin/customizer.php:1125
+#@ ferado
+msgid "Center"
+msgstr ""
+
+#: inc/admin/customizer.php:1035
+#: inc/admin/customizer.php:1105
+#: inc/admin/customizer.php:1126
+#@ ferado
+msgid "Right"
+msgstr ""
+
+#: inc/admin/customizer.php:1039
+#: inc/admin/customizer.php:1109
+#@ ferado
+msgid "Background Attachment"
+msgstr ""
+
+#: inc/admin/customizer.php:1044
+#: inc/admin/customizer.php:1114
+#@ ferado
+msgid "Scroll"
+msgstr ""
+
+#: inc/admin/customizer.php:1045
+#: inc/admin/customizer.php:1115
+#@ ferado
+msgid "Fixed"
+msgstr ""
+
+#: inc/admin/customizer.php:1049
+#@ ferado
+msgid "Show Comments"
+msgstr ""
+
+#: inc/admin/customizer.php:1054
+#: inc/admin/customizer.php:1432
+#@ ferado
+msgid "Yes"
+msgstr ""
+
+#: inc/admin/customizer.php:1055
+#: inc/admin/customizer.php:1433
+#@ ferado
+msgid "No"
+msgstr ""
+
+#: inc/admin/customizer.php:1064
+#@ ferado
+msgid "Large featured image"
+msgstr ""
+
+#: inc/admin/customizer.php:1065
+#@ ferado
+msgid "Small featured image"
+msgstr ""
+
+#: inc/admin/customizer.php:1066
+#@ ferado
+msgid "Masonry"
+msgstr ""
+
+#: inc/admin/customizer.php:1073
+#@ ferado
+msgid "Page title settings"
+msgstr ""
+
+#: inc/admin/customizer.php:1080
+#@ ferado
+msgid "Page Title Background Image"
+msgstr ""
+
+#: inc/admin/customizer.php:1119
+#@ ferado
+msgid "Page Title Alignment"
+msgstr ""
+
+#: inc/admin/customizer.php:1137
+#@ ferado
+msgid "WooCommerce Layout"
+msgstr ""
+
+#: inc/admin/customizer.php:1157
+#@ ferado
+msgid "Product list layout"
+msgstr ""
+
+#: inc/admin/customizer.php:1168
+#@ ferado
+msgid "Product list style"
+msgstr ""
+
+#: inc/admin/customizer.php:1173
+#@ ferado
+msgid "Grid"
+msgstr ""
+
+#: inc/admin/customizer.php:1174
+#@ ferado
+msgid "List"
+msgstr ""
+
+#: inc/admin/customizer.php:1178
+#@ ferado
+msgid "Show shop cart in header"
+msgstr ""
+
+#: inc/admin/customizer.php:1191
+#@ ferado
+msgid "Footer"
+msgstr ""
+
+#: inc/admin/customizer.php:1192
+#@ ferado
+msgid "Config for display text on footer and set the URLs for your social media profiles here to be used in the header. Adding in a link will make its respective icon show up without needing to do anything else."
+msgstr ""
+
+#: inc/admin/customizer.php:1259
+#@ ferado
+msgid "Left Footer"
+msgstr ""
+
+#: inc/admin/customizer.php:1265
+#@ ferado
+msgid "Right Footer"
+msgstr ""
+
+#: inc/admin/customizer.php:1271
+#: inc/ferado/extras.php:312
+#@ ferado
+msgid "Facebook"
+msgstr ""
+
+#: inc/admin/customizer.php:1277
+#: inc/ferado/extras.php:318
+#@ ferado
+msgid "Twitter"
+msgstr ""
+
+#: inc/admin/customizer.php:1283
+#@ ferado
+msgid "Dribbble"
+msgstr ""
+
+#: inc/admin/customizer.php:1289
+#: inc/ferado/extras.php:324
+#@ ferado
+msgid "Google Plus"
+msgstr ""
+
+#: inc/admin/customizer.php:1295
+#@ ferado
+msgid "Vimeo"
+msgstr ""
+
+#: inc/admin/customizer.php:1301
+#@ ferado
+msgid "WordPress"
+msgstr ""
+
+#: inc/admin/customizer.php:1307
+#: inc/ferado/extras.php:330
+#@ ferado
+msgid "Pinterest"
+msgstr ""
+
+#: inc/admin/customizer.php:1313
+#@ ferado
+msgid "LinkedIn"
+msgstr ""
+
+#: inc/admin/customizer.php:1319
+#@ ferado
+msgid "Yahoo"
+msgstr ""
+
+#: inc/admin/customizer.php:1325
+#@ ferado
+msgid "Skype"
+msgstr ""
+
+#: inc/admin/customizer.php:1331
+#@ ferado
+msgid "Stumbleupon"
+msgstr ""
+
+#: inc/admin/customizer.php:1337
+#@ ferado
+msgid "Youtube"
+msgstr ""
+
+#: inc/admin/customizer.php:1343
+#@ ferado
+msgid "Flickr"
+msgstr ""
+
+#: inc/admin/customizer.php:1349
+#@ ferado
+msgid "RSS"
+msgstr ""
+
+#: inc/admin/customizer.php:1355
+#@ ferado
+msgid "MySpace"
+msgstr ""
+
+#: inc/admin/customizer.php:1361
+#@ ferado
+msgid "Tumblr"
+msgstr ""
+
+#: inc/admin/customizer.php:1373
+#@ ferado
+msgid "Extras"
+msgstr ""
+
+#: inc/admin/customizer.php:1406
+#@ ferado
+msgid "Enable page loading effect"
+msgstr ""
+
+#: inc/admin/customizer.php:1414
+#@ ferado
+msgid "Upload Favicon"
+msgstr ""
+
+#: inc/admin/customizer.php:1421
+#@ ferado
+msgid "Google Analytics Code"
+msgstr ""
+
+#: inc/admin/customizer.php:1427
+#@ ferado
+msgid "Enable Under construction mode"
+msgstr ""
+
+#: inc/admin/customizer.php:1437
+#@ ferado
+msgid "Your Away Message"
+msgstr ""
+
+#: inc/admin/customizer.php:1443
+#@ ferado
+msgid "Countdown timer (Format: M D, Y)"
+msgstr ""
+
+#: inc/admin/customizer.php:1449
+#@ ferado
+msgid "Code Before &lt;/head&gt;"
+msgstr ""
+
+#: inc/admin/customizer.php:1455
+#@ ferado
+msgid "Code Before &lt;/body&gt;"
+msgstr ""
+
+#: inc/admin/sample-data-installer/confirm.php:16
+#, php-format
+#@ ferado
+msgid "This installer will make your website looks the same as <a href=\"http://%1$s.woorockets.com\" target=\"_blank\">%2$s live demo website</a>."
+msgstr ""
+
+#: inc/admin/sample-data-installer/confirm.php:23
+#: inc/admin/sample-data-installer/restore.php:17
+#@ ferado
+msgid "Important information"
+msgstr ""
+
+#: inc/admin/sample-data-installer/confirm.php:25
+#@ ferado
+msgid "Installing sample data will delete all data on this website."
+msgstr ""
+
+#: inc/admin/sample-data-installer/confirm.php:26
+#@ ferado
+msgid "It is NOT recommended to install sample data on production website."
+msgstr ""
+
+#: inc/admin/sample-data-installer/confirm.php:34
+#, php-format
+#@ ferado
+msgid "<li class=\"message-tgma\">WR Page Builder needs to be installed and activated. <b><a target=\"_blank\" href=\"%1$s\">Check now</a>!</b>.</li>"
+msgstr ""
+
+#: inc/admin/sample-data-installer/confirm.php:45
+#@ ferado
+msgid "I agree that installing sample data will delete all content on this website"
+msgstr ""
+
+#: inc/admin/sample-data-installer/confirmed.php:13
+#: inc/admin/sample-data-installer/restore.php:34
+#@ ferado
+msgid "There are several stages involved in the process. Please be patient."
+msgstr ""
+
+#: inc/admin/sample-data-installer/confirmed.php:17
+#@ ferado
+msgid "Download sample data package."
+msgstr ""
+
+#: inc/admin/sample-data-installer/confirmed.php:22
+#@ ferado
+msgid "Upload sample data package."
+msgstr ""
+
+#: inc/admin/sample-data-installer/confirmed.php:29
+#@ ferado
+msgid "Install sample data."
+msgstr ""
+
+#: inc/admin/sample-data-installer/confirmed.php:34
+#@ ferado
+msgid "Download demo assets."
+msgstr ""
+
+#: inc/admin/sample-data-installer/confirmed.php:49
+#@ ferado
+msgid "Please download sample data package manually"
+msgstr ""
+
+#: inc/admin/sample-data-installer/confirmed.php:50
+#@ ferado
+msgid "Download File"
+msgstr ""
+
+#: inc/admin/sample-data-installer/confirmed.php:53
+#@ ferado
+msgid "Select the downloaded sample data package to install"
+msgstr ""
+
+#: inc/admin/sample-data-installer/confirmed.php:56
+#@ ferado
+msgid "Please select the downloaded sample data package."
+msgstr ""
+
+#: inc/admin/sample-data-installer/confirmed.php:65
+#@ ferado
+msgid "Sample data is successfully installed"
+msgstr ""
+
+#: inc/admin/sample-data-installer/confirmed.php:70
+#, php-format
+#@ ferado
+msgid "Congratulations, your website now looks the same as <a href=\"http://demo.woorockets.com/%1$s\" target=\"_blank\">%2$s live demo website</a>."
+msgstr ""
+
+#: inc/admin/sample-data-installer/confirmed.php:79
+#@ ferado
+msgid "Attention!"
+msgstr ""
+
+#: inc/admin/sample-data-installer/confirmed.php:82
+#@ ferado
+msgid "Sample data for following plugins could NOT be installed:"
+msgstr ""
+
+#: inc/admin/sample-data-installer/confirmed.php:91
+#@ ferado
+msgid "Sample data is not successfully installed"
+msgstr ""
+
+#: inc/admin/sample-data-installer/confirmed.php:95
+#@ ferado
+msgid "An unknown problem was occurred while installing sample data. Please try again later."
+msgstr ""
+
+#: inc/admin/sample-data-installer/download.php:27
+#@ ferado
+msgid "Install required plugins."
+msgstr ""
+
+#: inc/admin/sample-data-installer/download.php:29
+#@ ferado
+msgid "For the best experience, it's strongly recommended for you to install following <strong>FREE</strong> plugins."
+msgstr ""
+
+#: inc/admin/sample-data-installer/download.php:56
+#: inc/admin/sample-data-installer/download.php:104
+#@ ferado
+msgid "New Installation"
+msgstr ""
+
+#: inc/admin/sample-data-installer/download.php:61
+#: inc/admin/sample-data-installer/download.php:104
+#@ ferado
+msgid "Update"
+msgstr ""
+
+#: inc/admin/sample-data-installer/download.php:66
+#@ ferado
+msgid "Installed"
+msgstr ""
+
+#: inc/admin/sample-data-installer/download.php:87
+#@ ferado
+msgid "Read more..."
+msgstr ""
+
+#: inc/admin/sample-data-installer/import-data.php:24
+#@ ferado
+msgid "Get it now"
+msgstr ""
+
+#: inc/admin/sample-data-installer/restore.php:14
+#@ ferado
+msgid "This process will restore the original data of your website."
+msgstr ""
+
+#: inc/admin/sample-data-installer/restore.php:19
+#@ ferado
+msgid "Restoring original data will delete all current data on this website."
+msgstr ""
+
+#: inc/admin/sample-data-installer/restore.php:20
+#@ ferado
+msgid "Plugins and demo assets installed by sample data installation will be removed."
+msgstr ""
+
+#: inc/admin/sample-data-installer/restore.php:27
+#@ ferado
+msgid "I agree that restoring original data will delete all current content on this website"
+msgstr ""
+
+#: inc/admin/sample-data-installer/restore.php:38
+#@ ferado
+msgid "Restore original data."
+msgstr ""
+
+#: inc/admin/sample-data-installer/restore.php:43
+#@ ferado
+msgid "Remove demo assets."
+msgstr ""
+
+#: inc/admin/sample-data-installer/restore.php:49
+#@ ferado
+msgid "Delete installed plugins."
+msgstr ""
+
+#: inc/admin/sample-data-installer/restore.php:69
+#@ ferado
+msgid "Original data is successfully restored"
+msgstr ""
+
+#: inc/admin/sample-data-installer/restore.php:72
+#@ ferado
+msgid "Congratulations, your website now looks the same as before."
+msgstr ""
+
+#: inc/admin/sample-data-installer/restore.php:78
+#@ ferado
+msgid "Original data is not successfully restored"
+msgstr ""
+
+#: inc/admin/sample-data-installer/restore.php:82
+#@ ferado
+msgid "An unknown problem was occurred while restoring original data. Please try again later."
+msgstr ""
+
+#: inc/admin/sample-data-installer.php:136
+#@ ferado
+msgid "Continue"
+msgstr ""
+
+#: inc/admin/sample-data-installer.php:137
+#@ ferado
+msgid "Finish"
+msgstr ""
+
+#: inc/admin/sample-data-installer.php:139
+#@ ferado
+msgid "Cancel"
+msgstr ""
+
+#: inc/admin/sample-data-installer.php:298
+#, php-format
+#@ ferado
+msgid "The theme version %1$s you are using is outdated. You need to update theme to the latest version %2$s before installing sample data."
+msgstr ""
+
+#: inc/admin/sample-data-installer.php:363
+#: inc/admin/sample-data-installer.php:372
+#@ ferado
+msgid "File upload failed."
+msgstr ""
+
+#: inc/admin/sample-data-installer.php:390
+#@ ferado
+msgid "Missing parameter."
+msgstr ""
+
+#: inc/admin/sample-data-installer.php:453
+#, php-format
+#@ ferado
+msgid "Upgrade plugin failed: %s"
+msgstr ""
+
+#: inc/admin/sample-data-installer.php:454
+#: inc/admin/sample-data-installer.php:471
+#@ ferado
+msgid "Unknown reason"
+msgstr ""
+
+#: inc/admin/sample-data-installer.php:470
+#, php-format
+#@ ferado
+msgid "Plugin installation failed: %s"
+msgstr ""
+
+#: inc/admin/sample-data-installer.php:483
+#, php-format
+#@ ferado
+msgid "Plugin activation failed: %s"
+msgstr ""
+
+#: inc/admin/sample-data-installer.php:754
+#, php-format
+#@ ferado
+msgid "Sample data import has encountered an error and cannot continue: %s"
+msgstr ""
+
+#: inc/admin/sample-data-installer.php:837
+#: inc/admin/sample-data-installer.php:852
+#@ ferado
+msgid "Missing demo asset to download."
+msgstr ""
+
+#: inc/admin/sample-data-installer.php:844
+#@ ferado
+msgid "Missing list of demo assets to download."
+msgstr ""
+
+#: inc/admin/sample-data-installer.php:860
+#@ ferado
+msgid "Invalid demo asset URL."
+msgstr ""
+
+#: inc/admin/sample-data-installer.php:941
+#, php-format
+#@ ferado
+msgid "Fail to download %1$s due to following error: %2$s"
+msgstr ""
+
+#: inc/admin/sample-data-installer.php:1005
+#@ ferado
+msgid "Not found any data backup file."
+msgstr ""
+
+#: inc/admin/sample-data-installer.php:1062
+#@ ferado
+msgid "Missing plugin to delete."
+msgstr ""
+
+#: inc/admin/sample-data-installer.php:1112
+#, php-format
+#@ ferado
+msgid "Unable to create directory %s for storing downloaded file"
+msgstr ""
+
+#: inc/admin/sample-data-installer.php:1121
+#, php-format
+#@ ferado
+msgid "Unable to save downloaded file to %s"
+msgstr ""
+
+#: inc/admin/sample-data-installer.php:1213
+#, php-format
+#@ ferado
+msgid "Unable to extract sample data package: %s"
+msgstr ""
+
+#: inc/admin/sample-data-installer.php:1222
+#: inc/admin/sample-data-installer.php:1260
+#, php-format
+#@ ferado
+msgid "Invalid sample data package: %s"
+msgstr ""
+
+#: inc/admin/sample-data-installer.php:1222
+#@ ferado
+msgid "XML file not found"
+msgstr ""
+
+#: inc/admin/sample-data-installer.php:1240
+#@ ferado
+msgid "Unable to parse XML file for sample data declaration."
+msgstr ""
+
+#: inc/admin/sample-data-installer.php:1261
+#@ ferado
+msgid "Theme name in sample data package does not match the one installed"
+msgstr ""
+
+#: inc/ferado/extras.php:79
+#, php-format
+#@ ferado
+msgid "Page %s"
+msgstr ""
+
+#: inc/ferado/layout.php:107
+#@ ferado
+msgid "Primary Sidebar"
+msgstr ""
+
+#: inc/ferado/layout.php:111
+#, php-format
+#@ ferado
+msgid "This is the Right Sidebar Area. You can add content to this area by visiting your %1$s and adding new widgets to this area."
+msgstr ""
+
+#: inc/ferado/layout.php:112
+#: inc/ferado/layout.php:141
+#@ ferado
+msgid "Widgets Panel"
+msgstr ""
+
+#: inc/ferado/layout.php:136
+#@ ferado
+msgid "Secondary Sidebar"
+msgstr ""
+
+#: inc/ferado/layout.php:140
+#, php-format
+#@ ferado
+msgid "This is the Left Sidebar Area. You can add content to this area by visiting your %1$s and adding new widgets to this area."
+msgstr ""
+
+#: inc/ferado/template-tags.php:40
+#@ ferado
+msgid "&laquo;"
+msgstr ""
+
+#: inc/ferado/template-tags.php:41
+#@ ferado
+msgid "&raquo;"
+msgstr ""
+
+#: inc/ferado/template-tags.php:57
+#, php-format
+#@ ferado
+msgctxt "post author"
+msgid "<i class=\"wr-icon-user\"></i>%s"
+msgstr ""
+
+#: inc/ferado/template-tags.php:64
+#@ ferado
+msgid ", "
+msgstr ""
+
+#: inc/ferado/template-tags.php:67
+#, php-format
+#@ ferado
+msgid "<i class=\"wr-icon-category\"></i>%1$s"
+msgstr ""
+
+#: inc/ferado/template-tags.php:74
+#@ ferado
+msgid "0 Comment"
+msgstr ""
+
+#: inc/ferado/template-tags.php:74
+#@ ferado
+msgid "1 Comment"
+msgstr ""
+
+#: inc/ferado/template-tags.php:74
+#@ ferado
+msgid "% Comments"
+msgstr ""
+
+#: inc/ferado/template-tags.php:96
+#@ ferado
+msgid "Pingback:"
+msgstr ""
+
+#: inc/ferado/template-tags.php:98
+#@ ferado
+msgid "Edit"
+msgstr ""
+
+#: inc/ferado/template-tags.php:113
+#@ ferado
+msgid "<span>Edit</span>"
+msgstr ""
+
+#: inc/ferado/template-tags.php:118
+#@ ferado
+msgid "<span>Reply</span>"
+msgstr ""
+
+#: inc/ferado/template-tags.php:130
+#@ ferado
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: inc/ferado/template-tags.php:138
+#@ ferado
+msgid "Post author"
+msgstr ""
+
+#: inc/ferado/template-tags.php:145
+#, php-format
+#@ ferado
+msgid "%1$s at %2$s"
+msgstr ""
+
+#: inc/ferado/wcm.php:42
+#@ ferado
+msgid "View your shopping cart"
+msgstr ""
+
+#: inc/ferado/wcm.php:140
+#@ ferado
+msgid "WooCoomerce Sidebar"
+msgstr ""
+
+#: inc/init.php:111
+#@ ferado
+msgid "Main Menu"
+msgstr ""
+
+#: inc/init.php:112
+#@ ferado
+msgid "Top Menu"
+msgstr ""
+
+#: inc/init.php:150
+#@ ferado
+msgid "Bottom 1"
+msgstr ""
+
+#: inc/init.php:159
+#@ ferado
+msgid "Bottom 2"
+msgstr ""
+
+#: inc/init.php:168
+#@ ferado
+msgid "Bottom 3"
+msgstr ""
+
+#: inc/init.php:177
+#@ ferado
+msgid "Bottom 4"
+msgstr ""
+
+#: inc/plugins/class-tgm-plugin-activation.php:161
+#@ tgmpa
+msgid "Install Required Plugins"
+msgstr ""
+
+#: inc/plugins/class-tgm-plugin-activation.php:162
+#@ tgmpa
+msgid "Install Plugins"
+msgstr ""
+
+#: inc/plugins/class-tgm-plugin-activation.php:163
+#, php-format
+#@ tgmpa
+msgid "Installing Plugin: %s"
+msgstr ""
+
+#: inc/plugins/class-tgm-plugin-activation.php:164
+#@ tgmpa
+msgid "Something went wrong."
+msgstr ""
+
+#: inc/plugins/class-tgm-plugin-activation.php:165
+#, php-format
+#@ ferado
+msgid "This theme requires the following plugin: %1$s."
+msgid_plural "This theme requires the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/plugins/class-tgm-plugin-activation.php:166
+#, php-format
+#@ ferado
+msgid "This theme recommends the following plugin: %1$s."
+msgid_plural "This theme recommends the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/plugins/class-tgm-plugin-activation.php:167
+#, php-format
+#@ ferado
+msgid "Sorry, but you do not have the correct permissions to install the %s plugin. Contact the administrator of this site for help on getting the plugin installed."
+msgid_plural "Sorry, but you do not have the correct permissions to install the %s plugins. Contact the administrator of this site for help on getting the plugins installed."
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/plugins/class-tgm-plugin-activation.php:168
+#, php-format
+#@ ferado
+msgid "The following required plugin is currently inactive: %1$s."
+msgid_plural "The following required plugins are currently inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/plugins/class-tgm-plugin-activation.php:169
+#, php-format
+#@ ferado
+msgid "The following recommended plugin is currently inactive: %1$s."
+msgid_plural "The following recommended plugins are currently inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/plugins/class-tgm-plugin-activation.php:170
+#, php-format
+#@ ferado
+msgid "Sorry, but you do not have the correct permissions to activate the %s plugin. Contact the administrator of this site for help on getting the plugin activated."
+msgid_plural "Sorry, but you do not have the correct permissions to activate the %s plugins. Contact the administrator of this site for help on getting the plugins activated."
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/plugins/class-tgm-plugin-activation.php:171
+#, php-format
+#@ ferado
+msgid "The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s."
+msgid_plural "The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/plugins/class-tgm-plugin-activation.php:172
+#, php-format
+#@ ferado
+msgid "Sorry, but you do not have the correct permissions to update the %s plugin. Contact the administrator of this site for help on getting the plugin updated."
+msgid_plural "Sorry, but you do not have the correct permissions to update the %s plugins. Contact the administrator of this site for help on getting the plugins updated."
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/plugins/class-tgm-plugin-activation.php:173
+#@ ferado
+msgid "Begin installing plugin"
+msgid_plural "Begin installing plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/plugins/class-tgm-plugin-activation.php:174
+#@ ferado
+msgid "Begin activating plugin"
+msgid_plural "Begin activating plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/plugins/class-tgm-plugin-activation.php:175
+#@ tgmpa
+msgid "Return to Required Plugins Installer"
+msgstr ""
+
+#: inc/plugins/class-tgm-plugin-activation.php:176
+#@ tgmpa
+msgid "Return to the dashboard"
+msgstr ""
+
+#: inc/plugins/class-tgm-plugin-activation.php:177
+#: inc/plugins/class-tgm-plugin-activation.php:1938
+#@ tgmpa
+msgid "Plugin activated successfully."
+msgstr ""
+
+#: inc/plugins/class-tgm-plugin-activation.php:179
+#, php-format
+#@ tgmpa
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr ""
+
+#: inc/plugins/class-tgm-plugin-activation.php:180
+#@ tgmpa
+msgid "Dismiss this notice"
+msgstr ""
+
+#: inc/plugins/class-tgm-plugin-activation.php:530
+#: inc/plugins/class-tgm-plugin-activation.php:2155
+#@ tgmpa
+msgid "Return to the Dashboard"
+msgstr ""
+
+#: inc/plugins/class-tgm-plugin-activation.php:1165
+#@ tgmpa
+msgid "Private Repository"
+msgstr ""
+
+#: inc/plugins/class-tgm-plugin-activation.php:1168
+#@ tgmpa
+msgid "Pre-Packaged"
+msgstr ""
+
+#: inc/plugins/class-tgm-plugin-activation.php:1173
+#@ tgmpa
+msgid "WordPress Repository"
+msgstr ""
+
+#: inc/plugins/class-tgm-plugin-activation.php:1176
+#@ tgmpa
+msgid "Required"
+msgstr ""
+
+#: inc/plugins/class-tgm-plugin-activation.php:1176
+#@ tgmpa
+msgid "Recommended"
+msgstr ""
+
+#: inc/plugins/class-tgm-plugin-activation.php:1179
+#@ tgmpa
+msgid "Not Installed"
+msgstr ""
+
+#: inc/plugins/class-tgm-plugin-activation.php:1181
+#@ tgmpa
+msgid "Installed But Not Activated"
+msgstr ""
+
+#: inc/plugins/class-tgm-plugin-activation.php:1286
+#: inc/plugins/class-tgm-plugin-activation.php:1394
+#@ tgmpa
+msgid "Install"
+msgstr ""
+
+#: inc/plugins/class-tgm-plugin-activation.php:1308
+#: inc/plugins/class-tgm-plugin-activation.php:1395
+#@ tgmpa
+msgid "Activate"
+msgstr ""
+
+#: inc/plugins/class-tgm-plugin-activation.php:1357
+#, php-format
+#@ tgmpa
+msgid "No plugins to install or activate. <a href=\"%1$s\" title=\"Return to the Dashboard\">Return to the Dashboard</a>"
+msgstr ""
+
+#: inc/plugins/class-tgm-plugin-activation.php:1373
+#@ tgmpa
+msgid "Plugin"
+msgstr ""
+
+#: inc/plugins/class-tgm-plugin-activation.php:1374
+#@ tgmpa
+msgid "Source"
+msgstr ""
+
+#: inc/plugins/class-tgm-plugin-activation.php:1375
+#@ tgmpa
+msgid "Type"
+msgstr ""
+
+#: inc/plugins/class-tgm-plugin-activation.php:1376
+#@ tgmpa
+msgid "Status"
+msgstr ""
+
+#. gettext fix: identical singular and plural forms found, that may be ambiguous! Please check the code!
+#: inc/plugins/class-tgm-plugin-activation.php:1629
+#: inc/plugins/class-tgm-plugin-activation.php:178
+#@ tgmpa
+msgid "The following plugin was activated successfully:"
+msgid_plural "The following plugins were activated successfully:"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/plugins/class-tgm-plugin-activation.php:1921
+#@ tgmpa
+msgid "Install package not available."
+msgstr ""
+
+#: inc/plugins/class-tgm-plugin-activation.php:1922
+#, php-format
+#@ tgmpa
+msgid "Downloading install package from <span class=\"code\">%s</span>&#8230;"
+msgstr ""
+
+#: inc/plugins/class-tgm-plugin-activation.php:1923
+#@ tgmpa
+msgid "Unpacking the package&#8230;"
+msgstr ""
+
+#: inc/plugins/class-tgm-plugin-activation.php:1924
+#@ tgmpa
+msgid "Installing the plugin&#8230;"
+msgstr ""
+
+#: inc/plugins/class-tgm-plugin-activation.php:1925
+#@ tgmpa
+msgid "Plugin install failed."
+msgstr ""
+
+#: inc/plugins/class-tgm-plugin-activation.php:1926
+#@ tgmpa
+msgid "Plugin installed successfully."
+msgstr ""
+
+#: inc/plugins/class-tgm-plugin-activation.php:1937
+#@ tgmpa
+msgid "Plugin activation failed."
+msgstr ""
+
+#: inc/plugins/class-tgm-plugin-activation.php:2051
+#@ tgmpa
+msgid "The installation and activation process is starting. This process may take a while on some hosts, so please be patient."
+msgstr ""
+
+#: inc/plugins/class-tgm-plugin-activation.php:2052
+#, php-format
+#@ tgmpa
+msgid "%1$s installed and activated successfully."
+msgstr ""
+
+#: inc/plugins/class-tgm-plugin-activation.php:2052
+#: inc/plugins/class-tgm-plugin-activation.php:2061
+#@ tgmpa
+msgid "Show Details"
+msgstr ""
+
+#: inc/plugins/class-tgm-plugin-activation.php:2052
+#: inc/plugins/class-tgm-plugin-activation.php:2061
+#@ tgmpa
+msgid "Hide Details"
+msgstr ""
+
+#: inc/plugins/class-tgm-plugin-activation.php:2053
+#@ tgmpa
+msgid "All installations and activations have been completed."
+msgstr ""
+
+#: inc/plugins/class-tgm-plugin-activation.php:2054
+#, php-format
+#@ tgmpa
+msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: inc/plugins/class-tgm-plugin-activation.php:2058
+#@ tgmpa
+msgid "The installation process is starting. This process may take a while on some hosts, so please be patient."
+msgstr ""
+
+#: inc/plugins/class-tgm-plugin-activation.php:2059
+#, php-format
+#@ tgmpa
+msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+msgstr ""
+
+#: inc/plugins/class-tgm-plugin-activation.php:2060
+#, php-format
+#@ tgmpa
+msgid "The installation of %1$s failed."
+msgstr ""
+
+#: inc/plugins/class-tgm-plugin-activation.php:2061
+#, php-format
+#@ tgmpa
+msgid "%1$s installed successfully."
+msgstr ""
+
+#: inc/plugins/class-tgm-plugin-activation.php:2062
+#@ tgmpa
+msgid "All installations have been completed."
+msgstr ""
+
+#: inc/plugins/class-tgm-plugin-activation.php:2063
+#, php-format
+#@ tgmpa
+msgid "Installing Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: inc/structure/breadcrumbs.php:12
+#@ ferado
+msgid "Home"
+msgstr ""
+
+#: inc/structure/breadcrumbs.php:13
+#@ ferado
+msgid "Blog"
+msgstr ""
+
+#: inc/structure/breadcrumbs.php:108
+#@ ferado
+msgid "Page"
+msgstr ""
+
+#: inc/structure/header-v1.php:29
+#: inc/structure/header-v2.php:29
+#, php-format
+#@ ferado
+msgid "Welcome back, %s"
+msgstr ""
+
+#: inc/structure/header-v1.php:31
+#: inc/structure/header-v2.php:31
+#@ ferado
+msgid "Welcome, visitor!"
+msgstr ""
+
+#: search.php:20
+#, php-format
+#@ ferado
+msgid "Search Results for: %s"
+msgstr ""
+
+#: single.php:33
+#, php-format
+#@ ferado
+msgctxt "Previous post link"
+msgid "<span class=\"meta-nav\">&laquo;</span>&nbsp;%title"
+msgstr ""
+
+#: single.php:34
+#, php-format
+#@ ferado
+msgctxt "Next post link"
+msgid "%title&nbsp;<span class=\"meta-nav\">&raquo;</span>"
+msgstr ""
+
+#: woocommerce/cart/cart.php:57
+#@ woocommerce
+msgid "Available on backorder"
+msgstr ""
+
+#: woocommerce/cart/cart.php:92
+#@ woocommerce
+msgid "Remove this item"
+msgstr ""
+
+#: woocommerce/cart/cart.php:105
+#@ woocommerce
+msgid "Update Cart"
+msgstr ""
+
+#: woocommerce/cart/cart.php:105
+#@ woocommerce
+msgid "Proceed to Checkout"
+msgstr ""
+
+#: woocommerce/cart/cart.php:130
+#@ woocommerce
+msgid "Discount Codes"
+msgstr ""
+
+#: woocommerce/cart/cart.php:131
+#@ woocommerce
+msgid "Enter your coupon code if you have one."
+msgstr ""
+
+#: woocommerce/cart/cart.php:132
+#@ woocommerce
+msgid "Coupon code"
+msgstr ""
+
+#: woocommerce/cart/cart.php:133
+#@ woocommerce
+msgid "Apply Coupon"
+msgstr ""
+
+#: woocommerce/content-product.php:73
+#@ woocommerce
+msgid "SKU:"
+msgstr ""
+
+#: woocommerce/content-product.php:73
+#@ woocommerce
+msgid "N/A"
+msgstr ""
+
+#: woocommerce/content-product.php:75
+#@ woocommerce
+msgid "Category:"
+msgid_plural "Categories:"
+msgstr[0] ""
+msgstr[1] ""
+
+#: woocommerce/content-product.php:76
+#@ woocommerce
+msgid "Tag:"
+msgid_plural "Tags:"
+msgstr[0] ""
+msgstr[1] ""
+
+#: woocommerce/loop/orderby.php:22
+#@ ferado
+msgid "View as: "
+msgstr ""
+
+#: woocommerce/loop/orderby.php:33
+#@ woocommerce
+msgid "Default sorting"
+msgstr ""
+
+#: woocommerce/loop/orderby.php:34
+#@ woocommerce
+msgid "Sort by popularity"
+msgstr ""
+
+#: woocommerce/loop/orderby.php:35
+#@ woocommerce
+msgid "Sort by average rating"
+msgstr ""
+
+#: woocommerce/loop/orderby.php:36
+#@ woocommerce
+msgid "Sort by newness"
+msgstr ""
+
+#: woocommerce/loop/orderby.php:37
+#@ woocommerce
+msgid "Sort by price: low to high"
+msgstr ""
+
+#: woocommerce/loop/orderby.php:38
+#@ woocommerce
+msgid "Sort by price: high to low"
+msgstr ""
+
+#: woocommerce/single-product/product-image.php:99
+#@ woocommerce
+msgid "Sale!"
+msgstr ""
+
+#: woocommerce/single-product/product-image.php:101
+#@ woocommerce
+msgid "Free"
+msgstr ""
+
+#: woocommerce/single-product/related.php:47
+#@ ferado
+msgid "Products Ralated"
+msgstr ""
+

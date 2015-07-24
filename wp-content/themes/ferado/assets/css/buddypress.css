@@ -1,0 +1,277 @@
+/**
+ * @version    1.5
+ * @package    Ferado
+ * @author     WooRockets Team <support@woorockets.com>
+ * @copyright  Copyright (C) 2014 WooRockets.com. All Rights Reserved.
+ * @license    GNU/GPL v2 or later http://www.gnu.org/licenses/gpl-2.0.html
+ *
+ * Websites: http://www.woorockets.com
+ *
+ * This is the custom CSS file, Custom CSS file gives you the power to make your own design. Make a backup of this file prior to updating please.
+ */
+
+#buddypress button,
+#buddypress a.button,
+#buddypress input[type="submit"],
+#buddypress input[type="button"],
+#buddypress input[type="reset"],
+#buddypress ul.button-nav li a,
+#buddypress div.generic-button a,
+#buddypress .comment-reply-link,
+a.bp-title-button {
+	height: 40px;
+	padding: 0 20px;
+	text-transform: uppercase;
+	background: #f45245;
+	border: 0;
+	color: #fff;
+}
+#buddypress button:hover,
+#buddypress a.button:hover,
+#buddypress input[type="submit"]:hover,
+#buddypress input[type="button"]:hover,
+#buddypress input[type="reset"]:hover,
+#buddypress ul.button-nav li a:hover,
+#buddypress div.generic-button a:hover,
+#buddypress .comment-reply-link:hover,
+a.bp-title-button:hover,
+#buddypress div.activity-comments form div.ac-reply-content a:hover {
+	background: #3d3d3d;
+	border: 0;
+	color: #fff;
+}
+#buddypress form#whats-new-form textarea {
+	height: 60px !important;
+	width: 100%;
+	font-size: 13px;
+}
+#buddypress #whats-new:focus {
+	border-color: #f45245 !important;
+}
+#buddypress #whats-new-options {
+	height: auto !important;
+	overflow: hidden;
+}
+#buddypress #whats-new-avatar a {
+	border: 1px solid #d7d7d7;
+	padding: 4px;
+	display: block;
+}
+#buddypress div#message p {
+	border: 0;
+	font-size: 13px;
+	padding: 15px;
+}
+#buddypress div#message.error p {
+	background: #f7968f;
+	color: #b1524b;
+	border: 0;
+}
+#buddypress div#message.info p {
+	background: #dfbf8e;
+	color: #8a714b;
+}
+#buddypress div#subnav.item-list-tabs ul li#activity-filter-select,
+#buddypress div#subnav.item-list-tabs ul li#members-order-select {
+	position: relative;
+}
+#buddypress div#subnav.item-list-tabs ul li#activity-filter-select:before,
+#buddypress div#subnav.item-list-tabs ul li#members-order-select:before {
+	background: #a3a3a3;
+	content: "";
+	display: block;
+	height: 38px;
+	pointer-events: none;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 38px;
+}
+#buddypress div#subnav.item-list-tabs ul li#activity-filter-select:after,
+#buddypress div#subnav.item-list-tabs ul li#members-order-select:after {
+	content: "\f347";
+	font-family: dashicons;
+	position: absolute;
+	right: 12px;
+	top: 9px;
+	color: #fff;
+}
+#buddypress div#subnav.item-list-tabs ul li#activity-filter-select select,
+#buddypress div#subnav.item-list-tabs ul li#members-order-select select {
+	height: 38px;
+	padding: 0 44px 0 10px;
+	background: #ededed;
+	color: #a3a3a3;
+	border: 0;
+	outline: none;
+	display: inline-block;
+	cursor: pointer;
+	font-size: 12px;
+	border-radius: 0;
+	text-transform: uppercase;
+	-webkit-appearance: none;
+	-moz-appearance:    none;
+	appearance:         none;
+}
+#buddypress div#subnav.item-list-tabs {
+	margin-bottom: 50px;
+}
+#buddypress #activity-stream .activity-header p,
+#buddypress .activity-list .activity-content .activity-inner,
+#buddypress div.pagination .pag-count {
+	margin: 0;
+}
+#buddypress ul.item-list li img.avatar {
+	border: 1px solid #eaeaea;
+	padding: 4px;
+}
+#buddypress div.activity-meta a {
+	background: #c8c8c8;
+	font-size: 12px;
+	text-transform: none;
+	height: auto;
+	line-height: 20px;
+	font-weight: 400;
+}
+#buddypress div.activity-meta a:focus {
+	border: 0;
+	color: #fff;
+	background: #c8c8c8;
+}
+#buddypress div.activity-meta a:hover {
+	background: #f45245;
+}
+#buddypress div.activity-comments form .ac-textarea {
+	border: 1px solid #e8e8e8;
+}
+#buddypress div.activity-comments form div.ac-reply-content a {
+	display: inline-block;
+	height: 40px;
+	line-height: 42px;
+	text-transform: uppercase;
+	background: #c8c8c8;
+	color: #fff;
+	padding: 0 20px;
+}
+#buddypress div.activity-comments ul {
+	padding: 0;
+	margin-top: 10px;
+}
+.woocommerce #respond input#submit.loading::after,
+.woocommerce a.button.loading::after,
+.woocommerce button.button.loading::after,
+.woocommerce input.button.loading::after {
+	left: 50%;
+	right: auto;
+	margin-left: -5px;
+	top: 4px;
+	color: #000;
+}
+#buddypress div.item-list-tabs {
+	padding: 20px;
+	border: 1px solid #eeeeee;
+}
+#buddypress div.item-list-tabs ul li#activity-all a,
+#buddypress div.item-list-tabs ul li#activity-favorites a {
+	position: relative;
+}
+#buddypress div.item-list-tabs ul li#activity-all a span,
+#buddypress div.item-list-tabs ul li#activity-favorites a span {
+	height: 20px;
+	line-height: 18px;
+	padding: 0;
+	position: absolute;
+	right: -7px;
+	top: -10px;
+	width: 20px;
+	background: #f45245;
+	color: #fff;
+	border: 0;
+}
+#buddypress div.item-list-tabs ul li#activity-mentions,
+#buddypress div.item-list-tabs ul li#activity-favorites {
+	 margin-left: 15px;
+}
+#buddypress div#subnav.item-list-tabs ul li.feed {
+	background: url('../img/icons/rss.jpg') no-repeat 0 0;
+	width: 40px;
+	height: 40px;
+}
+#buddypress div#subnav.item-list-tabs ul li.feed a {
+	text-indent: -999em;
+	display: block;
+}
+#buddypress #item-header-avatar {
+	width: 20%;
+	float: left;
+}
+#buddypress #item-header-content {
+	width: 80%;
+}
+#buddypress div.dir-search {
+	margin: 0 0 40px;
+}
+#buddypress #search-members-form input {
+	float: left;
+}
+#buddypress #search-members-form input#members_search {
+	height: 40px;
+	padding: 0 10px;
+	border-right: 0;
+	border-color: #eee;
+}
+#buddypress #settings-form {
+	padding: 20px;
+	background: #f8f8f8;
+}
+#buddypress #settings-form input {
+	background: #fff;
+	width: 100%;
+}
+#buddypress .standard-form label[for="pass1"] {
+	margin-top: 30px;
+}
+#buddypress #settings-form input[type="submit"] {
+	background: #f45245;
+	color: #fff;
+	width: auto;
+	margin: 0;
+}
+#buddypress #settings-form input[type="submit"]:hover {
+	background: #d02f22;
+}
+#buddypress .standard-form div.submit {
+	text-align: right;
+}
+#buddypress table.notification-settings {
+	background: #fff;
+}
+#buddypress table.notification-settings thead {
+	background: #eee;
+}
+#buddypress table.notification-settings td,
+#buddypress table.notification-settings th {
+	padding: 10px;
+}
+#buddypress ul.item-list li div.item-title span {
+	font-size: 12px;
+}
+.bdp-sidebar {
+	float: left;
+	width: 290px;
+	margin-left: 30px;
+}
+.widget.buddypress input {
+	width: 100%;
+}
+.widget.buddypress #bp-login-widget-form #bp-login-widget-submit {
+	line-height: 0;
+	text-transform: uppercase;
+	border: 0;
+}
+.widget.buddypress #bp-login-widget-form .forgetmenot {
+	margin: 12px 0;
+}
+.widget.buddypress #bp-login-widget-form #bp-login-widget-rememberme {
+	width: auto;
+}

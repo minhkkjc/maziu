@@ -1362,6 +1362,20 @@ $metaboxes = array(
                 'description' => ''
             )
         )
+    ),
+    'link_b' => array(
+        'title' => __('B', 'maziu'),
+        'applicableto' => array('post', 'page'),
+        'location' => 'normal',
+        'display_condition' => 'post-format-audio',
+        'priority' => 'low',
+        'fields' => array(
+            'b_url' => array(
+                'title' => __('URL', 'maziu'),
+                'type' => 'text',
+                'description' => ''
+            )
+        )
     )
 );
 
@@ -1512,4 +1526,12 @@ function get_likes() {
     global $post;
     $likes = get_post_meta($post->ID, '_like-counter', true);
     return $likes;
+}
+
+function get_soundcloud($postid) {
+    $url = get_post_meta($postid, 'a_url', true);
+    $sco = json_decode(file_get_contents('https://api.soundcloud.com/resolve.json?url=' . urlencode($url) . '&client_id=cf7b086fe7172e25225bcb5ba431eb71'));
+
+    $sc = '<iframe scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=' . urlencode($sco->uri) . '&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>';
+    return $sc;
 }

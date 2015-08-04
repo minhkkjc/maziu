@@ -28,6 +28,10 @@
 				</div><!-- #page-copyright -->
 			</div><!-- #bottom-menu -->
         </footer><!-- #page-footer -->
+
+        <div id="loader-wrap">
+            <div id="loader-img"></div>
+        </div><!-- #loader-wrap -->
     </div>
 
     <?php wp_footer(); ?>

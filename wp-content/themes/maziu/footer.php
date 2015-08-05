@@ -29,10 +29,11 @@
 			</div><!-- #bottom-menu -->
         </footer><!-- #page-footer -->
 
-        <div id="loader-wrap">
-            <div id="loader-img"></div>
-        </div><!-- #loader-wrap -->
     </div>
+	
+	<div id="loader-wrap" class="ease-transition">
+		<div id="loader-img"></div>
+	</div><!-- #loader-wrap -->
 
     <?php wp_footer(); ?>
 

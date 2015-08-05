@@ -75,8 +75,7 @@ function maziu_font_url() {
 function maziu_font_title_url()
 {
     $query_args = array(
-        'family' => urlencode('Droid Serif:regular,italic'),
-        'subset' => urlencode('latin'),
+        'family' => urlencode('Playfair Display:regular,italic'),
     );
 
     $font_url = add_query_arg($query_args, '//fonts.googleapis.com/css');

@@ -25,7 +25,7 @@
 
     <div class="post-content">
         <div class="post-categories"><?php the_category(''); ?></div>
-        <h3><?php the_title(); ?></h3>
+        <h3><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h3>
         <div class="post-excerpt"><?php the_excerpt(); ?></div>
         <div class="post-read-more">
             <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="main-bg-hover main-border main-color ease-transition"><?php echo __('Continue reading'); ?></a>

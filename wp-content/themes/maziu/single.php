@@ -1,8 +1,11 @@
 <?php
 
 get_header();
-
 ?>
+
+    <div id="no-content-wrap">
+
+    </div><!-- #no-content-wrap -->
 
     <div id="main-content-wrap">
         <div id="main-content" class="content">
@@ -25,3 +28,11 @@ get_header();
             </div><!-- #main-content-inner -->
         </div><!-- #main-content -->
     </div><!-- #main-content-wrap -->
+	
+	<div id="main-socials-wrap">
+		<div id="main-socials" class="content">
+			<?php echo do_shortcode('[socials class="main-bg-hover main-color" position="center"]'); ?>
+		</div><!-- #main-socials -->
+	</div><!-- #main-socials-wrap -->
+
+<?php get_footer(); ?>

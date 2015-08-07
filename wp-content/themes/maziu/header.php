@@ -10,6 +10,11 @@
     </head>
 
     <body <?php body_class(); ?>>
+
+        <div id="loader-wrap" class="ease-transition">
+            <img id="loader-img" src="<?php echo get_template_directory_uri(); ?>/images/loading.GIF" />
+        </div><!-- #loader-wrap -->
+
         <div id="page-wrap">
 
             <header id="page-header">

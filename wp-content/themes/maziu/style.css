@@ -673,9 +673,9 @@ ins {
 /* Main menu */
 #main-menu-wrap {
 	border-top: 1px solid #efefef;
-	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
-	-webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
-	-moz-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+	box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.05);
+	-webkit-box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.05);
+	-moz-box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.05);
     position: relative;
     z-index: 9999;
 }
@@ -929,6 +929,10 @@ ins {
 	padding-bottom: 100px;
 }
 
+.single #main-content {
+    margin-top: 60px;
+}
+
 #primary {
 	width: 825px;
 	float: left;
@@ -938,6 +942,11 @@ ins {
 	width: 255px;
 	margin-left: 30px;
 	float: left;
+}
+
+#no-content-wrap {
+    height: 140px;
+    background: #f8f8f8;
 }
 
 .post {
@@ -992,6 +1001,10 @@ ins {
 
 .post-content {
 	margin-top: 50px;
+}
+
+.single .post-content {
+    margin-top: 0;
 }
 
 .post-content .post-categories {
@@ -1575,7 +1588,11 @@ ul.socials li:last-child {
 	font-size: 13px;
 }
 
-#loader-wrap {
+.no-js #loader-wrap {
+    display: block;
+}
+
+.js #loader-wrap {
 	background: #fff;
 	position: fixed;
 	width: 100%;
@@ -1594,7 +1611,6 @@ ul.socials li:last-child {
 	display: block;
 	width: 80px;
 	height: 80px;
-	background: url('images/loading.GIF') no-repeat;
 	position: absolute;
 	top: 50%;
 	left: 50%;

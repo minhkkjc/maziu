@@ -92,6 +92,7 @@ function maziu_scripts_styles() {
     wp_enqueue_script('maziu-script', get_template_directory_uri() . '/js/script.js', array('jquery'), null, true);
     wp_enqueue_script('bx-slider-script', get_template_directory_uri() . '/js/bxslider/jquery.bxslider.min.js', array('jquery'), null);
     wp_enqueue_script('bootstrap', get_template_directory_uri() . '/bootstrap/js/bootstrap.min.js', array('jquery'));
+    wp_enqueue_script('modernizr', get_template_directory_uri() . '/js/modernizr.js', array('jquery'));
 
 	wp_enqueue_style('font-awesome', get_template_directory_uri() . '/fonts/fontawesome/css/font-awesome.min.css', array(), null);
     wp_enqueue_style('bootstrap', get_template_directory_uri() . '/bootstrap/css/bootstrap.min.css');
@@ -186,7 +187,7 @@ function maziu_slideshow()
                 <div class="slider-box">
                     <div class="sb-main">
                         <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="slider-image">
-                            <?php if (has_post_thumbnail()) the_post_thumbnail('module-size'); ?>
+                            <?php if (has_post_thumbnail()) the_post_thumbnail(); ?>
                         </a>
                         <div class="sb-main-info">
                             <?php

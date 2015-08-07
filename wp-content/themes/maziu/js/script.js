@@ -35,7 +35,7 @@ jQuery(function($) {
     });
 
     $(window).load(function() {
-		$('#page-wrap').animate({'opacity' : 1}, 400);
+		$('#page-wrap').animate({'opacity' : 1}, 600);
 		$('#loader-wrap').addClass('hide');
     });
 	

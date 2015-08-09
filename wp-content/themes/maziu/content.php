@@ -67,7 +67,10 @@
                 </ul>
             </div><!-- .post-entry -->
             <div class="post-content-detail"><?php the_content(); ?></div>
-            <div class="post-socials"><?php echo do_shortcode('[post_socials]'); ?></div>
+			<div class="post-content-footer clearfix">
+				<div class="post-tags"><?php the_tags(__("Tags: ", "maziu"), ", "); ?></div>
+				<div class="post-socials"><?php echo do_shortcode('[post_socials]'); ?></div>
+			</div>
         </div><!-- .post-content -->
 
     <?php endif; ?>

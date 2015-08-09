@@ -105,3 +105,30 @@ msgstr
 
 msgid "Audio"
 msgstr
+
+msgid "Tags: "
+msgstr
+
+msgid "Extra profile information"
+msgstr
+
+msgid "Facebook"
+msgstr
+
+msgid "Google+"
+msgstr
+
+msgid "Twitter"
+msgstr
+
+msgid "Avatar"
+msgstr
+
+msgid "You might also like"
+msgstr
+
+msgctxt "comments title"
+msgid "%1$s comment"
+msgid_plural "%1$s comments"
+msgstr[0] ""
+msgstr[1] ""

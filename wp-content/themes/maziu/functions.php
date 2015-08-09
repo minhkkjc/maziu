@@ -1499,6 +1499,72 @@ function display_metaboxes() {
     <?php
 }
 
+/* Add social fields to user form */
+add_action('show_user_profile', 'add_social_fields');
+add_action('edit_user_profile', 'add_social_fields');
+function add_social_fields($user) {
+?>
+	<h3><?php _e('Extra profile information', 'maziu'); ?></h3>
+	<table class="form-table">
+		<tr>
+			<th>
+				<label for="avatar"><?php _e('Avatar', 'maziu'); ?></label>
+			</th>
+			<td>
+				<?php if (!empty(get_the_author_meta('avatar', $user->ID))) : ?>
+				<div class="user-avatar-img">
+					<img src="<?php echo get_site_url(); ?>/wp-content/uploads/avatars/<?php echo get_the_author_meta('avatar', $user->ID); ?>" />
+				</div>
+				<?php endif; ?>
+				<input type="file" name="avatar" id="avatar" /><br />
+			</td>
+		</tr>
+		<tr>
+			<th>
+				<label for="facebook"><?php _e('Facebook', 'maziu'); ?></label>
+			</th>
+			<td>
+				<input type="text" name="facebook" id="facebook" class="regular-text" 
+					value="<?php echo esc_attr(get_the_author_meta('facebook', $user->ID)); ?>" /><br />
+			</td>
+		</tr>
+		<tr>
+			<th>
+				<label for="google"><?php _e('Google+', 'maziu'); ?></label>
+			</th>
+			<td>
+				<input type="text" name="google" id="google" class="regular-text" 
+					value="<?php echo esc_attr(get_the_author_meta('google', $user->ID)); ?>" /><br />
+			</td>
+		</tr>
+		<tr>
+			<th>
+				<label for="twitter"><?php _e('Twitter', 'maziu'); ?></label>
+			</th>
+			<td>
+				<input type="text" name="twitter" id="twitter" class="regular-text" 
+					value="<?php echo esc_attr(get_the_author_meta('twitter', $user->ID)); ?>" /><br />
+			</td>
+		</tr>
+	</table>
+<?php
+}
+
+add_action('personal_options_update', 'save_social_fields');
+add_action('edit_user_profile_update', 'save_social_fields');
+function save_social_fields($uid) {
+	$saved = false;
+	if (current_user_can('edit_user', $uid)) {
+		update_user_meta($uid, 'facebook', $_POST['facebook']);
+		update_user_meta($uid, 'google', $_POST['google']);
+		update_user_meta($uid, 'twitter', $_POST['twitter']);
+	
+		$saved = true;
+	}
+	
+	return $saved;
+}
+
 /* Functions */
 
 /*
@@ -1534,4 +1600,9 @@ function get_soundcloud($postid) {
 
     $sc = '<iframe scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=' . urlencode($sco->uri) . '&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>';
     return $sc;
+}
+
+function maziu_comments($comment, $args, $depth) {
+	$GLOBALS['comment'] = $comment;
+	echo 123;
 }

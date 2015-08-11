@@ -95,7 +95,10 @@ get_header();
 										<a href="<?php the_permalink(); ?>" title="<?php the_title() ?>"><?php the_title(); ?></a>
 									</h3>
 								</li>
-								<?php endwhile; ?>
+								<?php 
+									endwhile;
+									wp_reset_postdata();
+								?>
 							</ul>
 							<?php 
 								endif;

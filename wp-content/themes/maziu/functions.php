@@ -1616,8 +1616,20 @@ function custom_comment_list($comment, $args, $depth) {
             </li>
     <?php break;
         default: ?>
-            <li>
-
+            <li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
+				<div class="clearfix">
+					<div class="comment-avatar">
+						<?php echo get_avatar($comment, 100); ?>
+					</div>
+					<div class="comment-info">
+						<p class="comment-author"><?php comment_author(); ?></p>
+						<p class="comment-date">
+							<i class="fa fa-clock-o"></i>
+							<?php comment_date(); ?>
+						</p>
+						<p class="comment-content"><?php comment_text(); ?></p>
+					</div>
+				</div>
             </li>
         <?php
     endswitch;

@@ -806,7 +806,7 @@ ins {
 
 .sb-main-info h3 a {
     color: #fff;
-    font-size: 16px;
+    font-size: 18px;
     text-transform: uppercase;
     text-decoration: none;
 }
@@ -929,10 +929,6 @@ ins {
 	padding-bottom: 100px;
 }
 
-.single #main-content {
-    margin-top: 60px;
-}
-
 #primary {
 	width: 825px;
 	float: left;
@@ -1003,10 +999,6 @@ ins {
 	margin-top: 50px;
 }
 
-.single .post-content {
-    margin-top: 0;
-}
-
 .post-content .post-categories {
 	text-align: center;
 }
@@ -1043,7 +1035,7 @@ ins {
 }
 
 .post-content h3 {
-	font-size: 24px;
+	font-size: 26px;
 	text-align: center;
 	text-transform: capitalize;
 	line-height: 1;
@@ -1586,6 +1578,52 @@ ul.socials li:last-child {
 #page-copyright p a {
 	color: #1aadcc;
 	font-size: 13px;
+}
+
+/* Single */
+
+.single #main-content {
+    margin-top: 60px;
+}
+
+.single .post-content {
+    margin-top: 0;
+}
+
+.single .post-content h3 {
+	font-size: 30px;
+}
+
+.single .post-content h3 {
+	margin: 10px 0 47px 0;
+}
+
+.single .post-entry {
+	margin-bottom: 45px;
+}
+
+.single .post-content-detail p {
+	margin-bottom: 20px;
+}
+
+.single .post-content-detail {
+	margin-bottom: 54px;
+}
+
+.single .post-tags {
+	float: left;
+	font-size: 12px;
+	text-transform: uppercase;
+}
+
+.single .post-tags a {
+	font-size: 12px;
+	text-transform: uppercase;
+}
+
+.single .post-socials {
+	float: right;
+	margin: 0;
 }
 
 /*

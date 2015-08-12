@@ -68,7 +68,19 @@
             </div><!-- .post-entry -->
             <div class="post-content-detail"><?php the_content(); ?></div>
 			<div class="post-content-footer clearfix">
-				<div class="post-tags"><?php the_tags(__("Tags: ", "maziu"), ", "); ?></div>
+				<div class="post-tags">
+					Tags: 
+					<?php 
+						$tags = get_the_tags();
+						$tag_arr = array();
+						foreach ($tags as $tag) {
+							$tag_link = get_tag_link($tag->term_id);
+							$tag_arr[] = "<a href='" . $tag_link . "' class='main-color'>" . $tag->name . "</a>";
+						}
+						
+						echo implode("<span class='main-color'>, </span>", $tag_arr);
+					?>
+				</div>
 				<div class="post-socials"><?php echo do_shortcode('[post_socials]'); ?></div>
 			</div>
         </div><!-- .post-content -->

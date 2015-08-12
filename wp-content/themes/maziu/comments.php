@@ -17,6 +17,7 @@ if ( post_password_required() )
 			<?php
 				wp_list_comments( array(
 					'style'       => 'ul',
+                    'callback'    => 'custom_comment_list'
 				) );
 			?>
 		</ul><!-- .comment-list -->

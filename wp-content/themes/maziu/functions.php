@@ -1602,7 +1602,23 @@ function get_soundcloud($postid) {
     return $sc;
 }
 
-function maziu_comments($comment, $args, $depth) {
+
+/*
+ * Custom comment list
+ */
+function custom_comment_list($comment, $args, $depth) {
 	$GLOBALS['comment'] = $comment;
-	echo 123;
+	switch($comment->comment_type) :
+        case 'pingback':
+        case 'trackback': ?>
+            <li <?php comment_class(); ?> id="comment<?php comment_ID(); ?>">
+                <div class="back-link"><?php comment_author_link(); ?></div>
+            </li>
+    <?php break;
+        default: ?>
+            <li>
+
+            </li>
+        <?php
+    endswitch;
 }

@@ -6,12 +6,13 @@ if ( post_password_required() )
 <div id="post-comments">
 
 	<?php //if (have_comments()) : ?>
-		<h3 class="comments-title">
+		<p class="comments-title">
+			<i class="fa fa-comments-o"></i>
 			<?php
 				printf(_nx('%1s comment', '%1$s comments', get_comments_number(), 'comments title', 'maziu'),
 					number_format_i18n(get_comments_number()));
 			?>
-		</h3>
+		</p>
 
 		<ul class="comment-list">
 			<?php

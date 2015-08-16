@@ -27,17 +27,17 @@ get_header();
 								<div class="pa-social">
 									<ul class="clearfix">
 										<li>
-											<a href="<?php echo get_the_author_meta('facebook') ? get_the_author_meta('facebook') : '#'; ?>">
+											<a href="<?php echo get_the_author_meta('facebook') ? get_the_author_meta('facebook') : '#'; ?>" class="main-color">
 												<i class="fa fa-facebook"></i>
 											</a>
 										</li>
 										<li>
-											<a href="<?php echo get_the_author_meta('twitter') ? get_the_author_meta('twitter') : '#'; ?>">
+											<a href="<?php echo get_the_author_meta('twitter') ? get_the_author_meta('twitter') : '#'; ?>" class="main-color">
 												<i class="fa fa-twitter"></i>
 											</a>
 										</li>
 										<li>
-											<a href="<?php echo get_the_author_meta('google') ? get_the_author_meta('google') : '#'; ?>">
+											<a href="<?php echo get_the_author_meta('google') ? get_the_author_meta('google') : '#'; ?>" class="main-color">
 												<i class="fa fa-google-plus"></i>
 											</a>
 										</li>
@@ -45,7 +45,7 @@ get_header();
 								</div>
 							</div>
 							<div class="pa-right">
-								<h3 class="pa-name">
+								<p class="pa-name">
 									<a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>" title="<?php the_author(); ?>">
 										<?php
 											if (!empty(get_the_author_meta('first_name')) && !empty(get_the_author_meta('last_name'))) {
@@ -56,13 +56,13 @@ get_header();
 											}
 										?>
 									</a>
-								</h3>
+								</p>
 								<div class="pa-bio"><?php echo get_the_author_meta('description'); ?></div>
 							</div>
 						</div><!-- .post-author -->
 						
 						<div class="post-related">
-							<h4><?php _e('You might also like', 'maziu'); ?></h4>
+							<p class="pr-title"><?php _e('You might also like', 'maziu'); ?></p>
 							<?php 
 								$categories = get_the_category($post->ID);
 								$category_ids = array();
@@ -82,7 +82,7 @@ get_header();
 								
 								if ($query->have_posts()) :
 							?>
-							<ul class="post-related-list">
+							<ul class="post-related-list clearfix">
 								<?php 
 									while ($query->have_posts()) :
 										$query->the_post();

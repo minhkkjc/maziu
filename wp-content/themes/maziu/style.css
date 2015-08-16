@@ -1626,6 +1626,180 @@ ul.socials li:last-child {
 	margin: 0;
 }
 
+.single .post {
+	padding-bottom: 25px;
+}
+
+.pa-left {
+	width: 95px;
+	float: left;
+	margin-right: 30px;
+}
+
+.pa-right {
+	width: 700px;
+	float: left;
+}
+
+.pa-avatar img {
+	width: 100%;
+	display: block;
+}
+
+.pa-social {
+	margin-top: 10px;
+	text-align: center;
+}
+
+.pa-social ul {
+	margin: 0;
+	padding: 0;
+	display: inline-block;
+}
+
+.pa-social li {
+	float: left;
+	list-style-type: none;
+	float: left;
+	margin: 0 8px;
+}
+
+.pa-name {
+	margin: 0 0 10px 0;
+	line-height: 1;
+}
+
+.pa-name a {
+	color: #2f2f2f!important;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.post-author {
+	margin-bottom: 65px;
+}
+
+.post-related {
+	border: 1px solid #efefef;
+}
+
+.pr-title {
+	height: 70px;
+	line-height: 70px;
+	border-bottom: 1px solid #efefef;
+	color: #d4a38d;
+	text-transform: uppercase;
+	text-align: center;
+	margin: 0;
+}
+
+.post-related-list {
+	margin: 0;
+	padding: 30px 30px 45px 30px;
+}
+
+.post-related-list li {
+	width: 234.3333px;
+	float: left;
+	margin-right: 30px;
+	list-style-type: none;
+}
+
+.post-related-list li:last-child {
+	margin-right: 0;
+}
+
+.post-related-list li a, .post-related-list li a img {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+.item-related h3 {
+	margin: 15px 0 0 0;
+	text-align: center;
+}
+
+.item-related h3 a {
+	font-size: 18px;
+	color: #2f2f2f;
+	text-transform: capitalize;
+}
+
+#post-comments {
+	margin-top: 50px;
+	border: 1px solid #efefef;
+}
+
+.comments-title {
+	height: 70px;
+	line-height: 70px;
+	border-bottom: 1px solid #efefef;
+	color: #d4a38d;
+	text-transform: uppercase;
+	text-align: center;
+	margin: 0;
+}
+
+.comments-title i {
+	margin-right: 5px;
+}
+
+.comment-list {
+	margin: 0;
+	padding: 50px 30px 45px 30px;
+	border-bottom: 1px solid #efefef;
+}
+
+.comment-list li {
+	list-style-type: none;
+	margin-bottom: 45px;
+}
+
+.comment-list li:last-child {
+	margin-bottom: 0;
+}
+
+.comment-avatar {
+	width: 80px;
+	height: 80px;
+	overflow: hidden;
+	float: left;
+	margin-right: 30px;
+}
+
+.comment-avatar img {
+	width: 100%;
+	height: auto;
+	border-radius: 100%;
+}
+
+.comment-info {
+	float: left;
+	width: 653px;
+}
+
+.comment-author {
+	color: #2f2f2f;
+	text-transform: uppercase;
+	margin-bottom: 8px;
+	font-weight: bold;
+}
+
+.comment-date {
+	color: #8f8f8f;
+	margin-bottom: 8px;
+}
+
+.comment-date i {
+	color: #d4a38d;
+	margin-right: 5px;
+}
+
+.comment-content p {
+	margin: 0;
+}
+
 /*
 .no-js #loader-wrap {
     display: block;

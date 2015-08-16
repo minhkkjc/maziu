@@ -1627,7 +1627,7 @@ function custom_comment_list($comment, $args, $depth) {
 							<i class="fa fa-clock-o"></i>
 							<?php comment_date(); ?>
 						</p>
-						<p class="comment-content"><?php comment_text(); ?></p>
+						<div class="comment-content"><?php comment_text(); ?></div>
 					</div>
 				</div>
             </li>

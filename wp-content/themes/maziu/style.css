@@ -453,7 +453,7 @@ ins {
 	background: #d4a38d!important;
 }
 
-.main-color, .main-color-hover:hover {
+.main-color, .main-color-hover:hover , .main-color-child > *{
 	color: #d4a38d!important;
 }
 
@@ -1777,6 +1777,7 @@ ul.socials li:last-child {
 .comment-info {
 	float: left;
 	width: 653px;
+	position: relative;
 }
 
 .comment-author {
@@ -1798,6 +1799,26 @@ ul.socials li:last-child {
 
 .comment-content p {
 	margin: 0;
+}
+
+.comment-reply {
+	position: absolute;
+	right: 0;
+	top: 12px;
+}
+
+.comment-reply i {
+	margin-right: 8px;
+}
+
+.comment-reply a {
+	font-size: 12px;
+	text-transform: uppercase;
+	text-decoration: none!important;
+}
+
+.comment-respond #reply-title {
+	text-align: center;
 }
 
 /*

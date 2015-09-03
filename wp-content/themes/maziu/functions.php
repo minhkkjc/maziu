@@ -1628,6 +1628,16 @@ function custom_comment_list($comment, $args, $depth) {
 							<?php comment_date(); ?>
 						</p>
 						<div class="comment-content"><?php comment_text(); ?></div>
+						<div class="comment-reply main-color-child">
+						<?php 
+							comment_reply_link(array_merge($args, array( 
+								'reply_text' => __('Reply', 'maziu'),
+								'before' => '<i class="fa fa-reply"></i>', 
+								'depth' => $depth,
+								'max_depth' => $args['max_depth'] 
+								)));
+						?>
+						</div>
 					</div>
 				</div>
             </li>

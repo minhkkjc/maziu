@@ -132,3 +132,27 @@ msgid "%1$s comment"
 msgid_plural "%1$s comments"
 msgstr[0] ""
 msgstr[1] ""
+
+msgid "Reply"
+msgstr
+
+msgid "Leave a Comment"
+msgstr
+
+msgid "Leave a Comment to %s"
+msgstr
+
+msgid "Submit Comment"
+msgstr
+
+msgid "Name"
+msgstr
+
+msgid "Email"
+msgstr
+
+msgid "Website"
+msgstr
+
+msgid "Your email address will not be published",
+msgstr

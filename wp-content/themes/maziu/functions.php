@@ -59,7 +59,7 @@ function maziu_font_url() {
     );
 	
     $font_style = "
-        body {
+        body, .main-font {
             font-family: '" . $font . "', Arial, sans-serif;
         }
     ";
@@ -153,6 +153,19 @@ function maziu_admin_scripts($hook) {
     wp_enqueue_script('maziu_admin_script', get_template_directory_uri() . '/js/admin.js');
 }
 add_action('admin_enqueue_scripts', 'maziu_admin_scripts');
+
+/*
+ * Custom excerpt
+ */
+function maziu_excerpt_length($length) {
+	return 25;
+}
+add_filter('excerpt_length', 'maziu_excerpt_length', 999);
+
+function maziu_excerpt_more($more) {
+	return ' ...';
+}
+add_filter('excerpt_more', 'maziu_excerpt_more');
 
 /*
  * Slideshow
@@ -284,12 +297,13 @@ add_shortcode('socials', 'socials_shortcode');
 function post_socials_shortcode($atts)
 {
 	$a = shortcode_atts(array(
-		'class' => 'main-color'
+		'class' => 'main-color',
+		'class_ul' => '',
 	), $atts);
 	
 	ob_start();
 	?>
-	<ul class="post_socials clearfix">
+	<ul class="post-socials-list clearfix <?php echo $a['class_ul']; ?>">
 		<li>
 			<a href="#" class="<?php echo $a['class']; ?> ease-transition"><i class="fa fa-facebook"></i></a>
 		</li>

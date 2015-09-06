@@ -2,9 +2,9 @@ jQuery(function($) {
 
     $(document).on('click', '.tf-toggle', function() {
         var t = $(this);
-        var $show = t.attr('data-show');
+        var show = t.attr('data-show');
 
-        if ($show == 'true')
+        if (show == 'true')
         {
             t.attr('data-show', 'false');
             t.parent().addClass('tf-close');
@@ -38,5 +38,40 @@ jQuery(function($) {
 		$('#page-wrap').animate({'opacity' : 1}, 400);
 		$('#loader-wrap').addClass('hide');
     });
+	
+	// Socials toggle
+	$(document).on('click', '.socials-btn', function() {
+		var toggle = $(this).data('toggle');
+		var list = $(this).parent().find('ul.post-socials-list');
+		var count = list.find('li').size();
+		
+		if (toggle == 0) {
+			$(this).data('toggle', 1);
+			$(this).addClass('main-border main-color');
+			
+			var i = 0;
+			var displaySocials = setInterval(function() {
+				list.find('li').eq(i).find('a').removeClass('transparent');
+				i++;
+				
+				if (i == count) {
+					clearInterval(displaySocials);
+				}
+			}, 100); 
+		} else {
+			$(this).data('toggle', 0);
+			$(this).removeClass('main-border main-color');
+			
+			var i = count - 1;
+			var displaySocials = setInterval(function() {
+				list.find('li').eq(i).find('a').addClass('transparent');
+				i--;
+				
+				if (i == -1) {
+					clearInterval(displaySocials);
+				}
+			}, 100); 
+		}
+	});
 	
 });

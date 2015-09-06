@@ -22,22 +22,22 @@ get_header();
 						<div class="post-author clearfix">
 							<div class="pa-left">
 								<div class="pa-avatar">
-									<img src="<?php echo get_template_directory_uri(); ?>/images/avatar.png" alt="<?php the_author() ?>" />
+									<?php echo get_avatar(get_the_author_meta('ID'), 95); ?>
 								</div>
 								<div class="pa-social">
 									<ul class="clearfix">
 										<li>
-											<a href="<?php echo get_the_author_meta('facebook') ? get_the_author_meta('facebook') : '#'; ?>" class="main-color">
+											<a href="<?php echo get_the_author_meta('facebook') ? get_the_author_meta('facebook') : '#'; ?>" class="main-color ease-transition">
 												<i class="fa fa-facebook"></i>
 											</a>
 										</li>
 										<li>
-											<a href="<?php echo get_the_author_meta('twitter') ? get_the_author_meta('twitter') : '#'; ?>" class="main-color">
+											<a href="<?php echo get_the_author_meta('twitter') ? get_the_author_meta('twitter') : '#'; ?>" class="main-color ease-transition">
 												<i class="fa fa-twitter"></i>
 											</a>
 										</li>
 										<li>
-											<a href="<?php echo get_the_author_meta('google') ? get_the_author_meta('google') : '#'; ?>" class="main-color">
+											<a href="<?php echo get_the_author_meta('google') ? get_the_author_meta('google') : '#'; ?>" class="main-color ease-transition">
 												<i class="fa fa-google-plus"></i>
 											</a>
 										</li>

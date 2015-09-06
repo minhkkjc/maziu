@@ -1,6 +1,6 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-    <?php if (is_home()) : ?>
+    <?php if (is_home() || is_category()) : ?>
 
         <?php if (has_post_thumbnail()) : ?>
         <div class="post-thumbnail">
@@ -41,7 +41,7 @@
 
         <div class="post-content">
             <div class="post-categories"><?php the_category(''); ?></div>
-            <h3><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h3>
+            <h3><?php the_title(); ?></h3>
             <?php if (has_post_thumbnail()) : ?>
                 <div class="post-thumbnail">
                     <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">

@@ -156,3 +156,6 @@ msgstr
 
 msgid "Your email address will not be published",
 msgstr
+
+msgid "Category"
+msgstr

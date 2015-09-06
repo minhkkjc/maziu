@@ -1,15 +1,13 @@
 <?php
 
 get_header(); ?>
+
+	<div id="no-content-wrap" class="category-title-wrap">
+		<p><?php _e('Category', 'maziu'); ?></p>
+		<h2><?php single_cat_title( '', true ); ?></h2>
+    </div><!-- #no-content-wrap -->
 	
 	<div id="main-content-wrap">
-		<div id="slideshow-wrap">
-			<div class="content">
-				<div class="content-inner">
-					<?php maziu_slideshow(); ?>
-				</div>
-			</div>
-		</div><!-- #slideshow -->
 		
 		<div id="main-content" class="content">
 			<div id="main-content-inner" class="clearfix">
@@ -17,14 +15,31 @@ get_header(); ?>
 					<div id="content" class="site-content">
                     <?php
                         $paged = (get_query_var('paged')) ? absint(get_query_var('paged')) : 1;
-						$wp_query->set('posts_per_page', get_option('posts_per_page'));
+                        $wp_query->set('posts_per_page', get_option('posts_per_page'));
 						$wp_query->set('paged', $paged);
                     ?>
-					<?php if (have_posts()) : ?>
+					<?php 
+						if (have_posts()) : 
+							$i = 0;
+					?>
 
 						<?php while (have_posts()) : the_post(); ?>
-							<?php get_template_part('content', get_post_format()); ?>
-						<?php endwhile; ?>
+							<?php 
+								$i++;
+								if ($i == 1) {
+									get_template_part('content', get_post_format());
+								} else {
+									if ($i == 2) 
+										echo '<div class="category-list-wrap">';
+									
+									get_template_part('category-item');
+								}
+							?>
+						<?php 
+							endwhile;
+							if ($i > 1)
+								echo '</div>';
+						?>
 
 					<?php else : ?>
 						<?php get_template_part( 'content', 'none' ); ?>

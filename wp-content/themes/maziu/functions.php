@@ -1630,7 +1630,7 @@ function custom_comment_list($comment, $args, $depth) {
             </li>
     <?php break;
         default: ?>
-            <li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
+            <li <?php comment_class(); ?> id="comment-<?php echo comment_ID(); ?>">
 				<div class="clearfix">
 					<div class="comment-avatar">
 						<?php echo get_avatar($comment, 100); ?>
@@ -1641,6 +1641,12 @@ function custom_comment_list($comment, $args, $depth) {
 							<i class="fa fa-clock-o"></i>
 							<?php comment_date(); ?>
 						</p>
+						<?php
+							$status = wp_get_comment_status(get_comment_ID());
+							if ($status == 'unapproved') :
+						?>
+						<p class="comment-status"><?php _e('Comment awaiting approval', 'maziu'); ?></p>
+						<?php endif; ?>
 						<div class="comment-content"><?php comment_text(); ?></div>
 						<div class="comment-reply main-color-child">
 						<?php 

@@ -28,7 +28,7 @@ jQuery(function($) {
 	});
 
     // Gallery post slide
-    $('article > .gallery').bxSlider({
+    $('article > .gallery, .item-related > .gallery').bxSlider({
         pager: false,
         nextText: '<span class="main-border-hover main-color-hover ease-transition"><i class="fa fa-angle-right"></i></span>',
         prevText: '<span class="main-border-hover main-color-hover ease-transition"><i class="fa fa-angle-left"></i></span>'
@@ -72,6 +72,42 @@ jQuery(function($) {
 				}
 			}, 100); 
 		}
+	});
+	
+	// Ajax submit comments
+	$(window).load(function() {
+		var commentForm = $('#commentform');
+		
+		commentForm.submit(function() {
+			var author = commentForm.find('#author');
+			var email = commentForm.find('#email');
+			var comment = commentForm.find('#comment');
+			
+			if (author.hasClass('required')) {
+				if (author.val() == '') {
+					author.addClass('input-required');
+					return false;
+				}
+			}
+			
+			if (email.hasClass('required')) {
+				if (email.val() == '') {
+					email.addClass('input-required');
+					return false;
+				}
+			}
+			
+			if (comment.val() == '') {
+				comment.addClass('input-required');
+				return false;
+			}
+			
+			return true;
+		});
+		
+		commentForm.find('input[type="text"], textarea').focus(function() {
+			$(this).removeClass('input-required');
+		});
 	});
 	
 });

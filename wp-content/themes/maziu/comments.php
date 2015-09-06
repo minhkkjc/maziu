@@ -38,9 +38,11 @@ if ( post_password_required() )
 			'fields' => apply_filters('comment_form_default_fields', array(
 				'author' => (empty($uid) ? '<div class="comment-wrap clearfix"><div class="comment-left">' : '') . 
 							'<input id="author" name="author" type="text" value="' . esc_attr($commenter['comment_author']) . 
-							'" size="30"' . $aria_req . ' placeholder="' . __('Name', 'maziu') . ($req ? ' *' : '') . '" />',
+							'" size="30"' . $aria_req . ' placeholder="' . __('Name', 'maziu') . ($req ? ' *' : '') . '"' . 
+							' class="' . ($req ? 'required' : '') . '"' . '/>',
 				'email' => '<input id="email" name="email" type="text" value="' . esc_attr($commenter['comment_author_email']) . 
-							'" size="30"' . $aria_req . ' placeholder="' . __('Email', 'maziu') . ($req ? ' *' : '') . '" />',
+							'" size="30"' . $aria_req . ' placeholder="' . __('Email', 'maziu') . ($req ? ' *' : '') . '"' . 
+							' class="' . ($req ? 'required' : '') . '"' . '/>',
 				'url' => '<input id="url" name="url" type="text" value="' . esc_attr($commenter['comment_author_url']) . 
 							'" size="30"' . $aria_req . ' placeholder="' . __('Website', 'maziu') . '" />' .
 							(empty($uid) ? '</div>' : ''),
@@ -53,7 +55,10 @@ if ( post_password_required() )
 			__('Your email address will not be published', 'maziu') .
 			'</p>',
 			'comment_notes_after' => '',
-			'class_submit' => 'submit main-border main-color main-bg-hover ease-transition'
+			'class_submit' => 'submit main-border main-color main-bg-hover ease-transition',
+			'logged_in_as' => '<p class="logged-in-as">' . 
+							sprintf(__('Logged in as <a href="%1$s" class="underline">%2$s</a>. <a href="%3$s" title="Log out of this account" class="main-color">Log out?</a>'), admin_url('profile.php'), $user_identity, wp_logout_url(apply_filters('the_permalink', get_permalink()))) . 
+							'</p>',
 		);
 		comment_form($args);
 	?>

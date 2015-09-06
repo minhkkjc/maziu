@@ -159,3 +159,6 @@ msgstr
 
 msgid "Category"
 msgstr
+
+msgid "Comment awaiting approval"
+msgstr

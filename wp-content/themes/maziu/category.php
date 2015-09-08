@@ -32,7 +32,7 @@ get_header(); ?>
 									if ($i == 2) 
 										echo '<div class="category-list-wrap">';
 									
-									get_template_part('category-item');
+									get_template_part('category-item', get_post_format());
 								}
 							?>
 						<?php 

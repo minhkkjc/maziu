@@ -1377,20 +1377,6 @@ $metaboxes = array(
             )
         )
     ),
-    'link_b' => array(
-        'title' => __('B', 'maziu'),
-        'applicableto' => array('post', 'page'),
-        'location' => 'normal',
-        'display_condition' => 'post-format-audio',
-        'priority' => 'low',
-        'fields' => array(
-            'b_url' => array(
-                'title' => __('URL', 'maziu'),
-                'type' => 'text',
-                'description' => ''
-            )
-        )
-    )
 );
 
 add_action('admin_init', 'add_post_format_metabox');

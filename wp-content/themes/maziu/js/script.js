@@ -28,7 +28,7 @@ jQuery(function($) {
 	});
 
     // Gallery post slide
-    $('article > .gallery, .item-related > .gallery').bxSlider({
+    $('.post-thumbnail .gallery, article .gallery').bxSlider({
         pager: false,
         nextText: '<span class="main-border-hover main-color-hover ease-transition"><i class="fa fa-angle-right"></i></span>',
         prevText: '<span class="main-border-hover main-color-hover ease-transition"><i class="fa fa-angle-left"></i></span>'
@@ -86,6 +86,10 @@ jQuery(function($) {
 			if (author.hasClass('required')) {
 				if (author.val() == '') {
 					author.addClass('input-required');
+					
+					var comment_form = $('#respond').offset();
+					$('html, body').animate({'scrollTop' : comment_form.top - 20});
+					
 					return false;
 				}
 			}
@@ -93,12 +97,20 @@ jQuery(function($) {
 			if (email.hasClass('required')) {
 				if (email.val() == '') {
 					email.addClass('input-required');
+					
+					var comment_form = $('#respond').offset();
+					$('html, body').animate({'scrollTop' : comment_form.top - 20});
+					
 					return false;
 				}
 			}
 			
 			if (comment.val() == '') {
 				comment.addClass('input-required');
+				
+				var comment_form = $('#respond').offset();
+				$('html, body').animate({'scrollTop' : comment_form.top - 20});
+				
 				return false;
 			}
 			

@@ -22,7 +22,7 @@
                     <span><i class="fa fa-comments-o"></i><?php comments_number('0', '1', '%'); ?></span>
                 </li>
                 <li>
-                    <span><i class="fa fa-clock-o"></i><?php the_date(); ?></span>
+                    <span><i class="fa fa-clock-o"></i><?php echo get_the_date(); ?></span>
                 </li>
             </ul>
         </div><!-- .post-entry -->
@@ -62,23 +62,26 @@
                         <span><i class="fa fa-comments-o"></i><?php comments_number('0', '1', '%'); ?></span>
                     </li>
                     <li>
-                        <span><i class="fa fa-clock-o"></i><?php the_date(); ?></span>
+                        <span><i class="fa fa-clock-o"></i><?php echo get_the_date(); ?></span>
                     </li>
                 </ul>
             </div><!-- .post-entry -->
             <div class="post-content-detail"><?php the_content(); ?></div>
 			<div class="post-content-footer clearfix">
 				<div class="post-tags">
-					Tags: 
 					<?php 
 						$tags = get_the_tags();
 						$tag_arr = array();
-						foreach ($tags as $tag) {
-							$tag_link = get_tag_link($tag->term_id);
-							$tag_arr[] = "<a href='" . $tag_link . "' class='main-color'>" . $tag->name . "</a>";
-						}
 						
-						echo implode("<span class='main-color'>, </span>", $tag_arr);
+						if (!empty($tags)) :
+							echo 'Tags: ';
+							foreach ($tags as $tag) {
+								$tag_link = get_tag_link($tag->term_id);
+								$tag_arr[] = "<a href='" . $tag_link . "' class='main-color'>" . $tag->name . "</a>";
+							}
+							
+							echo implode("<span class='main-color'>, </span>", $tag_arr);
+						endif;
 					?>
 				</div>
 				<div class="post-socials"><?php echo do_shortcode('[post_socials]'); ?></div>

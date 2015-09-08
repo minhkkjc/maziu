@@ -15,7 +15,7 @@
 			<div class="post-entry">
 				<ul class="clearfix">
 					<li>
-						<span><i class="fa fa-clock-o"></i><?php the_date(); ?></span>
+						<span><i class="fa fa-clock-o"></i><?php echo get_the_date(); ?></span>
 					</li>
 					<li>
 						<span><i class="fa fa-heart-o"></i>5</span>

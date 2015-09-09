@@ -300,27 +300,37 @@ function post_socials_shortcode($atts)
 		'class' => 'main-color',
 		'class_ul' => '',
 	), $atts);
-	
+
+    $url = urlencode(get_the_permalink());
+    $facebook = 'https://www.facebook.com/sharer/sharer.php?u=' . $url;
+    $google = 'https://plus.google.com/share?url=' . $url;
+    $twitter = 'https://twitter.com/home?status=' . $url;
+
+    if (has_post_thumbnail()) {
+        $pinterest = 'https://pinterest.com/pin/create/button/?url=' . get_the_permalink() . '&media=' . urlencode(wp_get_attachment_url(get_post_thumbnail_id())) . '&description=' . get_the_title();
+    } else {
+        $pinterest = '#';
+    }
+
+    $linkedin = 'https://www.linkedin.com/shareArticle?url=' . $url . '&title=' . get_the_title();
+
 	ob_start();
 	?>
 	<ul class="post-socials-list clearfix <?php echo $a['class_ul']; ?>">
 		<li>
-			<a href="#" class="<?php echo $a['class']; ?> ease-transition"><i class="fa fa-facebook"></i></a>
+			<a href="<?php echo $facebook; ?>" class="<?php echo $a['class']; ?> ease-transition"><i class="fa fa-facebook"></i></a>
 		</li>
 		<li>
-			<a href="#" class="<?php echo $a['class']; ?> ease-transition"><i class="fa fa-twitter"></i></a>
+			<a href="<?php echo $twitter; ?>" class="<?php echo $a['class']; ?> ease-transition"><i class="fa fa-twitter"></i></a>
 		</li>
 		<li>
-			<a href="#" class="<?php echo $a['class']; ?> ease-transition"><i class="fa fa-google-plus"></i></a>
+			<a href="<?php echo $google; ?>" class="<?php echo $a['class']; ?> ease-transition"><i class="fa fa-google-plus"></i></a>
 		</li>
 		<li>
-			<a href="#" class="<?php echo $a['class']; ?> ease-transition"><i class="fa fa-dribbble"></i></a>
+			<a href="<?php echo $pinterest; ?>" class="<?php echo $a['class']; ?> ease-transition"><i class="fa fa-pinterest"></i></a>
 		</li>
 		<li>
-			<a href="#" class="<?php echo $a['class']; ?> ease-transition"><i class="fa fa-linkedin"></i></a>
-		</li>
-		<li>
-			<a href="#" class="<?php echo $a['class']; ?> ease-transition"><i class="fa fa-rss"></i></a>
+			<a href="<?php echo $linkedin; ?>" class="<?php echo $a['class']; ?> ease-transition"><i class="fa fa-linkedin"></i></a>
 		</li>
 	</ul>
 	<?php

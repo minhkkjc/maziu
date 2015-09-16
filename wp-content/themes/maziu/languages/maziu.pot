@@ -162,3 +162,24 @@ msgstr
 
 msgid "Comment awaiting approval"
 msgstr
+
+msgid "General"
+msgstr
+
+msgid "Categories settings"
+msgstr
+
+msgid "Layout"
+msgstr
+
+msgid "List"
+msgstr
+
+msgid "1st Full Post and List"
+msgstr
+
+msgid "Grid"
+msgstr
+
+msgid "1st Full Post and Grid"
+msgstr

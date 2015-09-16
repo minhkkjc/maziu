@@ -122,4 +122,15 @@ jQuery(function($) {
 		});
 	});
 	
+	$(document).on('click', '.social-list li a', function(e) {
+		e.preventDefault();
+		var url = $(this).attr('href');
+		var height = 300;
+		var width = 500;
+		var top = ($(window).height() - height) / 2;
+		var left = ($(window).width() - width) / 2;
+		
+		window.open(url, 'social-share', 'height=' + height + ', width=' + width + ', top=' + top + ', left=' + left);
+	});
+	
 });

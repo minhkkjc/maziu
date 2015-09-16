@@ -20,30 +20,18 @@ get_header(); ?>
                     ?>
 					<?php 
 						if (have_posts()) : 
-							$i = 0;
-					?>
+                            // Get category layout
+                            $categoriesLayout = get_option('maziu_option')['categories_layout'];
+                            $layout = $categoriesLayout[$cat];
 
-						<?php while (have_posts()) : the_post(); ?>
-							<?php 
-								$i++;
-								if ($i == 1) {
-									get_template_part('content', get_post_format());
-								} else {
-									if ($i == 2) 
-										echo '<div class="category-list-wrap">';
-									
-									get_template_part('category-item', get_post_format());
-								}
-							?>
-						<?php 
-							endwhile;
-							if ($i > 1)
-								echo '</div>';
-						?>
+                            if (empty($layout))
+                                $layout = 'list';
 
-					<?php else : ?>
-						<?php get_template_part( 'content', 'none' ); ?>
-					<?php endif; ?>
+                            get_template_part('category', $layout);
+					    else :
+						    get_template_part('content', 'none');
+					    endif;
+                    ?>
 
 					</div><!-- #content -->
 

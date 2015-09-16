@@ -150,7 +150,8 @@ add_action('widgets_init', 'maziu_widgets_init');
  * Add script file for admin
  */
 function maziu_admin_scripts($hook) {
-    wp_enqueue_script('maziu_admin_script', get_template_directory_uri() . '/js/admin.js');
+    wp_enqueue_style('maziu_admin_style', get_template_directory_uri() . '/css/admin.css', false, '1.0.0');
+    wp_enqueue_script('maziu_admin_script', get_template_directory_uri() . '/js/admin.js', false, '1.0.0');
 }
 add_action('admin_enqueue_scripts', 'maziu_admin_scripts');
 
@@ -268,7 +269,7 @@ function socials_shortcode($atts)
 	ob_start();
 	?>
     <div class="socials-wrap" style="text-align: <?php echo $a['position']; ?>">
-        <ul class="socials clearfix">
+        <ul class="socials clearfix social-list">
             <li>
                 <a href="#" class="<?php echo $a['class']; ?> ease-transition"><i class="fa fa-facebook"></i></a>
             </li>
@@ -316,7 +317,7 @@ function post_socials_shortcode($atts)
 
 	ob_start();
 	?>
-	<ul class="post-socials-list clearfix <?php echo $a['class_ul']; ?>">
+	<ul class="post-socials-list social-list clearfix <?php echo $a['class_ul']; ?>">
 		<li>
 			<a href="<?php echo $facebook; ?>" class="<?php echo $a['class']; ?> ease-transition"><i class="fa fa-facebook"></i></a>
 		</li>
@@ -345,6 +346,24 @@ class maziuSettings
 {
     private $options;
     private $fonts;
+
+    const CATEGORY_LAYOUT_LIST = 1;
+    const CATEGORY_LAYOUT_GRID = 2;
+    const CATEGORY_LAYOUT_LIST_SPECIAL = 3;
+    const CATEGORY_LAYOUT_GRID_SPECIAL = 4;
+
+    private function _getCategoriesLayout() {
+        if (empty($this->_categoriesLayout)) {
+            return array(
+                'list' => __('List', 'maziu'),
+                'one-full-list' => __('1st Full Post and List', 'maziu'),
+                'grid' => __('Grid', 'maziu'),
+                'one-full-grid' => __('1st Full Post and Grid', 'maziu'),
+            );
+        } else {
+            return $this->_categoriesLayout;
+        }
+    }
 
     public function __construct()
     {
@@ -393,7 +412,19 @@ class maziuSettings
 
     public function maziu_settings_page()
     {
-        echo 1;
+        $this->options = get_option('maziu_option');
+        ?>
+        <div class="wrap">
+            <h2><?php _e('General', 'maziu') ?></h2>
+            <form method="post" action="options.php">
+                <?php
+                settings_fields('maziu_group');
+                do_settings_sections('maziu-settings-page');
+                submit_button();
+                ?>
+            </form>
+        </div>
+        <?php
     }
 
     /*
@@ -462,6 +493,24 @@ class maziuSettings
         );
 
         /*
+         * General page
+         */
+        add_settings_section(
+            'general_categories_section',
+            __('Categories settings', 'maziu'),
+            '',
+            'maziu-settings-page'
+        );
+
+        add_settings_field(
+            'categories_layout',
+            __('Categories layout', 'maziu'),
+            array($this, 'categories_layout_callback'),
+            'maziu-settings-page',
+            'general_categories_section'
+        );
+
+        /*
          * Fonts page
          */
         add_settings_section(
@@ -511,6 +560,12 @@ class maziuSettings
         $new_input = get_option('maziu_option');
 
         /*
+         * General page
+         */
+        if (isset($input['categories_layout']))
+            $new_input['categories_layout'] = $input['categories_layout'];
+
+        /*
          * Fonts page
          */
         if (isset($input['font_text_family']))
@@ -526,6 +581,45 @@ class maziuSettings
 			$new_input['slide_count'] = absint($input['slide_count']);
 
         return $new_input;
+    }
+
+    public function categories_layout_callback() {
+        $categories = get_categories(array(
+            'hide_empty' => 0
+        ));
+
+        $html = '<table class="wp-list-table widefat striped categories-layout-table">';
+        $html .= '<thead><tr>';
+        $html .= '<th>' . __('Category', 'maziu') . '</th>';
+        $html .= '<th>' . __('Layout', 'maziu') . '</th>';
+        $html .= '</tr></thead>';
+        $html .= '<tbody id="the-list">';
+
+        if (!empty($categories)) :
+            foreach ($categories as $category) {
+                $html .= '<tr>';
+                $html .= '<td>' . $category->name . '</td>';
+                $html .= '<td>';
+                $html .= '<select name="maziu_option[categories_layout][' . $category->term_id . ']">';
+
+                $categoriesLayout = self::_getCategoriesLayout();
+                if (!empty($categoriesLayout)) :
+                    foreach ($categoriesLayout as $key => $layout) {
+                        $html .= '<option value="' . $key . '"' .
+                                (($this->options['categories_layout'][$category->term_id] == $key) ? ' selected' : '') . '>' .
+                                $layout . '</option>';
+                    }
+                endif;
+
+                $html .= '</select>';
+                $html .= '</td>';
+                $html .= '</tr>';
+            }
+        endif;
+
+        $html .= '</tbody>';
+        $html .= '</table>';
+        printf($html);
     }
 
     public function font_text_family_callback()

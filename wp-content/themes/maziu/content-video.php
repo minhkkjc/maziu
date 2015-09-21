@@ -33,22 +33,10 @@
 			</div><!-- .fluid-video-wrapper -->
 		</div><!-- .post-thumbnail -->
 
-		<div class="post-entry">
-			<ul class="clearfix">
-				<li>
-					<span><i class="fa fa-pencil-square-o"></i><?php the_author(); ?></span>
-				</li>
-				<li>
-					<span><i class="fa fa-heart-o"></i>5</span>
-				</li>
-				<li>
-					<span><i class="fa fa-comments-o"></i><?php comments_number('0', '1', '%'); ?></span>
-				</li>
-				<li>
-					<span><i class="fa fa-clock-o"></i><?php echo get_the_date(); ?></span>
-				</li>
-			</ul>
-		</div><!-- .post-entry -->
+        <?php
+            // Get post entry
+            get_template_part('post-entry');
+        ?>
 
 		<div class="post-content">
 			<div class="post-categories"><?php the_category(''); ?></div>
@@ -96,22 +84,11 @@
 				</div><!-- .fluid-video-wrapper -->
 			</div><!-- .post-thumbnail -->
 
-            <div class="post-entry">
-                <ul class="clearfix">
-                    <li>
-                        <span><i class="fa fa-pencil-square-o"></i><?php the_author(); ?></span>
-                    </li>
-                    <li>
-                        <span><i class="fa fa-heart-o"></i>5</span>
-                    </li>
-                    <li>
-                        <span><i class="fa fa-comments-o"></i><?php comments_number('0', '1', '%'); ?></span>
-                    </li>
-                    <li>
-                        <span><i class="fa fa-clock-o"></i><?php echo get_the_date(); ?></span>
-                    </li>
-                </ul>
-            </div><!-- .post-entry -->
+            <?php
+                // Get post entry
+                get_template_part('post-entry');
+            ?>
+
             <div class="post-content-detail"><?php the_content(); ?></div>
 			<div class="post-content-footer clearfix">
 				<div class="post-tags">

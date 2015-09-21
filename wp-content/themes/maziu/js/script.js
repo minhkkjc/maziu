@@ -28,7 +28,7 @@ jQuery(function($) {
 	});
 
     // Gallery post slide
-    $('.post-thumbnail .gallery, article .gallery').bxSlider({
+    $('.gallery').bxSlider({
         pager: false,
         nextText: '<span class="main-border-hover main-color-hover ease-transition"><i class="fa fa-angle-right"></i></span>',
         prevText: '<span class="main-border-hover main-color-hover ease-transition"><i class="fa fa-angle-left"></i></span>'

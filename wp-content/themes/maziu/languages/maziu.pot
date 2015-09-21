@@ -183,3 +183,6 @@ msgstr
 
 msgid "1st Full Post and Grid"
 msgstr
+
+msgid "Search results for %s"
+msgstr

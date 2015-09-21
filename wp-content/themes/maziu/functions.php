@@ -223,9 +223,32 @@ function maziu_slideshow()
                     </div>
                     <div class="sb-meta">
                         <ul class="clearfix">
-                            <li><i class="fa fa-heart-o main-color"></i>4</li>
-                            <li><a href="<?php the_permalink(); ?>" title="<?php the_title() ?>" class="read-more main-color"><?php echo __('Continue reading'); ?></a></li>
-                            <li><i class="fa fa-comments-o main-color"></i><?php comments_number('0', '1', '%') ?></li>
+                            <li>
+                                <?php
+                                // Check current user liked this post
+                                $pid = get_the_ID();
+                                $baseurl = get_site_url();
+                                $cookie_name = $baseurl . '-like-' . $pid;
+                                $cookie = get_cookie($cookie_name);
+
+                                if (!empty($cookie)) {
+                                    $liked = 1;
+                                } else {
+                                    $liked = 0;
+                                }
+                                ?>
+                                <span>
+                                    <i class="fa <?php echo ($liked) ? 'fa-heart' : 'fa-heart-o'; ?> post-like post-like-<?php echo $pid; ?> main-color"
+                                       data-pid="<?php echo $pid; ?>"></i>
+                                    <span class="like-count"><?php echo get_likes(); ?></span>
+                                </span>
+                            </li>
+                            <li>
+                                <a href="<?php the_permalink(); ?>" title="<?php the_title() ?>" class="read-more main-color"><?php echo __('Continue reading'); ?></a>
+                            </li>
+                            <li>
+                                <i class="fa fa-comments-o main-color"></i><?php comments_number('0', '1', '%') ?>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -901,8 +924,24 @@ class Popular_Posts_Widget extends WP_Widget {
 					</h3>
                     <div class="popular-post-meta clearfix">
                         <div class="post-likes">
-                            <i class="fa fa-heart-o main-color"></i>
-                            4
+                            <?php
+                            // Check current user liked this post
+                            $pid = get_the_ID();
+                            $baseurl = get_site_url();
+                            $cookie_name = $baseurl . '-like-' . $pid;
+                            $cookie = get_cookie($cookie_name);
+
+                            if (!empty($cookie)) {
+                                $liked = 1;
+                            } else {
+                                $liked = 0;
+                            }
+                            ?>
+                            <span>
+                                    <i class="fa <?php echo ($liked) ? 'fa-heart' : 'fa-heart-o'; ?> post-like post-like-<?php echo $pid; ?> main-color"
+                                       data-pid="<?php echo $pid; ?>"></i>
+                                    <span class="like-count"><?php echo get_likes(); ?></span>
+                                </span>
                         </div>
                         <div class="post-hits">
                             <i class="fa fa-comments-o main-color"></i>
@@ -1677,7 +1716,11 @@ function save_social_fields($uid) {
 function get_hits() {
     global $post;
     $hits = get_post_meta($post->ID, '_hit-counter', true);
-    return $hits;
+    if (!empty($hits)) {
+        return $hits;
+    } else {
+        return 0;
+    }
 }
 
 /*
@@ -1695,7 +1738,16 @@ function update_hits($hits) {
 function get_likes() {
     global $post;
     $likes = get_post_meta($post->ID, '_like-counter', true);
-    return $likes;
+    if (!empty($likes)) {
+        return $likes;
+    } else {
+        return 0;
+    }
+}
+
+function returnJSON(array $data) {
+    echo json_encode($data);
+    die;
 }
 
 function get_soundcloud($postid) {
@@ -1706,6 +1758,50 @@ function get_soundcloud($postid) {
     return $sc;
 }
 
+/*
+ * Update post like ajax
+ */
+add_action('wp_ajax_like_ajax', 'like_ajax');
+add_action("wp_ajax_nopriv_like_ajax", "like_ajax");
+function like_ajax() {
+    if (isset($_POST['pid']) && $_POST['pid']) {
+        $pid = $_POST['pid'];
+        $likes = get_post_meta($pid, '_like-counter', true);
+
+        // Check cookie
+        $cookie_name = get_site_url() . '-like-' . $pid;
+        $cookie = get_cookie($cookie_name);
+
+        if (!empty($cookie)) {
+            $liked = 1;
+        } else {
+            $liked = 0;
+        }
+
+        // Update likes for post
+        if ($liked == 1) {
+            $likes--;
+            unset($_COOKIE[$name]);
+            setcookie($cookie_name, '', time() - 1, '/');
+        } else {
+            $likes++;
+            setcookie($cookie_name, 1, time() + (30 * 24 * 60 * 60 * 1000), '/');
+        }
+
+        update_post_meta($pid, '_like-counter', $likes);
+
+        returnJSON(array('likes' => $likes, 'liked' => $liked));
+    } else {
+        returnJSON(array('error' => 1));
+    }
+}
+
+/*
+ * Get cookie
+ */
+function get_cookie($name) {
+    return $_COOKIE[$name];
+}
 
 /*
  * Custom comment list

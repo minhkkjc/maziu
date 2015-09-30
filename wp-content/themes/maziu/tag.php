@@ -1,12 +1,12 @@
 <?php
 /**
- * The template for displaying Search Page
+ * The template for displaying Tag Page
  */
 
 get_header(); ?>
 
-    <div id="no-content-wrap" class="search-title-wrap">
-        <h3><?php _e('Search results for', 'maziu'); ?> <span class="main-color"><?php echo get_search_query(); ?></span></h3>
+    <div id="no-content-wrap" class="tag-title-wrap">
+        <h3><?php echo single_tag_title(); ?></h3>
     </div><!-- #no-content-wrap -->
 
     <div id="main-content-wrap">

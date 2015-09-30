@@ -965,6 +965,10 @@ ins {
     background: #f8f8f8;
 }
 
+#no-content-wrap h3 {
+    margin: 0;
+}
+
 .post {
 	padding-bottom: 25px;
 	margin-bottom: 60px;
@@ -2145,8 +2149,7 @@ ul.socials li:last-child {
 }
 
 /* Search page */
-.search-title-wrap h3 {
-    margin: 0;
+.search-title-wrap h3, .tag-title-wrap h3 {
     font-size: 26px;
     color: #2f2f2f;
     line-height: 140px;
@@ -2156,6 +2159,11 @@ ul.socials li:last-child {
 .search-title-wrap h3 span {
     font-style: italic;
     font-weight: bold;
+}
+
+/* Search page */
+.tag-title-wrap h3 {
+    text-transform: capitalize;
 }
 
 /*

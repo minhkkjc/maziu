@@ -186,3 +186,9 @@ msgstr
 
 msgid "Search results for %s"
 msgstr
+
+msgid "Maziu Liked Posts Widget"
+msgstr
+
+msgid "A Liked Posts Widget"
+msgstr

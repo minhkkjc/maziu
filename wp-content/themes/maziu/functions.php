@@ -737,13 +737,13 @@ class About_Me_Widget extends WP_Widget {
 		$post_slug = !empty($instance['post_slug']) ? $instance['post_slug'] : __('Enter post slug', 'maziu');
 		?>
 		<p>
-			<label for="<?php echo $this->get_field_id('title'); ?>"><?php echo _e('Title:', 'maziu'); ?></label>
+			<label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:', 'maziu'); ?></label>
 			<input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" 
 			       name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>" />
 		</p>
 		
 		<p>
-			<label for="<?php echo $this->get_field_id('post_slug'); ?>"><?php echo _e('Post slug:', 'maziu'); ?></label>
+			<label for="<?php echo $this->get_field_id('post_slug'); ?>"><?php _e('Post slug:', 'maziu'); ?></label>
 			<input class="widefat" id="<?php echo $this->get_field_id('post_slug'); ?>" 
 			       name="<?php echo $this->get_field_name('post_slug'); ?>" type="text" value="<?php echo esc_attr($post_slug); ?>" />
 		</p>
@@ -789,7 +789,7 @@ class Follow_Widget extends WP_Widget {
         $title = !empty($instance['title']) ? $instance['title'] : __('Enter title', 'maziu');
         ?>
         <p>
-            <label for="<?php echo $this->get_field_id('title'); ?>"><?php echo _e('Title:', 'maziu'); ?></label>
+            <label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:', 'maziu'); ?></label>
             <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>"
                    name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>" />
         </p>
@@ -852,7 +852,7 @@ class Categories_Widget extends WP_Widget {
         $title = !empty($instance['title']) ? $instance['title'] : __('Enter title', 'maziu');
         ?>
         <p>
-            <label for="<?php echo $this->get_field_id('title'); ?>"><?php echo _e('Title:', 'maziu'); ?></label>
+            <label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:', 'maziu'); ?></label>
             <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>"
                    name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>" />
         </p>
@@ -964,12 +964,12 @@ class Popular_Posts_Widget extends WP_Widget {
         $count = !empty($instance['count']) ? $instance['count'] : 5;
         ?>
         <p>
-            <label for="<?php echo $this->get_field_id('title'); ?>"><?php echo _e('Title:', 'maziu'); ?></label>
+            <label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:', 'maziu'); ?></label>
             <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>"
                    name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>" />
         </p>
         <p>
-            <label for="<?php echo $this->get_field_id('count'); ?>"><?php echo _e('Count:', 'maziu'); ?></label>
+            <label for="<?php echo $this->get_field_id('count'); ?>"><?php _e('Count:', 'maziu'); ?></label>
             <input id="<?php echo $this->get_field_id('count'); ?>"
                    name="<?php echo $this->get_field_name('count'); ?>" type="text" value="<?php echo esc_attr($count); ?>" />
         </p>
@@ -1025,12 +1025,12 @@ class News_Letter_Widget extends WP_Widget {
         $description = !empty($instance['description']) ? $instance['description'] : '';
         ?>
         <p>
-            <label for="<?php echo $this->get_field_id('title'); ?>"><?php echo _e('Title:', 'maziu'); ?></label>
+            <label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:', 'maziu'); ?></label>
             <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>"
                    name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>" />
         </p>
         <p>
-            <label for="<?php echo $this->get_field_id('description'); ?>"><?php echo _e('Description:', 'maziu'); ?></label>
+            <label for="<?php echo $this->get_field_id('description'); ?>"><?php _e('Description:', 'maziu'); ?></label>
             <textarea class="widefat" id="<?php echo $this->get_field_id('description'); ?>"
                    name="<?php echo $this->get_field_name('description'); ?>"><?php echo $description; ?></textarea>
         </p>
@@ -1103,12 +1103,12 @@ class Popular_Tags_Widget extends WP_Widget {
         $count = !empty($instance['count']) ? $instance['count'] : 10;
         ?>
         <p>
-            <label for="<?php echo $this->get_field_id('title'); ?>"><?php echo _e('Title:', 'maziu'); ?></label>
+            <label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:', 'maziu'); ?></label>
             <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>"
                    name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>" />
         </p>
         <p>
-            <label for="<?php echo $this->get_field_id('count'); ?>"><?php echo _e('Count:', 'maziu'); ?></label>
+            <label for="<?php echo $this->get_field_id('count'); ?>"><?php _e('Count:', 'maziu'); ?></label>
             <input id="<?php echo $this->get_field_id('count'); ?>"
                    name="<?php echo $this->get_field_name('count'); ?>" type="text" value="<?php echo esc_attr($count); ?>" />
         </p>
@@ -1157,7 +1157,7 @@ class Liked_Posts_Widget extends WP_Widget {
             'numberposts' => $count,
             'post_type' => 'post',
             'post_status' => 'publish',
-            'meta_key' => '_hit-counter',
+            'meta_key' => '_like-counter',
             'orderby' => 'meta_value_num',
             'order' => 'DESC'
         );
@@ -1201,12 +1201,12 @@ class Liked_Posts_Widget extends WP_Widget {
         $count = !empty($instance['count']) ? $instance['count'] : 5;
         ?>
         <p>
-            <label for="<?php echo $this->get_field_id('title'); ?>"><?php echo _e('Title:', 'maziu'); ?></label>
+            <label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:', 'maziu'); ?></label>
             <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>"
                    name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>" />
         </p>
         <p>
-            <label for="<?php echo $this->get_field_id('count'); ?>"><?php echo _e('Count:', 'maziu'); ?></label>
+            <label for="<?php echo $this->get_field_id('count'); ?>"><?php _e('Count:', 'maziu'); ?></label>
             <input id="<?php echo $this->get_field_id('count'); ?>"
                    name="<?php echo $this->get_field_name('count'); ?>" type="text" value="<?php echo esc_attr($count); ?>" />
         </p>
@@ -1244,7 +1244,7 @@ class Instagram_Widget extends WP_Widget {
         if (!empty($instance['title'])) {
             echo $args['before_title'] . apply_filters('widget_title', $instance['title']) . $args['after_title'];
         }
-		
+
 		if (!empty($instance['instagram_username'])) {
 			$username = $instance['instagram_username'];
 		}
@@ -1254,13 +1254,13 @@ class Instagram_Widget extends WP_Widget {
         }
 
         if (empty($count)) $count = 4;
-		
+
 		if (!empty($instance['column'])) {
 			$column = (int)$instance['column'];
 		}
-		
+
 		if (empty($column)) $column = 2;
-		
+
 		if (!empty($username)) :
 			$user = json_decode(file_get_contents('https://api.instagram.com/v1/users/search?q=' . $username . '&access_token=2137252455.d7646b8.a916a8a8e024489ba99ae5c9eaee50ae'));
 			$id = $user->data[0]->id;
@@ -1273,7 +1273,7 @@ class Instagram_Widget extends WP_Widget {
 		?>
         <ul class="instagram-pictures-list clearfix instagram-columns-<?php echo $column; ?>">
         <?php foreach ($medias->data as $k => $media) : ?>
-			<li class="instagram-picture<?php if ($k >= ($total - $column)) echo ' no-margin-bottom'; ?>" 
+			<li class="instagram-picture<?php if ($k >= ($total - $column)) echo ' no-margin-bottom'; ?>"
 			style="float: left; width: <?php echo $width; ?>%;<?php if (($k % $column) != ($column - 1)) echo ' margin-right:' . $margin_right . '%;'; ?><?php if ($k < ($total - $column)) echo ' margin-bottom: 10px;'; ?>">
 				<a href="<?php echo $media->link; ?>">
 					<img src="<?php echo $media->images->low_resolution->url ?>" />
@@ -1295,22 +1295,22 @@ class Instagram_Widget extends WP_Widget {
 		$column = !empty($instance['column']) ? $instance['column'] : 2;
         ?>
         <p>
-            <label for="<?php echo $this->get_field_id('title'); ?>"><?php echo _e('Title:', 'maziu'); ?></label>
+            <label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:', 'maziu'); ?></label>
             <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>"
                    name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>" />
         </p>
 		<p>
-            <label for="<?php echo $this->get_field_id('instagram_username'); ?>"><?php echo _e('Instagram username:', 'maziu'); ?></label>
+            <label for="<?php echo $this->get_field_id('instagram_username'); ?>"><?php _e('Instagram username:', 'maziu'); ?></label>
             <input class="widefat" id="<?php echo $this->get_field_id('instagram_username'); ?>"
                    name="<?php echo $this->get_field_name('instagram_username'); ?>" type="text" value="<?php echo esc_attr($username); ?>" />
         </p>
         <p>
-            <label for="<?php echo $this->get_field_id('count'); ?>"><?php echo _e('Count:', 'maziu'); ?></label>
+            <label for="<?php echo $this->get_field_id('count'); ?>"><?php _e('Count:', 'maziu'); ?></label>
             <input id="<?php echo $this->get_field_id('count'); ?>"
                    name="<?php echo $this->get_field_name('count'); ?>" type="text" value="<?php echo esc_attr($count); ?>" />
         </p>
 		<p>
-            <label for="<?php echo $this->get_field_id('column'); ?>"><?php echo _e('Column:', 'maziu'); ?></label>
+            <label for="<?php echo $this->get_field_id('column'); ?>"><?php _e('Column:', 'maziu'); ?></label>
             <input id="<?php echo $this->get_field_id('column'); ?>"
                    name="<?php echo $this->get_field_name('column'); ?>" type="text" value="<?php echo esc_attr($column); ?>" />
         </p>
@@ -1387,17 +1387,17 @@ class Twitter_Timeline_Widget extends WP_Widget {
         $count = !empty($instance['count']) ? $instance['count'] : 3;
         ?>
         <p>
-            <label for="<?php echo $this->get_field_id('title'); ?>"><?php echo _e('Title:', 'maziu'); ?></label>
+            <label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:', 'maziu'); ?></label>
             <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>"
                    name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>" />
         </p>
 		<p>
-            <label for="<?php echo $this->get_field_id('wid'); ?>"><?php echo _e('Widget ID:', 'maziu'); ?></label>
+            <label for="<?php echo $this->get_field_id('wid'); ?>"><?php _e('Widget ID:', 'maziu'); ?></label>
             <input class="widefat" id="<?php echo $this->get_field_id('wid'); ?>"
                    name="<?php echo $this->get_field_name('wid'); ?>" type="text" value="<?php echo esc_attr($wid); ?>" />
         </p>
         <p>
-            <label for="<?php echo $this->get_field_id('count'); ?>"><?php echo _e('Count:', 'maziu'); ?></label>
+            <label for="<?php echo $this->get_field_id('count'); ?>"><?php _e('Count:', 'maziu'); ?></label>
             <input id="<?php echo $this->get_field_id('count'); ?>"
                    name="<?php echo $this->get_field_name('count'); ?>" type="text" value="<?php echo esc_attr($count); ?>" />
         </p>

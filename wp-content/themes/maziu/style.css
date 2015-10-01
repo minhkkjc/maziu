@@ -1425,6 +1425,86 @@ ul.socials li:last-child {
 	margin-bottom: 15px;
 }
 
+.widget_liked_posts_widget .liked-post-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.widget_liked_posts_widget .liked-post-list .liked-post {
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+.widget_liked_posts_widget .liked-post-thumbnail a, .widget_liked_posts_widget .liked-post-thumbnail img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.widget_liked_posts_widget .liked-post-info {
+    margin: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.75);
+    top: 0;
+    left: 100%;
+    text-align: center;
+    opacity: 0;
+}
+
+.widget_liked_posts_widget .liked-post:hover .liked-post-info {
+    left: 0;
+    opacity: 1;
+}
+
+.widget_liked_posts_widget .post-categories {
+    margin-top: 35px;
+}
+
+.widget_liked_posts_widget .liked-post-info .post-title {
+    font-size: 14px;
+    text-align: center;
+    margin: 5px 0 8px 0;
+}
+
+.widget_liked_posts_widget .liked-post-info .post-title a {
+    color: #fff;
+}
+
+.widget_liked_posts_widget .liked-post-meta {
+    display: inline-block;
+}
+
+.widget_liked_posts_widget .liked-post-meta > div {
+    float: left;
+    margin: 0 15px;
+    color: #8f8f8f;
+}
+
+.widget_liked_posts_widget .liked-rank-num {
+    width: 47px;
+    height: 28px;
+    line-height: 28px;
+    color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: center;
+    opacity: 1;
+}
+
+.widget_liked_posts_widget .liked-post:hover .liked-rank-num {
+    left: 100%;
+    opacity: 0;
+}
+
+.widget_liked_posts_widget .liked-post-meta i {
+    margin-right: 5px;
+}
+
 #main-socials-wrap {
 	background: #f6f6f6;
 }
@@ -1448,6 +1528,24 @@ ul.socials li:last-child {
 
 #main-socials-wrap .socials-wrap ul a:hover {
 	color: #fff!important;
+}
+
+.thumbnail-hover {
+    position: relative;
+}
+
+.thumbnail-cover {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #fff;
+    opacity: 0;
+}
+
+.thumbnail-hover:hover .thumbnail-cover {
+    opacity: 0.6;
 }
 
 /* Footer sidebar */

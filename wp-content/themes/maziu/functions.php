@@ -914,8 +914,9 @@ class Popular_Posts_Widget extends WP_Widget {
         ?>
             <li class="popular-post clearfix">
                 <div class="popular-post-thumbnail">
-					<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+					<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="thumbnail-hover">
 						<?php the_post_thumbnail('thumbnail'); ?>
+                        <div class="thumbnail-cover ease-transition"></div>
 					</a>
                 </div>
                 <div class="popular-post-info">
@@ -945,7 +946,7 @@ class Popular_Posts_Widget extends WP_Widget {
                         </div>
                         <div class="post-hits">
                             <i class="fa fa-comments-o main-color"></i>
-                            <?php echo get_hits(); ?>
+                            <?php comments_number('0', '1', '%'); ?>
                         </div>
                     </div>
                 </div>
@@ -1164,25 +1165,49 @@ class Liked_Posts_Widget extends WP_Widget {
 
         $posts = get_posts($array);
         ?>
-        <ul class="popular-post-list">
+        <ul class="liked-post-list">
             <?php
+            $rank = 0;
             foreach ($posts as $post) :
+                $rank++;
                 setup_postdata($post);
                 ?>
-                <li class="popular-post clearfix">
-                    <div class="popular-post-thumbnail">
-                        <?php the_post_thumbnail('thumbnail'); ?>
+                <li class="liked-post clearfix">
+                    <div class="liked-post-thumbnail">
+                        <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+                            <?php the_post_thumbnail('module-size'); ?>
+                        </a>
                     </div>
-                    <div class="popular-post-info">
-                        <h3><?php the_title(); ?></h3>
-                        <div class="popular-post-meta clearfix">
+                    <div class="liked-rank-num main-bg ease-transition"><?php echo $rank; ?></div>
+                    <div class="liked-post-info post-content ease-transition">
+                        <div class="post-categories"><?php the_category(''); ?></div>
+                        <p class="post-title">
+                            <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
+                        </p>
+                        <div class="liked-post-meta clearfix">
                             <div class="post-likes">
-                                <i class="fa fa-heart-o main-color"></i>
-                                4
+                                <?php
+                                // Check current user liked this post
+                                $pid = get_the_ID();
+                                $baseurl = get_site_url();
+                                $cookie_name = $baseurl . '-like-' . $pid;
+                                $cookie = get_cookie($cookie_name);
+
+                                if (!empty($cookie)) {
+                                    $liked = 1;
+                                } else {
+                                    $liked = 0;
+                                }
+                                ?>
+                                <span>
+                                    <i class="fa <?php echo ($liked) ? 'fa-heart' : 'fa-heart-o'; ?> post-like post-like-<?php echo $pid; ?> main-color"
+                                       data-pid="<?php echo $pid; ?>"></i>
+                                    <span class="like-count"><?php echo get_likes(); ?></span>
+                                </span>
                             </div>
-                            <div class="post-hits">
+                            <div class="post-comment-count">
                                 <i class="fa fa-comments-o main-color"></i>
-                                <?php echo get_hits(); ?>
+                                <?php comments_number('0', '1', '%'); ?>
                             </div>
                         </div>
                     </div>
@@ -1275,8 +1300,9 @@ class Instagram_Widget extends WP_Widget {
         <?php foreach ($medias->data as $k => $media) : ?>
 			<li class="instagram-picture<?php if ($k >= ($total - $column)) echo ' no-margin-bottom'; ?>"
 			style="float: left; width: <?php echo $width; ?>%;<?php if (($k % $column) != ($column - 1)) echo ' margin-right:' . $margin_right . '%;'; ?><?php if ($k < ($total - $column)) echo ' margin-bottom: 10px;'; ?>">
-				<a href="<?php echo $media->link; ?>">
+				<a href="<?php echo $media->link; ?>" class="thumbnail-hover">
 					<img src="<?php echo $media->images->low_resolution->url ?>" />
+                    <div class="thumbnail-cover ease-transition"></div>
 				</a>
 			</li>
 		<?php endforeach; ?>
@@ -1424,6 +1450,7 @@ function maziu_register_widgets() {
     register_widget('Popular_Tags_Widget');
 	register_widget('Instagram_Widget');
 	register_widget('Twitter_Timeline_Widget');
+    register_widget('Liked_Posts_Widget');
 }
 add_action('widgets_init', 'maziu_register_widgets');
 

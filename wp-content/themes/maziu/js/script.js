@@ -1,5 +1,6 @@
 jQuery(function($) {
 
+
     $(document).on('click', '.tf-toggle', function() {
         var t = $(this);
         var show = t.attr('data-show');
@@ -121,7 +122,8 @@ jQuery(function($) {
 			$(this).removeClass('input-required');
 		});
 	});
-	
+
+    // Social share
 	$(document).on('click', '.social-list li a', function(e) {
 		e.preventDefault();
 		var url = $(this).attr('href');

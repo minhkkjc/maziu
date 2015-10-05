@@ -91,7 +91,7 @@ msgstr
 msgid "Search"
 msgstr
 
-msgid "Maziu Options"
+msgid "Maziu Slideshow Options"
 msgstr
 
 msgid "Slideshow"
@@ -191,4 +191,10 @@ msgid "Maziu Liked Posts Widget"
 msgstr
 
 msgid "A Liked Posts Widget"
+msgstr
+
+msgid "Maziu Page Options"
+msgstr
+
+msgid "Full width template"
 msgstr

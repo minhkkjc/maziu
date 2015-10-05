@@ -362,6 +362,37 @@ function post_socials_shortcode($atts)
 }
 add_shortcode('post_socials', 'post_socials_shortcode');
 
+// Accordion
+function accordion_item_shortcode($atts, $content) {
+    $a = shortcode_atts(array(
+        'class' => '',
+    ), $atts);
+
+    ob_start();
+    ?>
+    <li class="maziu-accordion-item <?php echo $a['class']; ?>">
+        <?php echo do_shortcode($content); ?>
+    </li>
+    <?php
+    return ob_get_clean();
+}
+add_shortcode('maziu_accordion_item', 'accordion_item_shortcode');
+
+function accordion_shortcode($atts, $content) {
+    $a = shortcode_atts(array(
+        'class' => '',
+    ), $atts);
+
+    ob_start();
+    ?>
+    <ul class="maziu-accordion <?php echo $a['class']; ?>">
+        <?php echo do_shortcode($content); ?>
+    </ul>
+    <?php
+    return ob_get_clean();
+}
+add_shortcode('maziu_accordion', 'accordion_shortcode');
+
 /*
  * Add admin menus
  */
@@ -1454,23 +1485,23 @@ function maziu_register_widgets() {
 }
 add_action('widgets_init', 'maziu_register_widgets');
 
-/* Add meta box */
-function maziu_add_meta_box() {
+/* Add slideshow meta box */
+function maziu_add_slideshow_box() {
 	$screens = array('post', 'page');
 	
 	foreach ($screens as $screen) {
 		add_meta_box(
-			'maziu_meta_box_section',
-			__('Maziu Options'),
-			'maziu_meta_box_callback',
+			'maziu_slideshow_box_section',
+			__('Maziu Slideshow Options'),
+			'maziu_slideshow_box_callback',
 			$screen
 		);
 	}
 }
-add_action('add_meta_boxes', 'maziu_add_meta_box');
+add_action('add_meta_boxes', 'maziu_add_slideshow_box');
 
-function maziu_meta_box_callback($post) {
-	wp_nonce_field('maziu_meta_box', 'maziu_meta_box_nonce');
+function maziu_slideshow_box_callback($post) {
+	wp_nonce_field('maziu_slideshow_box', 'maziu_slideshow_box_nonce');
 	
 	$slideshow = get_post_meta($post->ID, '_slideshow', true);
 	if (!empty($slideshow))
@@ -1484,12 +1515,12 @@ function maziu_meta_box_callback($post) {
 	echo '</label>';
 }
 
-function maziu_save_meta_box_data($post_id) {
-	if (!isset($_POST['maziu_meta_box_nonce'])) {
+function maziu_save_slideshow_box_data($post_id) {
+	if (!isset($_POST['maziu_slideshow_box_nonce'])) {
 		return;
 	}
 	
-	if (!wp_verify_nonce($_POST['maziu_meta_box_nonce'], 'maziu_meta_box')) {
+	if (!wp_verify_nonce($_POST['maziu_slideshow_box_nonce'], 'maziu_slideshow_box')) {
 		return;
 	}
 	
@@ -1515,7 +1546,66 @@ function maziu_save_meta_box_data($post_id) {
 	
 	update_post_meta($post_id, '_slideshow', $slideshow_data);
 }
-add_action('save_post', 'maziu_save_meta_box_data');
+add_action('save_post', 'maziu_save_slideshow_box_data');
+
+/* Add page options box */
+function maziu_add_page_box() {
+    add_meta_box(
+        'maziu_page_box_section',
+        __('Maziu Page Options'),
+        'maziu_page_box_callback',
+        'page'
+    );
+}
+add_action('add_meta_boxes', 'maziu_add_page_box');
+
+function maziu_page_box_callback($post) {
+    wp_nonce_field('maziu_page_box', 'maziu_page_box_nonce');
+
+    $full_template = get_post_meta($post->ID, '_maziu_page_full_template', true);
+    if (!empty($full_template))
+        $checked = ' checked';
+    else
+        $checked = '';
+
+    echo '<label>';
+    echo '<input type="checkbox" id="maziu_page_full_template" name="maziu_page_full_template" value="1"' . $checked . ' />';
+    _e('Full width template');
+    echo '</label>';
+}
+
+function maziu_save_page_box_data($post_id) {
+    if (!isset($_POST['maziu_page_box_nonce'])) {
+        return;
+    }
+
+    if (!wp_verify_nonce($_POST['maziu_page_box_nonce'], 'maziu_page_box')) {
+        return;
+    }
+
+    if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
+        return;
+    }
+
+    if (isset($_POST['post_type']) && $_POST['post_type'] == 'page') {
+        if (!current_user_can('edit_page', $post_id)) {
+            return;
+        }
+    } else {
+        if (!current_user_can('edit_post', $post_id)) {
+            return;
+        }
+    }
+
+    if (!isset($_POST['maziu_page_full_template'])) {
+        $full_template = 0;
+    } else {
+        $full_template = absint($_POST['maziu_page_full_template']);
+    }
+
+    update_post_meta($post_id, '_maziu_page_full_template', $full_template);
+}
+add_action('save_post', 'maziu_save_page_box_data');
 
 /* --------------------- */
 $metaboxes = array(

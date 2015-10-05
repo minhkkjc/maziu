@@ -2264,6 +2264,77 @@ ul.socials li:last-child {
     text-transform: capitalize;
 }
 
+/* Page */
+.page .post-content {
+    margin-top: 0;
+}
+
+.page .post-content h1,
+.page .post-content h2,
+.page .post-content h3,
+.page .post-content h4,
+.page .post-content h5,
+.page .post-content h6 {
+    color: #2f2f2f;
+    line-height: 1;
+    margin: 0 0 10px 0;
+}
+
+.page .wpcf7 {
+    margin-top: 80px;
+}
+
+.page .wpcf7-form p {
+    margin-bottom: 25px;
+    color: #2f2f2f;
+}
+
+.page .wpcf7-form p .required {
+    color: #8f8f8f;
+}
+
+.page .wpcf7-form-control-wrap {
+    margin-top: 10px;
+    display: block;
+}
+
+.page .wpcf7-form-control-wrap input {
+    width: 540px;
+    height: 50px;
+    padding: 5px 10px;
+    border: 1px solid #efefef;
+}
+
+.page .wpcf7-form-control-wrap textarea {
+    padding: 5px 10px;
+    border: 1px solid #efefef;
+    height: 180px;
+    width: 100%;
+    resize: none;
+}
+
+.page .wpcf7-not-valid-tip {
+    margin-top: 5px;
+}
+
+.page .wpcf7-submit {
+    width: 150px;
+    height: 50px;
+    border: 1px solid;
+    background: transparent;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.page .wpcf7-submit:hover {
+    background: #d4a38d;
+    color: #fff!important;
+}
+
+.page .wpcf7-form .ajax-loader {
+    display: inline-block;
+}
+
 /*
 .no-js #loader-wrap {
     display: block;

@@ -134,5 +134,22 @@ jQuery(function($) {
 		
 		window.open(url, 'social-share', 'height=' + height + ', width=' + width + ', top=' + top + ', left=' + left);
 	});
+
+    // Accordion toggle
+    $(document).on('click', '.maziu-accordion-title', function() {
+        var t = $(this);
+        var item = t.parent();
+        var toggle = item.data('toggle');
+
+        if (toggle) {
+            item.find('.maziu-accordion-content').slideUp(400);
+            item.data('toggle', 0);
+            item.removeClass('active');
+        } else {
+            item.find('.maziu-accordion-content').slideDown(400);
+            item.data('toggle', 1);
+            item.addClass('active');
+        }
+    });
 	
 });

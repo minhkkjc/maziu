@@ -363,22 +363,7 @@ function post_socials_shortcode($atts)
 add_shortcode('post_socials', 'post_socials_shortcode');
 
 // Accordion
-function accordion_item_shortcode($atts, $content) {
-    $a = shortcode_atts(array(
-        'class' => '',
-    ), $atts);
-
-    ob_start();
-    ?>
-    <li class="maziu-accordion-item <?php echo $a['class']; ?>">
-        <?php echo do_shortcode($content); ?>
-    </li>
-    <?php
-    return ob_get_clean();
-}
-add_shortcode('maziu_accordion_item', 'accordion_item_shortcode');
-
-function accordion_shortcode($atts, $content) {
+function accordion_shortcode($atts, $content = null) {
     $a = shortcode_atts(array(
         'class' => '',
     ), $atts);
@@ -392,6 +377,82 @@ function accordion_shortcode($atts, $content) {
     return ob_get_clean();
 }
 add_shortcode('maziu_accordion', 'accordion_shortcode');
+
+function accordion_item_shortcode($atts, $content = null) {
+    $a = shortcode_atts(array(
+        'class' => '',
+    ), $atts);
+
+    ob_start();
+    ?>
+    <li class="maziu-accordion-item <?php echo $a['class']; ?>" data-toggle="0">
+        <?php echo do_shortcode($content); ?>
+    </li>
+    <?php
+    return ob_get_clean();
+}
+add_shortcode('maziu_accordion_item', 'accordion_item_shortcode');
+
+function accordion_title_shortcode($atts, $content = null) {
+    $a = shortcode_atts(array(
+        'class' => '',
+    ), $atts);
+
+    ob_start();
+    ?>
+    <div class="maziu-accordion-title clearfix <?php echo $a['class']; ?>">
+        <?php echo $content; ?>
+        <div class="maziu-accordion-icon-wrap">
+            <span class="maziu-accordion-icon"></span>
+        </div>
+    </div>
+    <?php
+    return ob_get_clean();
+}
+add_shortcode('maziu_accordion_title', 'accordion_title_shortcode');
+
+function accordion_content_shortcode($atts, $content = null) {
+    $a = shortcode_atts(array(
+        'class' => '',
+    ), $atts);
+
+    ob_start();
+    ?>
+    <div class="maziu-accordion-content <?php echo $a['class']; ?>">
+        <div class="maziu-accordion-content-in clearfix"><?php echo do_shortcode($content); ?></div>
+    </div>
+    <?php
+    return ob_get_clean();
+}
+add_shortcode('maziu_accordion_content', 'accordion_content_shortcode');
+
+function accordion_thumbnail_shortcode($atts, $content = null) {
+    $a = shortcode_atts(array(
+        'class' => '',
+    ), $atts);
+
+    ob_start();
+    ?>
+    <div class="maziu-accordion-thumbnail <?php echo $a['class']; ?>">
+        <?php echo $content; ?>
+    </div>
+    <?php
+    return ob_get_clean();
+}
+add_shortcode('maziu_accordion_thumbnail', 'accordion_thumbnail_shortcode');
+
+function accordion_text_shortcode($atts, $content = null) {
+    $a = shortcode_atts(array(
+        'class' => '',
+    ), $atts);
+
+    ob_start();
+    ?>
+    <div class="maziu-accordion-text <?php echo $a['class']; ?>"><?php echo $content; ?></div>
+    <?php
+    return ob_get_clean();
+}
+add_shortcode('maziu_accordion_text', 'accordion_text_shortcode');
 
 /*
  * Add admin menus

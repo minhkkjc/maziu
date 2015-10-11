@@ -6,12 +6,12 @@ get_header(); ?>
 		<div id="slideshow-wrap">
 			<div class="content">
 				<div class="content-inner">
-					<?php maziu_slideshow(); ?>
+					<?php //maziu_slideshow(); ?>
 				</div>
 			</div>
 		</div><!-- #slideshow -->
 		
-		<div id="main-content" class="content">
+		<div id="main-content" class="container">
 			<div id="main-content-inner" class="clearfix">
 				<div id="primary" class="content-area">
 					<div id="content" class="site-content">
@@ -59,7 +59,7 @@ get_header(); ?>
 	</div><!-- #main-content-wrap -->
 	
 	<div id="main-socials-wrap">
-		<div id="main-socials" class="content">
+		<div id="main-socials" class="container">
 			<?php echo do_shortcode('[socials class="main-bg-hover main-color" position="center"]'); ?>
 		</div><!-- #main-socials -->
 	</div><!-- #main-socials-wrap -->

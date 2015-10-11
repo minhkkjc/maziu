@@ -2,17 +2,22 @@
 
 get_header();
 ?>
-
-    <div id="no-content-wrap">
-
-    </div><!-- #no-content-wrap -->
-
-    <div id="main-content-wrap">
-        <div id="main-content" class="content">
-            <div id="main-content-inner" class="clearfix">
-                <?php while (have_posts()) : the_post(); ?>
+    <?php
+        while (have_posts()) :
+            the_post();
+            $full_width = get_post_meta(get_the_ID(), '_maziu_page_full_template', true);
+            if ($full_width) :
+    ?>
+        <div id="full-width-thumbnail-wrap">
+            <?php the_post_thumbnail('full'); ?>
+        </div><!-- #no-content-wrap -->
+    <?php else : ?>
+        <div id="no-content-wrap"></div>
+    <?php endif; ?>
+        <div id="main-content-wrap">
+            <div id="main-content" class="container">
+                <div id="main-content-inner" class="clearfix">
                     <?php
-                        $full_width = get_post_meta(get_the_ID(), '_maziu_page_full_template', true);
                         if ($full_width) :
                     ?>
                         <div id="primary" class="content-area full-width">
@@ -33,13 +38,13 @@ get_header();
 
                         <?php get_sidebar(); ?>
                     <?php endif; ?>
-                <?php endwhile; ?>
-            </div><!-- #main-content-inner -->
-        </div><!-- #main-content -->
-    </div><!-- #main-content-wrap -->
+                </div><!-- #main-content-inner -->
+            </div><!-- #main-content -->
+        </div><!-- #main-content-wrap -->
+    <?php endwhile; ?>
 
     <div id="main-socials-wrap">
-        <div id="main-socials" class="content">
+        <div id="main-socials" class="container">
             <?php echo do_shortcode('[socials class="main-bg-hover main-color" position="center"]'); ?>
         </div><!-- #main-socials -->
     </div><!-- #main-socials-wrap -->

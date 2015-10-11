@@ -20,7 +20,7 @@
             <header id="page-header">
 
                 <div id="top-header">
-                    <div class="content">
+                    <div class="container">
                         <div class="row">
                             <div class="container-fluid">
 
@@ -60,7 +60,7 @@
                 </div><!-- #top-header -->
 
 				<div id="logo">
-					<div class="content">
+					<div class="container">
 						<div class="row">
                             <div class="container-fluid">
                                 <a href="<?php echo esc_url(home_url('/')); ?>" title="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>">
@@ -72,7 +72,7 @@
 				</div><!-- #logo -->
 				
                 <div id="main-menu-wrap">
-                    <div class="content">
+                    <div class="container">
                         <div class="row">
                             <div class="container-fluid">
                                 <nav>

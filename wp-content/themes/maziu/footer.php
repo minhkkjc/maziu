@@ -31,6 +31,19 @@
 
     </div>
 
+    <div id="main-menu-mobile-wrap">
+        <div id="main-menu-mobile-in">
+            <div class="logo">
+                <a href="<?php echo esc_url(home_url('/')); ?>" title="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/logo.png" alt="<?php bloginfo('name'); ?>" />
+                </a>
+            </div><!-- .logo -->
+            <nav>
+                <?php wp_nav_menu(array('theme_location' => 'mainmenu', 'menu_class' => 'nav-menu clearfix', 'menu_id' => 'main-menu-mobile')) ?>
+            </nav><!-- nav -->
+        </div><!-- #main-menu-mobile-in -->
+    </div><!-- #main-menu-mobile-wrap -->
+
     <?php wp_footer(); ?>
 
 </body>

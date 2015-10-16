@@ -75,9 +75,11 @@
                     <div class="container">
                         <div class="row">
                             <div class="container-fluid">
-                                <nav>
+                                <nav class="hidden-xs hidden-sm">
                                     <?php wp_nav_menu( array( 'theme_location' => 'mainmenu', 'menu_class' => 'nav-menu clearfix', 'menu_id' => 'main-menu')) ?>
                                 </nav><!-- #main-menu -->
+
+                                <a href="#" class="main-menu-mobile-btn hidden-md hidden-lg">Menu</a>
                             </div>
 						</div>
                     </div>

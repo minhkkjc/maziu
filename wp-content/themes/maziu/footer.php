@@ -31,7 +31,7 @@
 
     </div>
 
-    <div id="main-menu-mobile-wrap">
+    <div id="main-menu-mobile-wrap" class="hidden-md hidden-lg">
         <div id="main-menu-mobile-in">
             <div class="logo">
                 <a href="<?php echo esc_url(home_url('/')); ?>" title="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>">

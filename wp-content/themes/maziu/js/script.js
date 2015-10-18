@@ -151,5 +151,18 @@ jQuery(function($) {
             item.addClass('active');
         }
     });
+
+    // Main menu mobile
+    $(document).on('click', '.main-menu-mobile-btn', function(e) {
+        e.preventDefault();
+
+        $(this).closest('body').toggleClass('menu-mobile-active');
+    });
+
+    $(document).on('click', '.menu-mobile-close', function(e) {
+        e.preventDefault();
+
+        $(this).closest('body').removeClass('menu-mobile-active');
+    });
 	
 });

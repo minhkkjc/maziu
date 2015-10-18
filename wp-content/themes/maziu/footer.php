@@ -31,7 +31,7 @@
 
     </div>
 
-    <div id="main-menu-mobile-wrap" class="hidden-md hidden-lg">
+    <div id="main-menu-mobile-wrap" class="hidden-md hidden-lg ease-transition">
         <div id="main-menu-mobile-in">
             <div class="logo">
                 <a href="<?php echo esc_url(home_url('/')); ?>" title="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>">
@@ -41,8 +41,11 @@
             <nav>
                 <?php wp_nav_menu(array('theme_location' => 'mainmenu', 'menu_class' => 'nav-menu clearfix', 'menu_id' => 'main-menu-mobile')) ?>
             </nav><!-- nav -->
+            <a href="#" class="menu-mobile-close">x</a><!-- .menu-mobile-close -->
         </div><!-- #main-menu-mobile-in -->
     </div><!-- #main-menu-mobile-wrap -->
+
+    <div id="main-menu-modal" class="hidden-md hidden-lg ease-transition"></div><!-- #main-menu-modal -->
 
     <?php wp_footer(); ?>
 

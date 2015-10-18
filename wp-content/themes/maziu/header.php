@@ -36,16 +36,16 @@
 												<i class="fa fa-sort-desc"></i>
 											</div>
                                         </li>
-                                        <li>
-											<div>
-												<label for="currency"><?php echo __('Currency', 'maziu'); ?>:</label>
-												<select id="currency">
-													<option>USD</option>
-													<option>VND</option>
-												</select>
-												<i class="fa fa-sort-desc"></i>
-											</div>
-                                        </li>
+<!--                                        <li>-->
+<!--											<div>-->
+<!--												<label for="currency">--><?php //echo __('Currency', 'maziu'); ?><!--:</label>-->
+<!--												<select id="currency">-->
+<!--													<option>USD</option>-->
+<!--													<option>VND</option>-->
+<!--												</select>-->
+<!--												<i class="fa fa-sort-desc"></i>-->
+<!--											</div>-->
+<!--                                        </li>-->
                                     </ul>
                                 </div><!-- #th-left -->
 
@@ -79,7 +79,7 @@
                                     <?php wp_nav_menu( array( 'theme_location' => 'mainmenu', 'menu_class' => 'nav-menu clearfix', 'menu_id' => 'main-menu')) ?>
                                 </nav><!-- #main-menu -->
 
-                                <a href="#" class="main-menu-mobile-btn hidden-md hidden-lg">Menu</a>
+                                <a href="#" class="main-menu-mobile-btn hidden-md hidden-lg"></a>
                             </div>
 						</div>
                     </div>
